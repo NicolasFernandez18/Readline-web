@@ -1,268 +1,308 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RedLine.web — Diseño y desarrollo de páginas web</title>
-<meta name="description" content="RedLine.web diseña y construye landing pages, sitios web y tiendas online modernas, rápidas y pensadas para que tu negocio avance.">
-<meta name="theme-color" content="#0b0b0d">
-<link rel="icon" type="image/png" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<title>RedLine.web — Hechos para ir más lejos</title>
+<meta name="description" content="RedLine.web diseña y desarrolla páginas web para pequeños comercios y emprendimientos: landing pages, sitios completos y tiendas online.">
 
-<meta property="og:title" content="RedLine.web — Nacidos para avanzar">
-<meta property="og:description" content="Diseñamos páginas web modernas, rápidas y pensadas para que tu negocio avance.">
-<meta property="og:type" content="website">
-
+<link rel="icon" href="assets/logo.jpg" type="image/jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">Saltar al contenido</a>
+<div class="speedline-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="top">
+<header class="site-header" id="siteHeader">
   <div class="wrap header-inner">
-    <a href="#top" class="brand" aria-label="RedLine.web — inicio">
-      <img class="brand-mark" src="assets/logo.jpg" width="40" height="40" alt="RedLine.web">
+    <a href="#inicio" class="brand">
+      <img src="assets/logo.jpg" alt="RedLine.web" class="brand-mark">
+      <span class="brand-name">RedLine<span class="brand-dot">.web</span></span>
     </a>
 
-    <nav class="nav" id="nav">
-      <ul class="nav-list">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <a href="#contacto" class="btn btn-primary btn-small">Hablemos</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contacto">Contacto</a>
     </nav>
 
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+    <a href="#contacto" class="btn btn-primary btn-small header-cta">Pedí tu presupuesto</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<main id="main">
+<main>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-line" aria-hidden="true"></div>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
     <div class="wrap hero-inner">
-      <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span>Web design &amp; development</p>
-      <h1 class="hero-title">
-        <span class="line">Tu idea.</span>
-        <span class="line accent">En movimiento.</span>
-      </h1>
-      <p class="hero-text">Diseñamos páginas web modernas, rápidas y pensadas para que tu negocio avance.</p>
-      <div class="hero-actions">
-        <a href="#contacto" class="btn btn-primary">Quiero mi web</a>
-        <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
+      <div class="hero-copy" data-reveal>
+        <p class="hero-kicker">Diseño y desarrollo web para comercios</p>
+        <h1 class="hero-title">
+          Páginas web hechas<br>para ir más lejos
+        </h1>
+        <p class="hero-sub">
+          Convertimos tu negocio en un sitio rápido, prolijo y fácil de encontrar. Trabajamos con panaderías,
+          estudios, talleres, boutiques y cualquier emprendimiento que necesite estar donde están sus clientes: en internet.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary">Pedí tu presupuesto</a>
+          <a href="#portfolio" class="btn btn-ghost">Ver proyectos</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="moon-glow" aria-hidden="true"></div>
+        <img src="assets/logo.jpg" alt="Logo RedLine.web: media luna roja con la palabra Redline" class="hero-logo">
       </div>
     </div>
+    <div class="hero-streaks" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
   </section>
 
-  <!-- ============ SERVICIOS ============ -->
-  <section class="section" id="servicios">
-    <div class="wrap">
-      <h2 class="section-title reveal">Una web que hace avanzar<br>tu negocio.</h2>
-
-      <div class="cards">
-        <article class="card reveal">
-          <span class="card-num">01</span>
-          <h3>Landing Pages</h3>
-          <p>Páginas enfocadas en presentar una propuesta y convertir visitas en consultas.</p>
-        </article>
-
-        <article class="card reveal">
-          <span class="card-num">02</span>
-          <h3>Sitios Web</h3>
-          <p>Una presencia digital completa para mostrar quién sos, qué hacés y cómo contactarte.</p>
-        </article>
-
-        <article class="card reveal">
-          <span class="card-num">03</span>
-          <h3>Tiendas Online</h3>
-          <p>Experiencias de compra modernas para llevar tus productos a internet.</p>
-        </article>
+  <!-- POR QUÉ -->
+  <section class="why">
+    <div class="wrap why-grid">
+      <div class="why-lead">
+        <h2>Tu local ya tiene vidriera.<br>Tu negocio también necesita una en internet.</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ IMPACTO ============ -->
-  <section class="impact">
-    <div class="wrap">
-      <p class="impact-text reveal">
-        No hacemos webs<br>
-        <span class="accent">para quedarse quieto.</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ POR QUÉ REDLINE ============ -->
-  <section class="section">
-    <div class="wrap">
-      <h2 class="section-title reveal">Diseño con propósito.</h2>
-
-      <div class="why-grid">
-        <div class="why-item reveal">
-          <h3>Diseño moderno</h3>
-          <p>Una identidad visual limpia, actual y alineada con tu marca.</p>
+      <div class="why-points">
+        <div class="why-item">
+          <span class="why-mark" aria-hidden="true"></span>
+          <div>
+            <h3>Antes de visitarte, te buscan</h3>
+            <p>Cada vez más clientes miran horarios, ubicación y productos desde el celular antes de decidirse a ir.</p>
+          </div>
         </div>
-        <div class="why-item reveal">
-          <h3>Mobile first</h3>
-          <p>La página funciona perfectamente en celulares, tablets y computadoras.</p>
+        <div class="why-item">
+          <span class="why-mark" aria-hidden="true"></span>
+          <div>
+            <h3>Tu competencia ya está</h3>
+            <p>Si el comercio de al lado tiene web y vos no, esa búsqueda se la queda él.</p>
+          </div>
         </div>
-        <div class="why-item reveal">
-          <h3>Enfocada en resultados</h3>
-          <p>Botones, contenido y estructura pensados para generar acciones.</p>
-        </div>
-        <div class="why-item reveal">
-          <h3>Simple de administrar</h3>
-          <p>Soluciones pensadas para poder mantenerse y crecer con el tiempo.</p>
+        <div class="why-item">
+          <span class="why-mark" aria-hidden="true"></span>
+          <div>
+            <h3>No hace falta que sea caro ni lento</h3>
+            <p>Con un proceso claro, tenés un sitio funcionando en poco tiempo y sin vueltas técnicas de tu lado.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PORTFOLIO ============ -->
-  <section class="section" id="proyectos">
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="section-title reveal">Proyectos.</h2>
-        <p class="section-note reveal">Todavía no tenemos clientes reales — estos son proyectos conceptuales que usamos para practicar y armar portfolio.</p>
+        <h2>Servicios</h2>
+        <p>Empezamos por donde tu negocio lo necesite, y crecemos con vos.</p>
       </div>
 
-      <div class="portfolio-grid">
-        <article class="portfolio-card reveal">
-          <div class="portfolio-visual visual-barber" aria-hidden="true"></div>
-          <div class="portfolio-body">
-            <span class="tag">Proyecto conceptual</span>
-            <h3>Blackline Barber</h3>
-            <p>Landing page conceptual para una barbería.</p>
+      <div class="service-list">
+
+        <article class="service-card">
+          <div class="service-top">
+            <span class="service-tag">Punto de partida</span>
+            <h3>Landing Page</h3>
           </div>
+          <p>Una sola página, directa y efectiva: quién sos, qué ofrecés, cómo te contactan. Ideal para presentarte
+            rápido o lanzar una promoción puntual.</p>
+          <ul class="service-features">
+            <li>Diseño a medida de tu marca</li>
+            <li>Botón directo a WhatsApp</li>
+            <li>Optimizada para celular</li>
+          </ul>
         </article>
 
-        <article class="portfolio-card reveal">
-          <div class="portfolio-visual visual-studio" aria-hidden="true"></div>
-          <div class="portfolio-body">
-            <span class="tag">Proyecto conceptual</span>
-            <h3>Nova Studio</h3>
-            <p>Página conceptual para un estudio creativo.</p>
+        <article class="service-card service-card--highlight">
+          <div class="service-top">
+            <span class="service-tag">El más elegido</span>
+            <h3>Sitio Web Completo</h3>
           </div>
+          <p>Varias secciones y páginas: servicios, productos, nosotros, contacto. Para negocios que quieren mostrar
+            todo su catálogo o su historia con más profundidad.</p>
+          <ul class="service-features">
+            <li>Estructura de varias páginas</li>
+            <li>Formulario de contacto propio</li>
+            <li>Preparado para posicionar en Google</li>
+          </ul>
         </article>
 
-        <article class="portfolio-card reveal">
-          <div class="portfolio-visual visual-garage" aria-hidden="true"></div>
-          <div class="portfolio-body">
-            <span class="tag">Proyecto conceptual</span>
-            <h3>Volt Garage</h3>
-            <p>Landing page conceptual para un negocio automotor.</p>
+        <article class="service-card">
+          <div class="service-top">
+            <span class="service-tag">Para vender online</span>
+            <h3>Tienda Online</h3>
           </div>
+          <p>Catálogo de productos, carrito de compra y medios de pago. Para el comercio que ya está listo para
+            vender sin depender solo del local físico.</p>
+          <ul class="service-features">
+            <li>Catálogo con precios y stock</li>
+            <li>Integración con medios de pago</li>
+            <li>Panel para cargar productos vos mismo</li>
+          </ul>
         </article>
+
       </div>
     </div>
   </section>
 
-  <!-- ============ PROCESO ============ -->
-  <section class="section section-alt" id="proceso">
+  <!-- PROCESO -->
+  <section class="process" id="proceso">
     <div class="wrap">
-      <h2 class="section-title reveal">De la idea a la pantalla.</h2>
+      <div class="section-head section-head--light">
+        <h2>Cómo trabajamos</h2>
+        <p>Cuatro pasos, sin sorpresas en el camino.</p>
+      </div>
 
-      <ol class="process">
-        <li class="reveal">
+      <ol class="process-list">
+        <li class="process-step">
           <span class="process-num">01</span>
           <div>
-            <h3>Hablamos</h3>
-            <p>Entendemos el negocio, los objetivos y las necesidades.</p>
+            <h3>Diagnóstico</h3>
+            <p>Charlamos sobre tu negocio, tus clientes y qué necesita resolver el sitio.</p>
           </div>
         </li>
-        <li class="reveal">
+        <li class="process-step">
           <span class="process-num">02</span>
           <div>
-            <h3>Diseñamos</h3>
-            <p>Definimos estructura, estilo visual y experiencia.</p>
+            <h3>Diseño</h3>
+            <p>Armamos una propuesta visual acorde a tu marca y te la mostramos antes de programar nada.</p>
           </div>
         </li>
-        <li class="reveal">
+        <li class="process-step">
           <span class="process-num">03</span>
           <div>
-            <h3>Construimos</h3>
-            <p>Convertimos el diseño en una web funcional y responsive.</p>
+            <h3>Desarrollo</h3>
+            <p>Construimos el sitio, lo probamos en distintos celulares y pantallas, y ajustamos los detalles.</p>
           </div>
         </li>
-        <li class="reveal">
+        <li class="process-step">
           <span class="process-num">04</span>
           <div>
-            <h3>Lanzamos</h3>
-            <p>Publicamos la web y dejamos todo listo.</p>
+            <h3>Lanzamiento</h3>
+            <p>Publicamos el sitio y te acompañamos en los primeros ajustes una vez que ya está online.</p>
           </div>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- ============ FAQ ============ -->
-  <section class="section" id="faq">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title reveal">Preguntas frecuentes.</h2>
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Portfolio</h2>
+        <p>Todavía estamos construyendo nuestra cartera de clientes. Estos son proyectos conceptuales, pensados
+          para mostrar cómo trabajamos con distintos tipos de comercio.</p>
+      </div>
 
-      <div class="faq-list reveal">
-        <details class="faq-item" open>
-          <summary>¿Qué tipo de páginas hacen?</summary>
-          <p>Landing pages y sitios web para emprendimientos, profesionales y negocios. También queremos ofrecer tiendas online más adelante.</p>
-        </details>
-        <details class="faq-item">
-          <summary>¿Necesito tener dominio y hosting?</summary>
-          <p>No necesariamente. Podemos ayudarte a elegirlos y configurarlos.</p>
-        </details>
-        <details class="faq-item">
-          <summary>¿La página funciona en celular?</summary>
-          <p>Sí. Todas las páginas que hacemos son responsive.</p>
-        </details>
-        <details class="faq-item">
-          <summary>¿Puedo pedir cambios?</summary>
-          <p>Sí. El alcance y las modificaciones se definen antes de comenzar el proyecto.</p>
-        </details>
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb portfolio-thumb--a" aria-hidden="true"></div>
+          <span class="portfolio-badge">Proyecto conceptual</span>
+          <h3>Panadería de barrio</h3>
+          <p>Landing page con productos del día, horarios y ubicación con mapa integrado.</p>
+        </article>
+        <article class="portfolio-card">
+          <div class="portfolio-thumb portfolio-thumb--b" aria-hidden="true"></div>
+          <span class="portfolio-badge">Proyecto conceptual</span>
+          <h3>Estudio contable</h3>
+          <p>Sitio completo con áreas de servicio, equipo y formulario de consultas.</p>
+        </article>
+        <article class="portfolio-card">
+          <div class="portfolio-thumb portfolio-thumb--c" aria-hidden="true"></div>
+          <span class="portfolio-badge">Proyecto conceptual</span>
+          <h3>Indumentaria</h3>
+          <p>Tienda online con catálogo por talles y colores, y botón de compra por WhatsApp.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA FINAL ============ -->
-  <section class="cta-final" id="contacto">
-    <div class="wrap">
-      <h2 class="cta-title reveal">¿Listo para avanzar?</h2>
-      <p class="cta-text reveal">Contanos tu idea y vemos cómo llevarla a la web.</p>
-      <!-- TODO: reemplazar el número de ejemplo por el WhatsApp real de RedLine.web -->
-      <a href="https://wa.me/5490000000000" target="_blank" rel="noopener" class="btn btn-primary btn-large reveal">
-        Hablar por WhatsApp
-      </a>
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="wrap contact-grid">
+      <div class="contact-lead">
+        <h2>Contanos sobre tu negocio</h2>
+        <p>Escribinos y coordinamos una charla sin compromiso para ver qué necesita tu sitio.</p>
+
+        <div class="contact-direct">
+          <a href="https://wa.me/5490000000000" class="contact-link" id="whatsappLink" target="_blank" rel="noopener">
+            <span class="contact-link-label">WhatsApp</span>
+            <span class="contact-link-value">Escribinos directo</span>
+          </a>
+          <a href="mailto:hola@redline.web" class="contact-link">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">hola@redline.web</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="negocio">Tipo de negocio</label>
+          <input type="text" id="negocio" name="negocio" placeholder="Ej: panadería, taller, boutique" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Contanos qué necesitás</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <div class="footer-brand-block">
-      <img class="footer-mark" src="assets/logo.jpg" width="32" height="32" alt="RedLine.web">
+    <div class="footer-brand">
+      <img src="assets/logo.jpg" alt="RedLine.web" class="footer-mark">
       <div>
-        <span class="footer-brand">redline<span class="brand-dot">.web</span></span>
-        <p class="footer-slogan">Nacidos para avanzar.</p>
+        <p class="footer-name">RedLine<span class="brand-dot">.web</span></p>
+        <p class="footer-tag">Hechos para ir más lejos</p>
       </div>
     </div>
-    <div class="footer-meta">
-      <p>&copy; <span id="year"></span> RedLine.web</p>
-      <p>Web Design &amp; Development</p>
-    </div>
+
+    <nav class="footer-nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <p class="footer-copy">© <span id="year"></span> RedLine.web</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<a href="https://wa.me/5490000000000" class="fab-whatsapp" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.61-.6-2.84-1.23-4.69-4.1-4.83-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.36.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.36-.23.6-.14.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.62-.17 1.3z"/></svg>
+</a>
+
+<button class="to-top" id="toTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/script.js"></script>
 </body>
 </html>
