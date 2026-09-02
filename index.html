@@ -272,30 +272,25 @@
     </section>
 
     <!-- CONTACTO / FORMULARIO -->
-    <section id="contacto" class="py-20 relative">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-redline-card p-8 md:p-10 rounded-2xl border border-redline-border shadow-2xl">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold">Impulsá tu Marca Hoy</h2>
-                    <p class="text-gray-400 text-sm mt-2">Completá el formulario y coordinemos una propuesta para tu negocio.</p>
-                </div>
-                <form class="space-y-4" action="https://formspree.io/f/nicodrax18@gmail.com" method="POST">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nombre o Marca</label>
-                        <input type="text" placeholder="Ej. Mi Emprendimiento" class="w-full bg-redline-dark border border-redline-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-redline-red transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Teléfono / WhatsApp</label>
-                        <input type="tel" placeholder="+54 11 1234 5678" class="w-full bg-redline-dark border border-redline-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-redline-red transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">¿Qué tipo de web necesitás?</label>
-                        <input type="text" placeholder="Ej. Landing page" class="w-full bg-redline-dark border border-redline-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-redline-red transition-colors">
-                    </div>
-                    <button type="submit" class="w-full py-4 bg-redline-red text-white font-bold rounded-lg shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all hover:shadow-[0_0_30px_rgba(255,26,45,0.7)]">
-                        Enviar Consulta
-                    </button>
-                </form>
+    <form class="space-y-4" action="https://formspree.io/f/nicodrax18@gmail.com" method="POST">
+    <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nombre o Marca</label>
+        <input type="text" name="nombre" required placeholder="Ej. Mi Emprendimiento" class="w-full bg-redline-dark border border-redline-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-redline-red transition-colors">
+    </div>
+    <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Teléfono / WhatsApp</label>
+        <input type="tel" name="telefono" required placeholder="+54 11 1234 5678" class="w-full bg-redline-dark border border-redline-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-redline-red transition-colors">
+    </div>
+    <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">¿Qué tipo de web necesitás?</label>
+        <select name="servicio" class="w-full bg-redline-dark border border-redline-border rounded-lg px-4 py-3 text-sm text-gray-300 focus:outline-none focus:border-redline-red transition-colors">
+               <input type="text" name="nombre" required placeholder="Ej. Landing Page" class="w-full bg-redline-dark border border-redline-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-redline-red transition-colors">
+        </select>
+    </div>
+    <button type="submit" class="w-full py-4 bg-redline-red text-white font-bold rounded-lg shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all hover:shadow-[0_0_30px_rgba(255,26,45,0.7)]">
+        Enviar Consulta
+    </button>
+</form>
             </div>
         </div>
     </section>
