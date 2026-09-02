@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RedLine.web — Páginas web para tu comercio</title>
+<meta name="description" content="Diseñamos y desarrollamos páginas web para pequeños comercios. Landing pages, sitios completos y tiendas online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black: #060607;
+    --panel: #121215;
+    --panel-2: #17171b;
+    --line: #2a2a2f;
+    --white: #f3f1ee;
+    --grey: #8d8d93;
+    --red: #e21f26;
+    --red-deep: #7a0f13;
+    --red-glow: #ff3b3b;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Manrope', sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--red); color:var(--white); }
+
+  h1,h2,h3, .headline{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:0.95;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 clamp(20px, 5vw, 48px);
+  }
+
+  :focus-visible{
+    outline:2px solid var(--red-glow);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001s !important; animation-iteration-count:1 !important; transition-duration:0.001s !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px clamp(20px, 5vw, 48px);
+    background:linear-gradient(to bottom, rgba(6,6,7,0.9), rgba(6,6,7,0));
+    transition:background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(8,8,9,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    font-size:1.35rem;
+    letter-spacing:0.03em;
+  }
+  .brand img{ width:34px; height:34px; border-radius:50%; }
+  .brand .dim{ color:var(--grey); font-weight:500; font-size:0.85rem; }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(16px, 3vw, 34px);
+    font-size:0.92rem;
+    color:var(--grey);
+  }
+  nav ul li a{ position:relative; padding:4px 0; transition:color 0.25s; }
+  nav ul li a:hover{ color:var(--white); }
+  nav ul li a::after{
+    content:'';
+    position:absolute; left:0; bottom:-2px;
+    width:0; height:2px;
+    background:var(--red);
+    transition:width 0.3s ease;
+  }
+  nav ul li a:hover::after{ width:100%; }
+
+  .nav-cta{
+    display:inline-block;
+    padding:9px 18px;
+    border:1px solid var(--red);
+    border-radius:2px;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--white);
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--red); }
+
+  .menu-btn{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:90px;
+    overflow:hidden;
+  }
+
+  .hero-bg{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 78% 28%, rgba(226,31,38,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 400px at 15% 85%, rgba(226,31,38,0.08), transparent 60%);
+    pointer-events:none;
+  }
+
+  .speedlines{
+    position:absolute; inset:0;
+    pointer-events:none;
+    opacity:0.55;
+  }
+  .speedlines svg{ width:100%; height:100%; }
+  .sline{
+    stroke:var(--red);
+    stroke-width:1.4;
+    fill:none;
+    opacity:0;
+    stroke-dasharray:1;
+    stroke-dashoffset:1;
+  }
+
+  .hero-grid{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:40px;
+    align-items:center;
+    width:100%;
+  }
+
+  .eyebrow-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--grey);
+    font-size:0.85rem;
+    margin-bottom:22px;
+    opacity:0;
+    transform:translateY(10px);
+  }
+  .eyebrow-row .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 10px var(--red-glow);
+    animation:pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:0.35; }
+  }
+
+  .hero h1{
+    font-size:clamp(2.7rem, 6.4vw, 5.2rem);
+    color:var(--white);
+    opacity:0;
+    transform:translateY(24px);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--red);
+    -webkit-text-stroke:0px;
+  }
+
+  .hero p.lead{
+    margin-top:22px;
+    max-width:46ch;
+    font-size:1.08rem;
+    line-height:1.6;
+    color:var(--grey);
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    margin-top:34px;
+    flex-wrap:wrap;
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  .btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 26px;
+    font-family:'Manrope', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    border-radius:2px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform 0.35s cubic-bezier(.2,.8,.2,1), background 0.25s, color 0.25s, border-color 0.25s;
+  }
+  .btn-primary{
+    background:var(--red);
+    color:var(--white);
+  }
+  .btn-primary:hover{ background:#c91820; }
+  .btn-ghost{
+    border-color:var(--line);
+    color:var(--white);
+  }
+  .btn-ghost:hover{ border-color:var(--grey); background:rgba(255,255,255,0.04); }
+  .btn svg{ width:16px; height:16px; transition:transform 0.3s ease; }
+  .btn-primary:hover svg{ transform:translateX(3px); }
+
+  /* Tachometer */
+  .gauge-wrap{
+    position:relative;
+    z-index:2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .gauge{
+    width:min(380px, 80vw);
+    aspect-ratio:1;
+    position:relative;
+  }
+  .gauge svg{ width:100%; height:100%; overflow:visible; }
+  .gauge-needle{
+    transform-origin:150px 150px;
+    transform:rotate(-125deg);
+    transition:transform 2.4s cubic-bezier(.16,.84,.32,1.03);
+  }
+  .gauge.active .gauge-needle{ transform:rotate(78deg); }
+  .gauge-cap{ fill:var(--white); }
+  .gauge-num{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:15px;
+    fill:var(--grey);
+    text-anchor:middle;
+  }
+  .gauge-center-label{
+    position:absolute;
+    left:50%; top:63%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+  }
+  .gauge-center-label .n{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:2.6rem;
+    font-weight:700;
+    color:var(--white);
+    line-height:1;
+  }
+  .gauge-center-label .u{
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    color:var(--grey);
+    text-transform:uppercase;
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:28px; left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    color:var(--grey);
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    opacity:0;
+  }
+  .scroll-cue .stick{
+    width:1px; height:30px;
+    background:linear-gradient(var(--red), transparent);
+    animation:stickmove 1.8s ease-in-out infinite;
+  }
+  @keyframes stickmove{
+    0%{ transform:scaleY(0.3); transform-origin:top; opacity:0.4; }
+    50%{ transform:scaleY(1); transform-origin:top; opacity:1; }
+    100%{ transform:scaleY(0.3); transform-origin:top; opacity:0.4; }
+  }
+
+  /* ---------- TICKER ---------- */
+  .ticker{
+    position:relative;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--panel);
+    padding:14px 0;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .ticker-track{
+    display:inline-flex;
+    animation:scroll-left 26s linear infinite;
+  }
+  .ticker:hover .ticker-track{ animation-play-state:paused; }
+  .ticker-item{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--grey);
+    padding:0 24px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .ticker-item span.mark{ color:var(--red); font-size:0.9rem; }
+  @keyframes scroll-left{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{ position:relative; padding:120px 0; }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    margin-bottom:64px;
+    flex-wrap:wrap;
+  }
+  .section-tag{
+    color:var(--red);
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    margin-bottom:10px;
+    display:block;
+  }
+  .section-head h2{
+    font-size:clamp(2rem, 4.2vw, 3.1rem);
+    color:var(--white);
+  }
+  .section-head p{
+    max-width:38ch;
+    color:var(--grey);
+    line-height:1.6;
+    font-size:0.98rem;
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--panel);
+    padding:38px 32px;
+    position:relative;
+    transition:background 0.4s ease;
+    will-change:transform;
+  }
+  .service-card:hover{ background:var(--panel-2); }
+  .service-card .icon{
+    width:46px; height:46px;
+    margin-bottom:26px;
+    color:var(--red);
+  }
+  .service-card h3{
+    font-size:1.6rem;
+    color:var(--white);
+    margin-bottom:12px;
+  }
+  .service-card p{
+    color:var(--grey);
+    font-size:0.94rem;
+    line-height:1.65;
+    margin-bottom:22px;
+  }
+  .service-card .price{
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+    font-family:'Barlow Condensed', sans-serif;
+    color:var(--white);
+    border-top:1px solid var(--line);
+    padding-top:18px;
+  }
+  .service-card .price .n{ font-size:1.5rem; font-weight:700; }
+  .service-card .price .d{ font-size:0.78rem; color:var(--grey); text-transform:uppercase; }
+
+  /* ---------- PROCESS w/ drawing line ---------- */
+  .process{
+    position:relative;
+  }
+  .process-line-wrap{
+    position:absolute;
+    left:29px; top:14px; bottom:14px;
+    width:2px;
+  }
+  .process-line-bg{ position:absolute; inset:0; background:var(--line); }
+  .process-line-fill{
+    position:absolute; top:0; left:0; width:100%;
+    height:0%;
+    background:linear-gradient(var(--red), var(--red-glow));
+    box-shadow:0 0 12px var(--red-glow);
+    transition:height 0.1s linear;
+  }
+  .process-steps{
+    display:flex;
+    flex-direction:column;
+    gap:64px;
+    padding-left:76px;
+    position:relative;
+  }
+  .process-step{
+    position:relative;
+  }
+  .process-step .marker{
+    position:absolute;
+    left:-76px; top:0;
+    width:60px; height:60px;
+    border-radius:50%;
+    border:2px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--grey);
+    background:var(--black);
+    transition:border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .process-step.in .marker{
+    border-color:var(--red);
+    color:var(--white);
+    box-shadow:0 0 18px rgba(226,31,38,0.45);
+  }
+  .process-step h3{
+    font-size:1.5rem;
+    color:var(--white);
+    margin-bottom:10px;
+  }
+  .process-step p{
+    color:var(--grey);
+    max-width:52ch;
+    line-height:1.65;
+    font-size:0.96rem;
+  }
+
+  /* ---------- STATS ---------- */
+  .stats-band{
+    background:var(--panel);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:70px 0;
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:24px;
+  }
+  .stat{ text-align:left; }
+  .stat .num{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.2rem, 5vw, 3.2rem);
+    color:var(--white);
+  }
+  .stat .num .u{ color:var(--red); }
+  .stat .lbl{
+    color:var(--grey);
+    font-size:0.85rem;
+    margin-top:6px;
+  }
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .pf-card{
+    border:1px solid var(--line);
+    background:var(--panel);
+    overflow:hidden;
+    transition:transform 0.4s cubic-bezier(.2,.7,.2,1), border-color 0.4s;
+  }
+  .pf-card:hover{ transform:translateY(-6px); border-color:#3a3a41; }
+  .pf-thumb{
+    height:170px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:2.4rem;
+    font-weight:700;
+    color:rgba(255,255,255,0.08);
+    letter-spacing:0.02em;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .pf-thumb::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(135deg, rgba(226,31,38,0.14), transparent 60%);
+  }
+  .pf-body{ padding:24px; }
+  .pf-tag{
+    color:var(--red);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-weight:600;
+  }
+  .pf-body h3{
+    margin-top:8px;
+    font-size:1.3rem;
+    color:var(--white);
+  }
+  .pf-body p{
+    color:var(--grey);
+    font-size:0.88rem;
+    margin-top:8px;
+    line-height:1.5;
+  }
+  .pf-note{
+    margin-top:30px;
+    color:var(--grey);
+    font-size:0.85rem;
+    border-left:2px solid var(--red);
+    padding-left:14px;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-band{
+    position:relative;
+    padding:140px 0;
+    text-align:center;
+    overflow:hidden;
+  }
+  .cta-band::before{
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse 700px 400px at 50% 40%, rgba(226,31,38,0.18), transparent 70%);
+  }
+  .cta-band h2{
+    position:relative;
+    font-size:clamp(2.2rem, 6vw, 4.4rem);
+    color:var(--white);
+    max-width:16ch;
+    margin:0 auto 26px;
+  }
+  .cta-band p{
+    position:relative;
+    color:var(--grey);
+    max-width:42ch;
+    margin:0 auto 38px;
+    line-height:1.6;
+  }
+  .cta-band .btn-row{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:56px 0 32px;
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:40px;
+    flex-wrap:wrap;
+    padding-bottom:40px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:26px;
+  }
+  .footer-brand{ display:flex; align-items:center; gap:12px; }
+  .footer-brand img{ width:40px; height:40px; border-radius:50%; }
+  .footer-brand .name{ font-family:'Barlow Condensed', sans-serif; font-weight:700; font-size:1.4rem; }
+  .footer-brand .tag{ color:var(--grey); font-size:0.8rem; margin-top:2px; }
+  .footer-links{ display:flex; gap:60px; flex-wrap:wrap; }
+  .footer-col h4{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--grey);
+    margin-bottom:14px;
+  }
+  .footer-col a{
+    display:block;
+    color:var(--white);
+    font-size:0.92rem;
+    margin-bottom:10px;
+    opacity:0.85;
+    transition:opacity 0.2s, color 0.2s;
+  }
+  .footer-col a:hover{ opacity:1; color:var(--red); }
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    color:var(--grey);
+    font-size:0.78rem;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 920px){
+    .hero-grid{ grid-template-columns:1fr; gap:60px; }
+    .gauge-wrap{ order:-1; }
+    .gauge{ width:min(280px, 60vw); }
+    .services-grid{ grid-template-columns:1fr; }
+    .stats-grid{ grid-template-columns:repeat(2,1fr); }
+    .portfolio-grid{ grid-template-columns:1fr; }
+    nav ul{ display:none; }
+    .nav-cta{ font-size:0.78rem; padding:8px 14px; }
+  }
+
+  @media (max-width: 560px){
+    .stats-grid{ grid-template-columns:1fr; }
+    section{ padding:80px 0; }
+    .footer-top{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="brand">
+    <img src="logo.jpg" alt="Logo RedLine.web">
+    <span>REDLINE<span style="color:var(--red)">.web</span></span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <a href="#contacto" class="nav-cta">Pedir presupuesto</a>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="speedlines" id="speedlines"></div>
+
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow-row" id="ann1">
+        <span class="dot"></span>
+        <span>Diseño y desarrollo web para comercios</span>
+      </div>
+      <h1 id="ann2">Tu negocio<br>merece salir<br>de <em>fábrica.</em></h1>
+      <p class="lead" id="ann3">En RedLine.web hacemos páginas para pequeños comercios: rápidas, claras y hechas para vender. Vos atendé el local, nosotros nos encargamos de que también te encuentren en internet.</p>
+      <div class="hero-actions" id="ann4">
+        <a href="#contacto" class="btn btn-primary">
+          Quiero mi página
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+
+    <div class="gauge-wrap">
+      <div class="gauge" id="gauge">
+        <svg viewBox="0 0 300 300">
+          <path d="M 45 225 A 120 120 0 1 1 255 225" fill="none" stroke="#2a2a2f" stroke-width="14" stroke-linecap="round"/>
+          <path d="M 165 218 A 120 120 0 0 1 255 225" fill="none" stroke="#7a0f13" stroke-width="14" stroke-linecap="round"/>
+          <g class="gauge-num">
+            <text x="45" y="245">0</text>
+            <text x="80" y="115">3</text>
+            <text x="150" y="72">6</text>
+            <text x="220" y="115">9</text>
+            <text x="255" y="245">12</text>
+          </g>
+          <g class="gauge-needle">
+            <polygon points="150,150 146,155 150,45 154,155" fill="var(--red)"/>
+            <circle cx="150" cy="150" r="11" class="gauge-cap"/>
+            <circle cx="150" cy="150" r="5" fill="var(--red)"/>
+          </g>
+        </svg>
+        <div class="gauge-center-label">
+          <div class="n">RPM</div>
+          <div class="u">A fondo, siempre</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" id="scrollCue">
+    <span>Scroll</span>
+    <span class="stick"></span>
+  </div>
+</section>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<!-- ================= SERVICIOS ================= -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag">Servicios</span>
+        <h2>Tres velocidades,<br>un solo destino.</h2>
+      </div>
+      <p>Elegís según dónde está tu negocio hoy. Después, si crecés, la página crece con vos.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="service-card" data-tilt>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 4v5"/></svg>
+        <h3>Landing Page</h3>
+        <p>Una sola página, directa al punto: quién sos, qué vendés y cómo te contactan. Ideal para arrancar o para una promo puntual.</p>
+        <div class="price"><span class="n">Desde $XX.XXX</span></div>
+      </div>
+      <div class="service-card" data-tilt>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+        <h3>Sitio completo</h3>
+        <p>Varias secciones: inicio, productos o servicios, nosotros y contacto. Para el comercio que ya tiene más para mostrar.</p>
+        <div class="price"><span class="n">Desde $XX.XXX</span></div>
+      </div>
+      <div class="service-card" data-tilt>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18l-2 13H5L3 6Z"/><path d="M8 6V4a4 4 0 0 1 8 0v2"/></svg>
+        <h3>Tienda online</h3>
+        <p>Catálogo, carrito y pagos. Para vender directo desde la web, sin depender solo de las redes.</p>
+        <div class="price"><span class="n">A cotizar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESO ================= -->
+<section id="proceso" class="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag">Cómo trabajamos</span>
+        <h2>Del cero a la línea<br>de llegada.</h2>
+      </div>
+      <p>Sin vueltas ni tecnicismos. Cuatro pasos y tu página está online.</p>
+    </div>
+
+    <div style="position:relative;">
+      <div class="process-line-wrap">
+        <div class="process-line-bg"></div>
+        <div class="process-line-fill" id="processFill"></div>
+      </div>
+
+      <div class="process-steps" id="processSteps">
+        <div class="process-step">
+          <div class="marker">01</div>
+          <h3>Charlamos de tu negocio</h3>
+          <p>Nos contás qué vendés, quién es tu cliente y qué necesitás mostrar. Sin formularios eternos, una charla real.</p>
+        </div>
+        <div class="process-step">
+          <div class="marker">02</div>
+          <h3>Armamos el diseño</h3>
+          <p>Te mostramos una propuesta visual acorde a tu marca antes de tocar una línea de código, para que apruebes vos.</p>
+        </div>
+        <div class="process-step">
+          <div class="marker">03</div>
+          <h3>Desarrollamos</h3>
+          <p>Construimos la página, la probamos en celular y en compu, y la dejamos rápida y prolija.</p>
+        </div>
+        <div class="process-step">
+          <div class="marker">04</div>
+          <h3>Publicamos y acompañamos</h3>
+          <p>Sale al aire con tu dominio. Te explicamos cómo actualizar lo básico y quedamos para lo que necesites después.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<div class="stats-band">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="num"><span class="count" data-target="100">0</span><span class="u">%</span></div>
+        <div class="lbl">A tu medida, sin plantillas genéricas</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num"><span class="count" data-target="48">0</span><span class="u">h</span></div>
+        <div class="lbl">Primera propuesta de diseño</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num"><span class="count" data-target="3">0</span></div>
+        <div class="lbl">Planes según lo que necesites</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num"><span class="count" data-target="1">0</span></div>
+        <div class="lbl">Contacto directo con quien te hace la web</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag">Portfolio</span>
+        <h2>Proyectos<br>conceptuales.</h2>
+      </div>
+      <p>Todavía estamos arrancando, así que estos son ejercicios propios para mostrar cómo pensamos el diseño.</p>
+    </div>
+
+    <div class="portfolio-grid reveal">
+      <div class="pf-card">
+        <div class="pf-thumb">01</div>
+        <div class="pf-body">
+          <span class="pf-tag">Proyecto conceptual</span>
+          <h3>Almacén de barrio</h3>
+          <p>Landing simple con horarios, ubicación y pedidos por WhatsApp.</p>
+        </div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-thumb">02</div>
+        <div class="pf-body">
+          <span class="pf-tag">Proyecto conceptual</span>
+          <h3>Estudio de tatuajes</h3>
+          <p>Sitio con portfolio de trabajos y turnos por formulario.</p>
+        </div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-thumb">03</div>
+        <div class="pf-body">
+          <span class="pf-tag">Proyecto conceptual</span>
+          <h3>Indumentaria local</h3>
+          <p>Catálogo con categorías, buscador simple y contacto rápido.</p>
+        </div>
+      </div>
+    </div>
+    <p class="pf-note reveal">Estos proyectos son ejercicios propios, no trabajos para clientes reales. Los sumamos acá para mostrar nuestro estilo mientras vamos sumando casos reales.</p>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-band" id="contacto">
+  <div class="wrap">
+    <h2 class="reveal">¿Arrancamos con tu página?</h2>
+    <p class="reveal">Contanos de tu comercio y te respondemos con una propuesta concreta, sin compromiso.</p>
+    <div class="btn-row reveal">
+      <a href="https://wa.me/5490000000000?text=Hola%2C%20quiero%20una%20p%C3%A1gina%20web%20para%20mi%20comercio" class="btn btn-primary" target="_blank" rel="noopener">
+        Escribinos por WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="mailto:hola@redlineweb.com" class="btn btn-ghost">Escribinos un mail</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.jpg" alt="Logo RedLine.web">
+        <div>
+          <div class="name">REDLINE<span style="color:var(--red)">.web</span></div>
+          <div class="tag">Hechos para ir más lejos</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#portfolio">Portfolio</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="mailto:hola@redlineweb.com">hola@redlineweb.com</a>
+          <a href="https://wa.me/5490000000000" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> RedLine.web</span>
+      <span>Gualeguaychú, Entre Ríos</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Header on scroll */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive:true });
+
+  /* Hero entrance sequence */
+  window.addEventListener('load', () => {
+    const seq = [
+      ['ann1', 0],
+      ['ann2', 120],
+      ['ann3', 300],
+      ['ann4', 460],
+      ['scrollCue', 900]
+    ];
+    seq.forEach(([id, delay]) => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if(el){ el.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(.2,.7,.2,1)'; el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
+      }, delay);
+    });
+    setTimeout(() => {
+      document.getElementById('gauge').classList.add('active');
+    }, 500);
+  });
+
+  /* Speed lines behind hero */
+  const speedWrap = document.getElementById('speedlines');
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const slSvg = document.createElementNS(svgNS, 'svg');
+  slSvg.setAttribute('viewBox', '0 0 1200 800');
+  slSvg.setAttribute('preserveAspectRatio', 'none');
+  const lineCount = 14;
+  for(let i=0; i<lineCount; i++){
+    const y = 40 + i * (720/lineCount) + (Math.random()*20-10);
+    const len = 260 + Math.random()*340;
+    const startX = 1220 - Math.random()*260;
+    const path = document.createElementNS(svgNS, 'path');
+    path.setAttribute('d', `M ${startX} ${y} L ${startX - len} ${y - 40 - Math.random()*40}`);
+    path.setAttribute('class', 'sline');
+    path.style.animationDelay = (0.6 + i*0.055) + 's';
+    slSvg.appendChild(path);
+  }
+  speedWrap.appendChild(slSvg);
+
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.sline').forEach(p => {
+      const len = p.getTotalLength();
+      p.style.strokeDasharray = len;
+      p.style.strokeDashoffset = len;
+      p.style.transition = 'stroke-dashoffset 0.9s cubic-bezier(.2,.7,.2,1), opacity 0.3s ease';
+      requestAnimationFrame(() => {
+        p.style.opacity = '0.7';
+        p.style.strokeDashoffset = '0';
+      });
+    });
+  });
+
+  /* Infinite ticker content */
+  const tickerWords = ['Landing Pages', 'Sitios Web', 'Tiendas Online', 'Diseño a medida', 'Carga rápida', 'Mobile first'];
+  const track = document.getElementById('tickerTrack');
+  let html = '';
+  for(let r=0; r<2; r++){
+    tickerWords.forEach(w => {
+      html += `<span class="ticker-item"><span class="mark">●</span>${w}</span>`;
+    });
+  }
+  track.innerHTML = html;
+
+  /* Scroll reveal */
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  /* Process steps + drawing line */
+  const stepEls = document.querySelectorAll('.process-step');
+  const stepIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, { threshold:0.4 });
+  stepEls.forEach(el => stepIo.observe(el));
+
+  const fill = document.getElementById('processFill');
+  const wrapEl = document.querySelector('.process-line-wrap');
+  function updateProcessLine(){
+    const rect = wrapEl.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = rect.height;
+    const visibleStart = vh * 0.75;
+    let progress = (visibleStart - rect.top) / total;
+    progress = Math.max(0, Math.min(1, progress));
+    fill.style.height = (progress*100) + '%';
+  }
+  window.addEventListener('scroll', updateProcessLine, { passive:true });
+  window.addEventListener('resize', updateProcessLine);
+  updateProcessLine();
+
+  /* Count up stats */
+  const counters = document.querySelectorAll('.count');
+  const countIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const dur = 1200;
+        const start = performance.now();
+        function step(now){
+          const p = Math.min(1, (now-start)/dur);
+          const eased = 1 - Math.pow(1-p, 3);
+          el.textContent = Math.round(eased * target);
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        countIo.unobserve(el);
+      }
+    });
+  }, { threshold:0.6 });
+  counters.forEach(c => countIo.observe(c));
+
+  /* Card tilt on mouse move (desktop only) */
+  if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+    document.querySelectorAll('[data-tilt]').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(700px) rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*6).toFixed(2)}deg) translateY(-2px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(700px) rotateX(0) rotateY(0) translateY(0)';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
