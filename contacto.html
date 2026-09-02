@@ -35,11 +35,18 @@
     </header>
 
     <main class="pt-36 pb-24 max-w-4xl mx-auto px-4">
-        <div class="bg-redline-card p-8 md:p-12 rounded-3xl border border-redline-border shadow-2xl">
+        <div class="bg-redline-card p-8 md:p-12 rounded-3xl border border-redline-border shadow-2xl relative overflow-hidden">
             <h1 class="text-3xl md:text-5xl font-extrabold text-center mb-2">Cotizá tu Página Web</h1>
             <p class="text-gray-400 text-center text-sm mb-8">Completá tus datos y te respondemos en el día.</p>
 
-            <form class="space-y-6" action="https://formspree.io/f/xjyvrgyj" method="POST">
+            <!-- MENSAJE DE ÉXITO (Oculto por defecto) -->
+            <div id="form-success-msg" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 text-sm text-center flex items-center justify-center gap-3">
+                <i class="fa-solid fa-circle-check text-xl"></i>
+                <span>¡Mensaje enviado con éxito! Nos pondremos en contacto muy pronto.</span>
+            </div>
+
+            <!-- FORMULARIO -->
+            <form id="contact-form" class="space-y-6" action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Tu Nombre / Negocio</label>
@@ -61,8 +68,8 @@
                     <textarea name="mensaje" rows="4" placeholder="Contanos brevemente qué querés mostrar..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none"></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all">
-                    Enviar Consulta
+                <button type="submit" id="submit-btn" class="w-full py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all flex items-center justify-center gap-2">
+                    <span>Enviar Consulta</span>
                 </button>
             </form>
 
@@ -84,5 +91,41 @@
     <a href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 flex items-center justify-center">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
+
+    <!-- SCRIPT MANEJO DE ENVÍO CON FETCH -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('form-success-msg');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Evita la redirección fuera del sitio
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+
+            const data = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    successMsg.classList.remove('hidden');
+                    form.reset(); // Limpia los campos
+                } else {
+                    alert('Ocurrió un error al enviar el mensaje. Inténtalo nuevamente o escríbenos por WhatsApp.');
+                }
+            } catch (error) {
+                alert('Error de conexión. Inténtalo de nuevo.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Enviar Consulta</span>';
+            }
+        });
+    </script>
 </body>
 </html>
