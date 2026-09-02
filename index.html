@@ -1,374 +1,111 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedLine.web | Páginas Web para Emprendimientos y Negocios</title>
-    <meta name="description" content="Diseñamos landing pages modernas, veloces y optimizadas para PYMEs, comercios y emprendedores. Llevá tu negocio al siguiente nivel con RedLine.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#0B0D12',
-                            card: '#131722',
-                            red: '#E50914',
-                            glow: '#FF2E4D',
-                            accent: '#FF4D4D'
-                        }
-                    },
-                    boxShadow: {
-                        'glow-red': '0 0 25px rgba(229, 9, 20, 0.4)',
-                        'glow-card': '0 0 15px rgba(229, 9, 20, 0.15)'
-                    }
-                }
-            }
-        }
-    </script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            background-color: #0B0D12;
-            color: #F3F4F6;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
-        }
-        .bg-grid {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RedLine Web — Diseño y desarrollo web para marcas que quieren avanzar." />
+  <title>RedLine.web — Nacidos para avanzar.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-brand-dark text-gray-100 bg-grid relative overflow-x-hidden selection:bg-brand-red selection:text-white">
+<body>
+  <div class="cursor"></div>
+  <div class="noise"></div>
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full bg-brand-red/20 border border-brand-red flex items-center justify-center group-hover:shadow-glow-red transition-all duration-300">
-                    <i data-lucide="moon" class="w-5 h-5 text-brand-red fill-brand-red"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-wider text-white">RED<span class="text-brand-red">LINE</span><span class="text-xs text-brand-accent">.web</span></span>
-                    <span class="text-[10px] text-gray-400 tracking-widest uppercase -mt-1">Hechos para ir más lejos</span>
-                </div>
-            </a>
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="RedLine Web">redline<span>.web</span></a>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+    </nav>
+    <a class="nav-cta magnetic" href="#contacto">Hablemos <span>↗</span></a>
+  </header>
 
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
-                <a href="#inicio" class="hover:text-brand-red transition-colors">Inicio</a>
-                <a href="#servicios" class="hover:text-brand-red transition-colors">Servicios</a>
-                <a href="#por-que-nosotros" class="hover:text-brand-red transition-colors">Sobre Nosotros</a>
-                <a href="#portfolio" class="hover:text-brand-red transition-colors">Proyectos</a>
-                <a href="#faq" class="hover:text-brand-red transition-colors">Preguntas</a>
-            </nav>
-
-            <div class="hidden md:block">
-                <a href="#contacto" class="px-5 py-2.5 rounded-full bg-brand-red text-white font-semibold text-sm hover:bg-brand-glow transition-all shadow-glow-red flex items-center gap-2">
-                    <i data-lucide="message-square" class="w-4 h-4"></i>
-                    Solicitar Presupuesto
-                </a>
-            </div>
-
-            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2">
-                <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> DISEÑO WEB · DESARROLLO · MOVIMIENTO</p>
+        <h1>WEBS<br><em>QUE SE</em><br><strong>MUEVEN.</strong></h1>
+        <p class="hero-text">Creamos experiencias digitales con carácter para emprendimientos y marcas que no quieren quedarse quietas.</p>
+        <div class="hero-actions">
+          <a class="button button-red magnetic" href="#contacto">Empezar proyecto <span>→</span></a>
+          <a class="text-link" href="#proyectos">Ver trabajos <span>↘</span></a>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-6 py-6 space-y-4">
-            <a href="#inicio" class="block text-gray-200 hover:text-brand-red font-medium py-2">Inicio</a>
-            <a href="#servicios" class="block text-gray-200 hover:text-brand-red font-medium py-2">Servicios</a>
-            <a href="#por-que-nosotros" class="block text-gray-200 hover:text-brand-red font-medium py-2">Sobre Nosotros</a>
-            <a href="#portfolio" class="block text-gray-200 hover:text-brand-red font-medium py-2">Proyectos</a>
-            <a href="#faq" class="block text-gray-200 hover:text-brand-red font-medium py-2">FAQ</a>
-            <a href="#contacto" class="block text-center w-full py-3 rounded-xl bg-brand-red text-white font-bold shadow-glow-red mt-4">
-                Solicitar Presupuesto
-            </a>
-        </div>
-    </header>
-
-    <section id="inicio" class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold tracking-wide uppercase">
-                        <i data-lucide="zap" class="w-4 h-4"></i> Diseño & Desarrollo Web
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-                        Tu negocio merece una web que <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-glow">destaque</span>.
-                    </h1>
-                    <p class="text-gray-400 text-lg sm:text-xl font-normal max-w-xl mx-auto md:mx-0">
-                        Diseñamos landing pages modernas, ágiles y personalizadas para emprendimientos y negocios que buscan generar confianza y cerrar ventas.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
-                        <a href="https://wa.me/5491100000000?text=Hola%20RedLine,%20quiero%20solicitar%20un%20presupuesto" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red text-white font-bold hover:bg-brand-glow transition-all duration-300 shadow-glow-red flex items-center justify-center gap-3 text-lg">
-                            <i data-lucide="rocket" class="w-5 h-5"></i>
-                            Quiero mi página
-                        </a>
-                        <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-card border border-white/15 text-gray-200 font-semibold hover:border-brand-red/50 hover:text-white transition-all text-center text-lg">
-                            Ver nuestros servicios
-                        </a>
-                    </div>
-                </div>
-
-                <div class="relative flex justify-center">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-red to-brand-glow rounded-2xl blur-xl opacity-30"></div>
-                    <div class="relative w-full max-w-md bg-brand-card border border-white/10 rounded-2xl p-4 shadow-2xl space-y-4">
-                        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
-                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                            <span class="text-xs text-gray-500 ml-2 font-mono">redline.web/tu-negocio</span>
-                        </div>
-                        <div class="bg-brand-dark/90 rounded-xl p-6 border border-white/5 space-y-4">
-                            <div class="h-6 bg-brand-red/30 rounded w-3/4 animate-pulse"></div>
-                            <div class="h-4 bg-gray-700/50 rounded w-full"></div>
-                            <div class="h-4 bg-gray-700/50 rounded w-5/6"></div>
-                            <div class="pt-4 flex gap-3">
-                                <div class="h-10 bg-brand-red rounded-lg w-1/2"></div>
-                                <div class="h-10 bg-gray-800 rounded-lg w-1/2"></div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3 pt-2">
-                            <div class="bg-brand-dark/60 p-3 rounded-lg border border-white/5 flex items-center gap-3">
-                                <i data-lucide="smartphone" class="w-5 h-5 text-brand-red"></i>
-                                <span class="text-xs text-gray-300 font-medium">100% Mobile Ready</span>
-                            </div>
-                            <div class="bg-brand-dark/60 p-3 rounded-lg border border-white/5 flex items-center gap-3">
-                                <i data-lucide="gauge" class="w-5 h-5 text-brand-red"></i>
-                                <span class="text-xs text-gray-300 font-medium">Carga Rápida</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="orb"><span>RL</span></div>
+        <div class="slash slash-1"></div><div class="slash slash-2"></div><div class="slash slash-3"></div>
+        <div class="art-label label-a">RED / 01</div><div class="art-label label-b">BUEN DISEÑO<br>HACE RUIDO.</div>
+      </div>
+      <div class="scroll-mark">SCROLL <span>↓</span></div>
     </section>
 
-    <section class="py-16 bg-brand-card/40 border-y border-white/5">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <span class="text-brand-red text-sm font-semibold tracking-wider uppercase">Paso Digital Seguro</span>
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
-                ¿Tu negocio está <span class="underline decoration-brand-red/60 underline-offset-8">solamente en Instagram o WhatsApp</span>?
-            </h2>
-            <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-                Depender de las redes sociales limita tus ventas. Una página web propia le otorga a tu emprendimiento un <strong class="text-white">hogar digital 24/7</strong> donde tus clientes pueden ver tus productos o servicios, generar confianza instantánea y contactarte directamente.
-            </p>
-        </div>
+    <section class="ticker" aria-label="RedLine Web">
+      <div>DISEÑO WEB <span>✦</span> LANDING PAGES <span>✦</span> ECOMMERCE <span>✦</span> IDENTIDAD DIGITAL <span>✦</span> DISEÑO WEB <span>✦</span> LANDING PAGES <span>✦</span></div>
     </section>
 
-    <section id="servicios" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center space-y-4 mb-16">
-            <span class="text-brand-red text-sm font-semibold tracking-wider uppercase">Nuestras Soluciones</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Lo que hacemos por tu marca</h2>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-brand-card p-8 rounded-2xl border border-white/10 hover:border-brand-red/50 transition-all group">
-                <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
-                    <i data-lucide="layout" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Landing Pages</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Páginas modernas enfocadas principalmente en captar clientes e incrementar consultas.</p>
-            </div>
-
-            <div class="bg-brand-card p-8 rounded-2xl border border-white/10 hover:border-brand-red/50 transition-all group">
-                <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
-                    <i data-lucide="palette" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Diseño Web</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Diseños adaptados 100% a la identidad visual, colores y tono de tu comercio.</p>
-            </div>
-
-            <div class="bg-brand-card p-8 rounded-2xl border border-white/10 hover:border-brand-red/50 transition-all group">
-                <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
-                    <i data-lucide="smartphone" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Optimización Móvil</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Se adapta fluidamente a celulares, tablets y pantallas de computadora.</p>
-            </div>
-
-            <div class="bg-brand-card p-8 rounded-2xl border border-white/10 hover:border-brand-red/50 transition-all group">
-                <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
-                    <i data-lucide="share-2" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Integraciones</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Conexión directa con WhatsApp, formularios, mapa interactivo de Google y redes.</p>
-            </div>
-        </div>
+    <section id="servicios" class="section services">
+      <div class="section-intro reveal">
+        <p class="eyebrow"><span></span> LO QUE HACEMOS</p>
+        <h2>Tu web no tiene<br>que parecerse a <i>todas.</i></h2>
+      </div>
+      <div class="service-list">
+        <article class="service reveal">
+          <div class="service-number">01</div><div><h3>Landing Pages</h3><p>Páginas que van directo al punto: captar atención, explicar tu propuesta y convertir visitas en oportunidades.</p></div><div class="service-arrow">↗</div>
+        </article>
+        <article class="service service-feature reveal">
+          <div class="service-number">02</div><div><h3>Webs Completas</h3><p>Una presencia digital sólida, rápida y pensada alrededor de tu marca, no de una plantilla genérica.</p></div><div class="service-arrow">↗</div>
+        </article>
+        <article class="service reveal">
+          <div class="service-number">03</div><div><h3>Ecommerce</h3><p>Tiendas online con una experiencia clara para que tus productos tengan el protagonismo que merecen.</p></div><div class="service-arrow">↗</div>
+        </article>
+      </div>
     </section>
 
-    <section id="por-que-nosotros" class="py-20 bg-brand-card/30 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <span class="text-brand-red text-sm font-semibold tracking-wider uppercase">Diferencial</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">¿Por qué elegir RedLine? 🚀</h2>
-                    
-                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
-                            <span class="text-sm font-semibold text-white">Diseño moderno</span>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
-                            <span class="text-sm font-semibold text-white">Adaptado a celulares</span>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
-                            <span class="text-sm font-semibold text-white">Carga rápida</span>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
-                            <span class="text-sm font-semibold text-white">SEO básico para Google</span>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
-                            <span class="text-sm font-semibold text-white">Integración con WhatsApp</span>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
-                            <span class="text-sm font-semibold text-white">Soporte técnico constante</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-brand-card to-brand-dark p-8 rounded-3xl border border-white/10 shadow-glow-card space-y-4">
-                    <i data-lucide="shield-check" class="w-10 h-10 text-brand-red"></i>
-                    <h3 class="text-xl font-bold text-white">Hechos para ir más lejos</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Desarrollamos soluciones livianas, efectivas y libres de líos técnicos para que tu única preocupación sea responder los nuevos pedidos.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <section class="statement section">
+      <div class="statement-shape"></div>
+      <p class="eyebrow"><span></span> REDLINE.WEB</p>
+      <h2>DISEÑO.<br><span>ESTRATEGIA.</span><br>MOVIMIENTO.</h2>
+      <p class="statement-copy">No diseñamos para llenar espacio. Diseñamos para que una marca se sienta viva, reconocible y lista para avanzar.</p>
     </section>
 
-    <section id="portfolio" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center space-y-4 mb-16">
-            <span class="text-brand-red text-sm font-semibold tracking-wider uppercase">Proyectos Conceptuales</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Modelos de Demostración 🖥️</h2>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-brand-card rounded-2xl overflow-hidden border border-white/10 p-6 space-y-4">
-                <div class="h-36 bg-gray-800 rounded-xl flex items-center justify-center">
-                    <i data-lucide="scissors" class="w-10 h-10 text-brand-red"></i>
-                </div>
-                <h3 class="font-bold text-white text-lg">Barbería</h3>
-                <p class="text-xs text-gray-400">Reserva de turnos en línea y catálogo de cortes.</p>
-            </div>
-
-            <div class="bg-brand-card rounded-2xl overflow-hidden border border-white/10 p-6 space-y-4">
-                <div class="h-36 bg-gray-800 rounded-xl flex items-center justify-center">
-                    <i data-lucide="utensils" class="w-10 h-10 text-brand-red"></i>
-                </div>
-                <h3 class="font-bold text-white text-lg">Restaurante</h3>
-                <p class="text-xs text-gray-400">Menú QR digital y pedidos directos por WhatsApp.</p>
-            </div>
-
-            <div class="bg-brand-card rounded-2xl overflow-hidden border border-white/10 p-6 space-y-4">
-                <div class="h-36 bg-gray-800 rounded-xl flex items-center justify-center">
-                    <i data-lucide="dumbbell" class="w-10 h-10 text-brand-red"></i>
-                </div>
-                <h3 class="font-bold text-white text-lg">Gimnasio</h3>
-                <p class="text-xs text-gray-400">Muestra de instalaciones, clases y planes de suscripción.</p>
-            </div>
-        </div>
+    <section id="proyectos" class="section projects">
+      <div class="projects-head reveal"><div><p class="eyebrow"><span></span> PROYECTOS CONCEPTUALES</p><h2>Ideas que<br><i>podrían existir.</i></h2></div><p>Exploraciones visuales creadas para mostrar distintas direcciones de RedLine Web.</p></div>
+      <div class="project-grid">
+        <a class="project project-one reveal" href="#contacto"><div class="project-image"><span class="mini-logo">BL</span><span class="project-word">BLACKLINE</span></div><div class="project-meta"><b>BLACKLINE BARBER</b><span>Branding · Web</span></div></a>
+        <a class="project project-two reveal" href="#contacto"><div class="project-image"><span class="nova">NOVA<br><i>STUDIO</i></span><span class="star">✦</span></div><div class="project-meta"><b>NOVA STUDIO</b><span>Creative · Web</span></div></a>
+        <a class="project project-three reveal" href="#contacto"><div class="project-image"><span class="volt">VOLT</span><span class="volt-line"></span><span class="garage">GARAGE / 24</span></div><div class="project-meta"><b>VOLT GARAGE</b><span>Automotive · Web</span></div></a>
+      </div>
     </section>
 
-    <section class="py-20 bg-brand-card/30 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-4 mb-16">
-                <span class="text-brand-red text-sm font-semibold tracking-wider uppercase">Proceso Transparente</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Paso a paso</h2>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-brand-card p-6 rounded-2xl border border-white/10 space-y-2">
-                    <span class="text-3xl font-black text-brand-red">01</span>
-                    <h3 class="font-bold text-white">Hablamos</h3>
-                    <p class="text-xs text-gray-400">Entendemos tu negocio y objetivos principales.</p>
-                </div>
-                <div class="bg-brand-card p-6 rounded-2xl border border-white/10 space-y-2">
-                    <span class="text-3xl font-black text-brand-red">02</span>
-                    <h3 class="font-bold text-white">Diseñamos</h3>
-                    <p class="text-xs text-gray-400">Armamos la propuesta estética adaptada.</p>
-                </div>
-                <div class="bg-brand-card p-6 rounded-2xl border border-white/10 space-y-2">
-                    <span class="text-3xl font-black text-brand-red">03</span>
-                    <h3 class="font-bold text-white">Construimos</h3>
-                    <p class="text-xs text-gray-400">Desarrollamos el código e integraciones.</p>
-                </div>
-                <div class="bg-brand-card p-6 rounded-2xl border border-white/10 space-y-2">
-                    <span class="text-3xl font-black text-brand-red">04</span>
-                    <h3 class="font-bold text-white">Publicamos</h3>
-                    <p class="text-xs text-gray-400">Conectamos tu dominio en Vercel y lanzamos.</p>
-                </div>
-            </div>
-        </div>
+    <section id="proceso" class="section process">
+      <div class="section-intro reveal"><p class="eyebrow"><span></span> CÓMO TRABAJAMOS</p><h2>De una idea<br>a <i>algo real.</i></h2></div>
+      <div class="process-line">
+        <div class="step reveal"><b>01</b><h3>Hablamos</h3><p>Entendemos tu negocio, objetivos y personalidad.</p></div>
+        <div class="step reveal"><b>02</b><h3>Diseñamos</h3><p>Convertimos estrategia en una dirección visual.</p></div>
+        <div class="step reveal"><b>03</b><h3>Construimos</h3><p>Damos vida a la experiencia y cuidamos cada detalle.</p></div>
+        <div class="step reveal"><b>04</b><h3>Lanzamos</h3><p>Publicamos y dejamos tu proyecto listo para avanzar.</p></div>
+      </div>
     </section>
 
-    <section id="faq" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center space-y-4 mb-14">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Preguntas Frecuentes</h2>
-        </div>
-
-        <div class="space-y-4">
-            <details class="bg-brand-card border border-white/10 rounded-2xl p-6">
-                <summary class="font-bold text-white cursor-pointer">¿Cuánto tarda una landing?</summary>
-                <p class="mt-4 text-gray-400 text-sm">Generalmente toma de 3 a 7 días hábiles.</p>
-            </details>
-            <details class="bg-brand-card border border-white/10 rounded-2xl p-6">
-                <summary class="font-bold text-white cursor-pointer">¿Necesito tener dominio?</summary>
-                <p class="mt-4 text-gray-400 text-sm">Podemos empezar con un subdominio gratis de Vercel o registrar el tuyo (.com / .com.ar).</p>
-            </details>
-            <details class="bg-brand-card border border-white/10 rounded-2xl p-6">
-                <summary class="font-bold text-white cursor-pointer">¿La página funciona en celulares?</summary>
-                <p class="mt-4 text-gray-400 text-sm">Sí, está totalmente optimizada para pantallas móviles.</p>
-            </details>
-        </div>
+    <section id="contacto" class="contact section">
+      <div class="contact-ring"></div>
+      <p class="eyebrow"><span></span> TU PRÓXIMO PASO</p>
+      <h2>¿TENÉS<br>UNA <i>IDEA?</i></h2>
+      <p>Hagámosla avanzar.</p>
+      <a class="contact-button magnetic" href="mailto:hola@redline.web">Hablemos <span>↗</span></a>
     </section>
+  </main>
 
-    <section id="contacto" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brand-card border border-brand-red/30 rounded-3xl p-8 sm:p-12 shadow-glow-red grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-3xl sm:text-5xl font-black text-white">¿Listo para llevar tu negocio a internet?</h2>
-                    <p class="text-gray-300">Hablemos sobre tu proyecto y armemos la web que tu comercio necesita.</p>
-                    <div class="space-y-3 pt-2 text-sm text-gray-300">
-                        <p class="flex items-center gap-3"><i data-lucide="phone" class="text-brand-red"></i> WhatsApp: +54 9 11 0000-0000</p>
-                        <p class="flex items-center gap-3"><i data-lucide="mail" class="text-brand-red"></i> Email: contacto@redline.web</p>
-                        <p class="flex items-center gap-3"><i data-lucide="instagram" class="text-brand-red"></i> Instagram: @redline.web</p>
-                    </div>
-                </div>
-
-                <form class="bg-brand-dark p-6 rounded-2xl border border-white/10 space-y-4" onsubmit="event.preventDefault(); alert('¡Gracias! Te responderemos muy pronto.');">
-                    <input type="text" placeholder="Tu Nombre o Negocio" required class="w-full bg-brand-card border border-white/10 rounded-xl p-3 text-white text-sm focus:outline-none focus:border-brand-red">
-                    <input type="text" placeholder="WhatsApp o Correo" required class="w-full bg-brand-card border border-white/10 rounded-xl p-3 text-white text-sm focus:outline-none focus:border-brand-red">
-                    <textarea placeholder="¿De qué trata tu negocio?" rows="3" class="w-full bg-brand-card border border-white/10 rounded-xl p-3 text-white text-sm focus:outline-none focus:border-brand-red"></textarea>
-                    <button type="submit" class="w-full py-4 rounded-xl bg-brand-red text-white font-bold shadow-glow-red hover:bg-brand-glow">
-                        Solicitar Presupuesto
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-brand-dark border-t border-white/10 py-10 text-center text-xs text-gray-500">
-        <p class="font-bold text-white text-base mb-1">redline.web</p>
-        <p class="mb-4">Web Design / Nacidos para avanzar.</p>
-        <div class="flex justify-center gap-6 text-gray-400">
-            <a href="#">Instagram</a>
-            <a href="#">WhatsApp</a>
-            <a href="#">Email</a>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
+  <footer class="footer">
+    <a class="logo" href="#top">redline<span>.web</span></a>
+    <p>Nacidos para avanzar.</p>
+    <p>© <span id="year"></span> RedLine Web</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
