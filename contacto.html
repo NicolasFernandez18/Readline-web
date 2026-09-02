@@ -20,14 +20,13 @@
 </head>
 <body class="bg-redline-dark text-gray-100 font-sans antialiased">
 
-    <!-- HEADER MENU -->
     <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <a href="index.html"><img src="logo.jpg" alt="REDLINE" class="h-10 w-auto"></a>
             <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
                 <a href="index.html" class="hover:text-redline-red">Inicio</a>
                 <a href="servicios.html" class="hover:text-redline-red">Servicios & Precios</a>
-                <a href="portafolio.html" class="hover:text-redline-red">Portafolio</a>
+                <a href="portafolio.html" class="hover:text-redline-red">Ejemplos</a>
                 <a href="nosotros.html" class="hover:text-redline-red">Nosotros</a>
                 <a href="contacto.html" class="text-redline-red font-bold">Contacto</a>
             </nav>
@@ -37,14 +36,14 @@
 
     <main class="pt-36 pb-24 max-w-4xl mx-auto px-4">
         <div class="bg-redline-card p-8 md:p-12 rounded-3xl border border-redline-border shadow-2xl">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-center mb-2">Hablemos de tu Proyecto</h1>
-            <p class="text-gray-400 text-center text-sm mb-10">Completá los datos y coordinamos una propuesta adaptada a tus metas.</p>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-center mb-2">Cotizá tu Página Web</h1>
+            <p class="text-gray-400 text-center text-sm mb-8">Completá tus datos y te respondemos en el día.</p>
 
             <form class="space-y-6" action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Nombre / Empresa</label>
-                        <input type="text" name="nombre" required placeholder="Ej. Nicolas Fernandez" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Tu Nombre / Negocio</label>
+                        <input type="text" name="nombre" required placeholder="Ej. Nicolas / Mi Negocio" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase text-gray-400 mb-2">WhatsApp / Teléfono</label>
@@ -52,35 +51,38 @@
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Correo Electrónico</label>
-                        <input type="email" name="email" required placeholder="tu@email.com" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Tipo de Servicio</label>
-                        <select name="servicio" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-gray-300 focus:border-redline-red focus:outline-none">
-                            <option value="Landing Page">Landing Page One-Page</option>
-                            <option value="Sitio Multipágina">Sitio Web Multipágina</option>
-                            <option value="Desarrollo Laravel / Custom">Desarrollo a Medida / Laravel</option>
-                        </select>
-                    </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Rubro o Tipo de Negocio</label>
+                    <input type="text" name="rubro" placeholder="Ej. Restaurante, Barbería, Hotel, Tienda de ropa..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Mensaje / Requerimientos</label>
-                    <textarea name="mensaje" rows="4" placeholder="Contanos sobre tu emprendimiento o las funcionalidades que necesitás..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none"></textarea>
+                    <label class="block text-xs font-bold uppercase text-gray-400 mb-2">¿Qué te gustaría agregar en tu web?</label>
+                    <textarea name="mensaje" rows="4" placeholder="Contanos brevemente qué querés mostrar..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none"></textarea>
                 </div>
 
                 <button type="submit" class="w-full py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all">
-                    Enviar Cotización
+                    Enviar Consulta
                 </button>
             </form>
+
+            <div class="mt-8 pt-8 border-t border-redline-border text-center">
+                <p class="text-xs text-gray-400 mb-3">También podés encontrarnos en Instagram:</p>
+                <a href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-redline-dark px-4 py-2 rounded-xl border border-redline-border hover:border-redline-red transition-all">
+                    <i class="fa-brands fa-instagram text-pink-500 text-lg"></i>
+                    <span>@redline.web</span>
+                </a>
+            </div>
         </div>
     </main>
 
     <footer class="py-8 border-t border-redline-border text-center text-xs text-gray-500">
         <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 flex items-center justify-center">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
 </body>
 </html>
