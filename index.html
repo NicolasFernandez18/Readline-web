@@ -3,403 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REDLINE | Hechos para ir más lejos</title>
-    
-    <!-- FAVICON -->
+    <title>REDLINE | Páginas Web & Soluciones Digitales</title>
     <link rel="icon" type="image/jpeg" href="logo.jpg">
-
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        redline: {
-                            red: '#FF1A2D',
-                            dark: '#070709',
-                            card: '#0F0F14',
-                            border: '#22222A'
-                        }
-                    },
-                    animation: {
-                        'pulse-glow': 'pulseGlow 4s infinite alternate',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        pulseGlow: {
-                            '0%': { opacity: '0.2', transform: 'scale(0.95)' },
-                            '100%': { opacity: '0.5', transform: 'scale(1.05)' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-8px)' }
-                        }
-                    }
+                    colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
                 }
             }
         }
     </script>
-    <style>
-        /* Animación para el reveal al hacer scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
-<body class="bg-redline-dark text-gray-100 font-sans antialiased selection:bg-redline-red selection:text-white overflow-x-hidden">
+<body class="bg-redline-dark text-gray-100 font-sans antialiased selection:bg-redline-red selection:text-white">
 
-    <!-- BARRA DE PROGRESO DE SCROLL -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-redline-red via-red-500 to-redline-red z-50 transition-all duration-150" style="width: 0%;"></div>
-
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/5491112345678?text=Hola%20REDLINE,%20quiero%20cotizar%20mi%20p%C3%A1gina%20web" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-500 text-white rounded-full shadow-[0_0_25px_rgba(16,185,129,0.6)] hover:bg-emerald-400 hover:scale-110 active:scale-95 transition-all duration-300 group">
-        <i class="fa-brands fa-whatsapp text-3xl transition-transform duration-300 group-hover:rotate-12"></i>
-        <span class="absolute -top-1 -right-1 flex h-4 w-4">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-redline-dark"></span>
-        </span>
-        <span class="absolute right-16 bg-redline-card text-white text-xs font-semibold px-3 py-1.5 rounded-lg border border-redline-border shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none translate-x-2 group-hover:translate-x-0">
-            ¡Hablemos por WhatsApp!
-        </span>
-    </a>
-
-    <!-- HEADER / NAV -->
-    <header class="fixed top-0 left-0 w-full z-40 bg-redline-dark/80 backdrop-blur-md border-b border-redline-border/60 transition-all duration-300">
+    <!-- NAV -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 transition-transform duration-300 hover:scale-105 active:scale-95">
-                <img src="logo.jpg" alt="REDLINE Logo" class="h-12 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,26,45,0.6)] hover:drop-shadow-[0_0_20px_rgba(255,26,45,0.9)] transition-all duration-300">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.jpg" alt="REDLINE Logo" class="h-10 w-auto object-contain">
             </a>
-
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
-                <a href="#servicios" class="hover:text-redline-red transition-colors duration-200">Servicios</a>
-                <a href="#ventajas" class="hover:text-redline-red transition-colors duration-200">Ventajas</a>
-                <a href="#proceso" class="hover:text-redline-red transition-colors duration-200">Proceso</a>
-                <a href="#faq" class="hover:text-redline-red transition-colors duration-200">Preguntas</a>
+                <a href="index.html" class="text-redline-red font-bold">Inicio</a>
+                <a href="servicios.html" class="hover:text-redline-red transition-colors">Servicios & Precios</a>
+                <a href="portafolio.html" class="hover:text-redline-red transition-colors">Portafolio</a>
+                <a href="nosotros.html" class="hover:text-redline-red transition-colors">Nosotros</a>
+                <a href="contacto.html" class="hover:text-redline-red transition-colors">Contacto</a>
             </nav>
-
-            <a href="#contacto" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-lg shadow-[0_0_15px_rgba(255,26,45,0.4)] hover:bg-red-600 hover:shadow-[0_0_25px_rgba(255,26,45,0.8)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
-                Cotizar Web
-            </a>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contacto.html" class="px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl shadow-[0_0_15px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all">
+                    Cotizar Proyecto
+                </a>
+            </div>
+            <!-- Botón Menú Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-redline-card border-b border-redline-border px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-redline-red font-bold">Inicio</a>
+            <a href="servicios.html" class="block text-gray-300 hover:text-white">Servicios & Precios</a>
+            <a href="portafolio.html" class="block text-gray-300 hover:text-white">Portafolio</a>
+            <a href="nosotros.html" class="block text-gray-300 hover:text-white">Nosotros</a>
+            <a href="contacto.html" class="block text-gray-300 hover:text-white">Contacto</a>
+            <a href="contacto.html" class="block text-center py-3 text-sm font-bold text-white bg-redline-red rounded-xl">Cotizar Proyecto</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="pt-36 pb-24 md:pt-44 md:pb-32 relative overflow-hidden">
-        <!-- Luz Neón de fondo animada -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-redline-red/15 rounded-full blur-[140px] pointer-events-none animate-pulse-glow"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-redline-red/10 border border-redline-red/40 text-redline-red text-xs font-bold tracking-widest uppercase mb-6 hover:bg-redline-red/20 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,26,45,0.3)]">
-                Páginas Web para Emprendimientos
+    <section class="pt-36 pb-20 md:pt-48 md:pb-32 text-center relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-redline-red/10 border border-redline-red/40 text-redline-red text-xs font-bold uppercase tracking-widest mb-6">
+                Desarrollo Web & Identidad Digital
             </span>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                Llevá tu negocio al <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-redline-red via-red-500 to-rose-400 drop-shadow-[0_0_25px_rgba(255,26,45,0.4)]">siguiente nivel</span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                Impulsamos tu marca con sitios web de <span class="text-transparent bg-clip-text bg-gradient-to-r from-redline-red via-red-500 to-rose-400">alto rendimiento</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Diseñamos landing pages de alto impacto, exhibidores de productos ultrarrápidos y webs optimizadas para transformar visitas en clientes.
+            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                Diseñamos vitrinas digitales, landing pages ultrarrápidas y soluciones web a medida enfocadas en aumentar tus conversiones y ventas.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contacto" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-redline-red rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.5)] hover:bg-red-600 hover:shadow-[0_0_35px_rgba(255,26,45,0.8)] hover:-translate-y-1 active:translate-y-0 transition-all duration-300 group">
-                    Quiero mi Web <i class="fa-solid fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-2"></i>
-                </a>
-                <a href="#servicios" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-300 bg-redline-card border border-redline-border rounded-xl hover:bg-redline-border hover:text-white hover:-translate-y-1 active:translate-y-0 transition-all duration-300 shadow-lg">
+                <a href="servicios.html" class="px-8 py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all">
                     Ver Soluciones
                 </a>
+                <a href="portafolio.html" class="px-8 py-4 bg-redline-card border border-redline-border text-gray-300 font-bold rounded-xl hover:bg-redline-border transition-all">
+                    Ver Trabajos
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- METRICAS / STATS (REVEAL) -->
-    <section class="py-12 border-y border-redline-border bg-redline-card/40 backdrop-blur-sm reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4 rounded-xl hover:bg-redline-card/80 transition-all duration-300 hover:scale-105">
-                    <p class="text-3xl md:text-5xl font-extrabold text-redline-red drop-shadow-[0_0_10px_rgba(255,26,45,0.4)]">+100%</p>
-                    <p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Diseño Exclusivo</p>
-                </div>
-                <div class="p-4 rounded-xl hover:bg-redline-card/80 transition-all duration-300 hover:scale-105">
-                    <p class="text-3xl md:text-5xl font-extrabold text-white">&lt; 2s</p>
-                    <p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Velocidad de Carga</p>
-                </div>
-                <div class="p-4 rounded-xl hover:bg-redline-card/80 transition-all duration-300 hover:scale-105">
-                    <p class="text-3xl md:text-5xl font-extrabold text-redline-red drop-shadow-[0_0_10px_rgba(255,26,45,0.4)]">24/7</p>
-                    <p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Tu Negocio Abierto</p>
-                </div>
-                <div class="p-4 rounded-xl hover:bg-redline-card/80 transition-all duration-300 hover:scale-105">
-                    <p class="text-3xl md:text-5xl font-extrabold text-white">100%</p>
-                    <p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Adaptado a Celulares</p>
-                </div>
+    <!-- MÉTRICAS -->
+    <section class="py-12 border-y border-redline-border bg-redline-card/40">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-3xl md:text-5xl font-extrabold text-redline-red">+100%</p>
+                <p class="text-xs md:text-sm text-gray-400 mt-2">Diseño Personalizado</p>
+            </div>
+            <div>
+                <p class="text-3xl md:text-5xl font-extrabold text-white">&lt; 2s</p>
+                <p class="text-xs md:text-sm text-gray-400 mt-2">Tiempo de Carga</p>
+            </div>
+            <div>
+                <p class="text-3xl md:text-5xl font-extrabold text-redline-red">100%</p>
+                <p class="text-xs md:text-sm text-gray-400 mt-2">Mobile First</p>
+            </div>
+            <div>
+                <p class="text-3xl md:text-5xl font-extrabold text-white">24/7</p>
+                <p class="text-xs md:text-sm text-gray-400 mt-2">Atención & Soporte</p>
             </div>
         </div>
     </section>
 
-    <!-- SERVICIOS (REVEAL + GLOW CARDS) -->
-    <section id="servicios" class="py-24 border-b border-redline-border relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Nuestros Servicios</h2>
-                <p class="text-gray-400 mt-3 text-base">Estrategia y desarrollo adaptado a tus productos y marca</p>
+    <!-- FOOTER GENERAL -->
+    <footer class="py-12 border-t border-redline-border bg-redline-dark text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <img src="logo.jpg" alt="REDLINE" class="h-10 w-auto mb-4">
+                <p class="text-xs text-gray-400 leading-relaxed">Hechos para ir más lejos. Soluciones web modernas para emprendedores y empresas.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
-                <div class="reveal bg-redline-card p-8 rounded-2xl border border-redline-border hover:border-redline-red/80 hover:shadow-[0_0_30px_rgba(255,26,45,0.25)] hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-redline-red/10 rounded-2xl flex items-center justify-center text-redline-red text-2xl mb-6 group-hover:scale-110 group-hover:bg-redline-red group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(255,26,45,0.1)]">
-                            <i class="fa-solid fa-box-open"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 transition-colors duration-200 group-hover:text-white">Landing Pages de Productos</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Páginas enfocadas en exhibir y destacar tus productos estrella con galerías visuales, detalles clave y muestras de stock.</p>
-                    </div>
-                    <ul class="text-xs text-gray-300 space-y-2.5 pt-4 border-t border-redline-border/50">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-redline-red mr-2.5"></i>Catálogo visual impactante</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-redline-red mr-2.5"></i>Botón de compra/consulta directa</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 2 -->
-                <div class="reveal bg-redline-card p-8 rounded-2xl border border-redline-border hover:border-redline-red/80 hover:shadow-[0_0_30px_rgba(255,26,45,0.25)] hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-redline-red/10 rounded-2xl flex items-center justify-center text-redline-red text-2xl mb-6 group-hover:scale-110 group-hover:bg-redline-red group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(255,26,45,0.1)]">
-                            <i class="fa-solid fa-rocket"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 transition-colors duration-200 group-hover:text-white">Landing Pages de Servicios</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Diseños directos y optimizados para promocionar servicios, lanzamientos o promociones especiales con alta conversión.</p>
-                    </div>
-                    <ul class="text-xs text-gray-300 space-y-2.5 pt-4 border-t border-redline-border/50">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-redline-red mr-2.5"></i>Integración directa a WhatsApp</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-redline-red mr-2.5"></i>Optimizado para campañas de Ads</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 3 -->
-                <div class="reveal bg-redline-card p-8 rounded-2xl border border-redline-border hover:border-redline-red/80 hover:shadow-[0_0_30px_rgba(255,26,45,0.25)] hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-redline-red/10 rounded-2xl flex items-center justify-center text-redline-red text-2xl mb-6 group-hover:scale-110 group-hover:bg-redline-red group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(255,26,45,0.1)]">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 transition-colors duration-200 group-hover:text-white">Rediseño & Optimización</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Transformamos tu web actual en una vitrina moderna, veloz y con una estética neón que destaca sobre la competencia.</p>
-                    </div>
-                    <ul class="text-xs text-gray-300 space-y-2.5 pt-4 border-t border-redline-border/50">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-redline-red mr-2.5"></i>Carga ultrarrápida</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-redline-red mr-2.5"></i>Adaptado 100% a celulares</li>
-                    </ul>
-                </div>
+            <div>
+                <h4 class="text-white font-bold mb-3">Navegación</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-redline-red">Inicio</a></li>
+                    <li><a href="servicios.html" class="hover:text-redline-red">Servicios & Precios</a></li>
+                    <li><a href="portafolio.html" class="hover:text-redline-red">Portafolio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-redline-red">Nosotros</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3">Servicios</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="servicios.html" class="hover:text-redline-red">Landing Pages</a></li>
+                    <li><a href="servicios.html" class="hover:text-redline-red">Vitrinas de Productos</a></li>
+                    <li><a href="servicios.html" class="hover:text-redline-red">Rediseño Web</a></li>
+                    <li><a href="servicios.html" class="hover:text-redline-red">Mantenimiento</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3">Contacto Directo</h4>
+                <p class="text-xs text-gray-400 mb-2"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> WhatsApp Comercial</p>
+                <p class="text-xs text-gray-400"><i class="fa-solid fa-envelope text-redline-red mr-2"></i> contacto@redline.web</p>
             </div>
         </div>
-    </section>
-
-    <!-- VENTAJAS / POR QUÉ ELEGIRNOS -->
-    <section id="ventajas" class="py-24 bg-redline-card/20 border-b border-redline-border relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
-                    <span class="text-redline-red font-bold text-xs uppercase tracking-widest bg-redline-red/10 px-3 py-1 rounded-md border border-redline-red/20">¿Por qué REDLINE?</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-6 leading-tight">Hechos para marcar la diferencia en el mercado</h2>
-                    <p class="text-gray-400 mb-8 leading-relaxed">No hacemos webs genéricas. Desarrollamos herramientas digitales diseñadas específicamente para maximizar la visibilidad y ventas de emprendedores.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex gap-4 p-4 rounded-xl bg-redline-card/50 border border-redline-border/60 hover:border-redline-red/40 transition-all duration-300 hover:translate-x-1">
-                            <div class="w-12 h-12 bg-redline-red/20 rounded-xl flex items-center justify-center text-redline-red shrink-0 text-xl shadow-[0_0_10px_rgba(255,26,45,0.2)]">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Velocidad Extrema</h4>
-                                <p class="text-gray-400 text-xs mt-1">Webs livianas sin carga innecesaria para que ningún cliente se vaya por esperar.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 p-4 rounded-xl bg-redline-card/50 border border-redline-border/60 hover:border-redline-red/40 transition-all duration-300 hover:translate-x-1">
-                            <div class="w-12 h-12 bg-redline-red/20 rounded-xl flex items-center justify-center text-redline-red shrink-0 text-xl shadow-[0_0_10px_rgba(255,26,45,0.2)]">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Enfoque Mobile First</h4>
-                                <p class="text-gray-400 text-xs mt-1">Diseñado desde cero pensado en cómo el 90% de tus clientes navegarán: desde el celular.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tarjeta Flotante Interactiva -->
-                <div class="reveal flex justify-center">
-                    <div class="w-full max-w-md bg-redline-card p-6 rounded-2xl border border-redline-border shadow-2xl relative z-10 transition-all duration-500 hover:scale-105 hover:border-redline-red/50 hover:shadow-[0_0_40px_rgba(255,26,45,0.2)] animate-float">
-                        <div class="flex items-center gap-2 border-b border-redline-border pb-4 mb-4">
-                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <span class="text-xs text-gray-500 ml-auto font-mono">redline.web</span>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="h-28 bg-redline-dark rounded-xl p-5 flex flex-col justify-end border border-redline-border/60 relative overflow-hidden group">
-                                <div class="absolute inset-0 bg-gradient-to-r from-redline-red/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <span class="text-xs text-redline-red font-bold uppercase tracking-wider mb-1">Altas Conversiones</span>
-                                <span class="text-base font-bold text-white">Diseño enfocado en ventas</span>
-                            </div>
-                            <div class="h-14 bg-redline-red/15 border border-redline-red/40 rounded-xl flex items-center px-5 justify-between transition-all duration-300 hover:bg-redline-red/25 hover:scale-[1.02]">
-                                <span class="text-xs font-semibold text-gray-200">Integración WhatsApp Directa</span>
-                                <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROCESO DE TRABAJO (REVEAL CARDS) -->
-    <section id="proceso" class="py-24 border-b border-redline-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold">Tu web lista en 4 pasos</h2>
-                <p class="text-gray-400 mt-3 text-base">Un proceso simple, ágil y sin complicaciones</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="reveal bg-redline-card p-6 rounded-2xl border border-redline-border relative hover:border-redline-red hover:-translate-y-2 transition-all duration-300 group">
-                    <span class="text-4xl font-black text-redline-border group-hover:text-redline-red/40 transition-colors duration-300 absolute top-4 right-5">01</span>
-                    <div class="w-10 h-10 bg-redline-red/10 rounded-lg flex items-center justify-center text-redline-red font-bold mb-4 group-hover:bg-redline-red group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-comments"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Consulta</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Analizamos las necesidades de tu marca y definimos los objetivos.</p>
-                </div>
-                <div class="reveal bg-redline-card p-6 rounded-2xl border border-redline-border relative hover:border-redline-red hover:-translate-y-2 transition-all duration-300 group">
-                    <span class="text-4xl font-black text-redline-border group-hover:text-redline-red/40 transition-colors duration-300 absolute top-4 right-5">02</span>
-                    <div class="w-10 h-10 bg-redline-red/10 rounded-lg flex items-center justify-center text-redline-red font-bold mb-4 group-hover:bg-redline-red group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-sitemap"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Estructura</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Diseñamos el prototipo de tu sitio priorizando la experiencia de usuario.</p>
-                </div>
-                <div class="reveal bg-redline-card p-6 rounded-2xl border border-redline-border relative hover:border-redline-red hover:-translate-y-2 transition-all duration-300 group">
-                    <span class="text-4xl font-black text-redline-border group-hover:text-redline-red/40 transition-colors duration-300 absolute top-4 right-5">03</span>
-                    <div class="w-10 h-10 bg-redline-red/10 rounded-lg flex items-center justify-center text-redline-red font-bold mb-4 group-hover:bg-redline-red group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Desarrollo</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Programamos la web con los colores, contenido e imágenes oficiales.</p>
-                </div>
-                <div class="reveal bg-redline-card p-6 rounded-2xl border border-redline-border relative hover:border-redline-red hover:-translate-y-2 transition-all duration-300 group">
-                    <span class="text-4xl font-black text-redline-border group-hover:text-redline-red/40 transition-colors duration-300 absolute top-4 right-5">04</span>
-                    <div class="w-10 h-10 bg-redline-red/10 rounded-lg flex items-center justify-center text-redline-red font-bold mb-4 group-hover:bg-redline-red group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Lanzamiento</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Publicamos la web y la dejamos lista para empezar a recibir clientes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREGUNTAS FRECUENTES (FAQ) -->
-    <section id="faq" class="py-24 bg-redline-card/20 border-b border-redline-border">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-extrabold">Preguntas Frecuentes</h2>
-            </div>
-            <div class="space-y-4">
-                <div class="reveal bg-redline-card p-6 rounded-2xl border border-redline-border hover:border-redline-red/50 transition-all duration-300">
-                    <h3 class="font-bold text-white mb-2 flex items-center gap-3">
-                        <i class="fa-solid fa-circle-question text-redline-red text-lg"></i>
-                        ¿Cuánto tiempo tarda en estar lista mi web?
-                    </h3>
-                    <p class="text-gray-400 text-sm pl-7 leading-relaxed">El tiempo promedio de entrega para una Landing Page estándar es de 3 a 7 días hábiles tras recibir el contenido.</p>
-                </div>
-                <div class="reveal bg-redline-card p-6 rounded-2xl border border-redline-border hover:border-redline-red/50 transition-all duration-300">
-                    <h3 class="font-bold text-white mb-2 flex items-center gap-3">
-                        <i class="fa-solid fa-circle-question text-redline-red text-lg"></i>
-                        ¿Necesito pagar mantenimiento mensual?
-                    </h3>
-                    <p class="text-gray-400 text-sm pl-7 leading-relaxed">No obligatoriamente. Una vez entregada la web es completamente tuya. Ofrecemos planes de soporte solo si querés desentenderte de las actualizaciones.</p>
-                </div>
-                <div class="reveal bg-redline-card p-6 rounded-2xl border border-redline-border hover:border-redline-red/50 transition-all duration-300">
-                    <h3 class="font-bold text-white mb-2 flex items-center gap-3">
-                        <i class="fa-solid fa-circle-question text-redline-red text-lg"></i>
-                        ¿Puedo recibir consultas directamente en mi WhatsApp?
-                    </h3>
-                    <p class="text-gray-400 text-sm pl-7 leading-relaxed">¡Sí! Integramos botones directos para que los clientes se contacten con tu chat con un solo clic.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO / FORMULARIO -->
-    <section id="contacto" class="py-24 relative overflow-hidden">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-            <div class="bg-redline-card p-8 md:p-12 rounded-3xl border border-redline-border shadow-[0_0_50px_rgba(0,0,0,0.8)] relative transition-all duration-300 hover:border-redline-red/40">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-extrabold">Impulsá tu Marca Hoy</h2>
-                    <p class="text-gray-400 text-sm mt-2">Completá el formulario y coordinemos una propuesta para tu negocio.</p>
-                </div>
-                
-                <form class="space-y-5" action="https://formspree.io/f/xjyvrgyj" method="POST">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nombre o Marca</label>
-                        <input type="text" name="nombre" required placeholder="Ej. Mi Emprendimiento" class="w-full bg-redline-dark border border-redline-border rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-redline-red focus:ring-2 focus:ring-redline-red/30 transition-all duration-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Teléfono / WhatsApp</label>
-                        <input type="tel" name="telefono" required placeholder="+54 11 1234 5678" class="w-full bg-redline-dark border border-redline-border rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-redline-red focus:ring-2 focus:ring-redline-red/30 transition-all duration-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">¿Qué tipo de web necesitás?</label>
-                        <select name="servicio" class="w-full bg-redline-dark border border-redline-border rounded-xl px-4 py-3.5 text-sm text-gray-300 focus:outline-none focus:border-redline-red focus:ring-2 focus:ring-redline-red/30 transition-all duration-200">
-                            <option value="Landing Page para Productos">Landing Page para Mostrar Productos</option>
-                            <option value="Landing Page para Servicios">Landing Page para Servicios</option>
-                            <option value="Rediseño de Web Existente">Rediseño de Web Existente</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="w-full py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_25px_rgba(255,26,45,0.4)] hover:bg-red-600 hover:shadow-[0_0_35px_rgba(255,26,45,0.7)] active:scale-[0.99] transition-all duration-300">
-                        Enviar Consulta
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-12 border-t border-redline-border bg-redline-dark text-center text-sm text-gray-500">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
-            <img src="logo.jpg" alt="REDLINE" class="h-14 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,26,45,0.4)] mb-4 transition-transform duration-300 hover:scale-105">
-            <p class="text-gray-400 mb-6 font-medium">Páginas Web para Emprendimientos / Hechos para ir más lejos.</p>
+        <div class="max-w-7xl mx-auto px-4 border-t border-redline-border/60 pt-6 text-center text-xs">
             <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT: BARRA DE SCROLL Y EFECTO REVEAL -->
     <script>
-        // Barra de lectura superior
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-
-        // Animación Reveal al hacer scroll (Intersection Observer)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>

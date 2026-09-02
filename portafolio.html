@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Trabajos | REDLINE</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-redline-dark text-gray-100 font-sans antialiased">
+
+    <!-- HEADER MENU -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html"><img src="logo.jpg" alt="REDLINE" class="h-10 w-auto"></a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-redline-red">Inicio</a>
+                <a href="servicios.html" class="hover:text-redline-red">Servicios & Precios</a>
+                <a href="portafolio.html" class="text-redline-red font-bold">Portafolio</a>
+                <a href="nosotros.html" class="hover:text-redline-red">Nosotros</a>
+                <a href="contacto.html" class="hover:text-redline-red">Contacto</a>
+            </nav>
+            <a href="contacto.html" class="hidden md:inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl">Cotizar Web</a>
+        </div>
+    </header>
+
+    <main class="pt-36 pb-24 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Casos de Éxito & Proyectos</h1>
+            <p class="text-gray-400 text-base max-w-2xl mx-auto">Explorá algunos de los diseños y plataformas desarrolladas para marcas que decidieron ir más lejos.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Proyecto 1 -->
+            <div class="bg-redline-card rounded-2xl border border-redline-border overflow-hidden group hover:border-redline-red/60 transition-all">
+                <div class="h-48 bg-redline-border flex items-center justify-center relative overflow-hidden">
+                    <span class="text-4xl text-gray-600 font-black"><i class="fa-solid fa-laptop-code"></i></span>
+                    <div class="absolute inset-0 bg-redline-red/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] font-bold uppercase text-redline-red tracking-wider">Landing Page / Producto</span>
+                    <h3 class="text-xl font-bold mt-1 mb-2">Exhibidor Visual de Indumentaria</h3>
+                    <p class="text-gray-400 text-xs mb-4">Vitrina catálogo con integración rápida a WhatsApp y galería optimizada para celulares.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] bg-redline-dark px-2.5 py-1 rounded text-gray-300 border border-redline-border">HTML5/Tailwind</span>
+                        <span class="text-[10px] bg-redline-dark px-2.5 py-1 rounded text-gray-300 border border-redline-border">Mobile First</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="bg-redline-card rounded-2xl border border-redline-border overflow-hidden group hover:border-redline-red/60 transition-all">
+                <div class="h-48 bg-redline-border flex items-center justify-center relative overflow-hidden">
+                    <span class="text-4xl text-gray-600 font-black"><i class="fa-solid fa-horse"></i></span>
+                    <div class="absolute inset-0 bg-redline-red/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] font-bold uppercase text-redline-red tracking-wider">Sistema Web Laravel</span>
+                    <h3 class="text-xl font-bold mt-1 mb-2">DreamHorse Gestor</h3>
+                    <p class="text-gray-400 text-xs mb-4">Plataforma de gestión y seguimiento de equinos con arquitectura MVC y base de datos SQL.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] bg-redline-dark px-2.5 py-1 rounded text-gray-300 border border-redline-border">Laravel</span>
+                        <span class="text-[10px] bg-redline-dark px-2.5 py-1 rounded text-gray-300 border border-redline-border">MySQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="bg-redline-card rounded-2xl border border-redline-border overflow-hidden group hover:border-redline-red/60 transition-all">
+                <div class="h-48 bg-redline-border flex items-center justify-center relative overflow-hidden">
+                    <span class="text-4xl text-gray-600 font-black"><i class="fa-solid fa-truck-monster"></i></span>
+                    <div class="absolute inset-0 bg-redline-red/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] font-bold uppercase text-redline-red tracking-wider">Aplicación Web</span>
+                    <h3 class="text-xl font-bold mt-1 mb-2">Gestión de Maquinaria Vial</h3>
+                    <p class="text-gray-400 text-xs mb-4">Administración de equipos pesados, obras y asignación de ubicaciones geográficas.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] bg-redline-dark px-2.5 py-1 rounded text-gray-300 border border-redline-border">Blade</span>
+                        <span class="text-[10px] bg-redline-dark px-2.5 py-1 rounded text-gray-300 border border-redline-border">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 border-t border-redline-border text-center text-xs text-gray-500">
+        <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

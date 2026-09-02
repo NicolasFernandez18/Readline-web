@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios y Precios | REDLINE</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-redline-dark text-gray-100 font-sans antialiased">
+
+    <!-- HEADER MENU -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html"><img src="logo.jpg" alt="REDLINE" class="h-10 w-auto"></a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-redline-red">Inicio</a>
+                <a href="servicios.html" class="text-redline-red font-bold">Servicios & Precios</a>
+                <a href="portafolio.html" class="hover:text-redline-red">Portafolio</a>
+                <a href="nosotros.html" class="hover:text-redline-red">Nosotros</a>
+                <a href="contacto.html" class="hover:text-redline-red">Contacto</a>
+            </nav>
+            <a href="contacto.html" class="hidden md:inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl">Cotizar Web</a>
+        </div>
+    </header>
+
+    <main class="pt-36 pb-24 max-w-7xl mx-auto px-4">
+        <!-- HEADER SECCIÓN -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Planes y Soluciones Web</h1>
+            <p class="text-gray-400 text-base max-w-2xl mx-auto">Seleccioná la estructura adecuada para escalar tu negocio en internet.</p>
+        </div>
+
+        <!-- TARJETAS DE PLANES DE PRECIOS -->
+        <div class="grid md:grid-cols-3 gap-8 mb-24">
+            <!-- Plan Inicial -->
+            <div class="bg-redline-card p-8 rounded-3xl border border-redline-border flex flex-col justify-between hover:border-gray-600 transition-all">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Emprendedores</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Landing Page One-Page</h3>
+                    <p class="text-gray-400 text-xs mb-6">Ideal para lanzar un producto específico, campaña publicitaria o presentación express.</p>
+                    <ul class="text-sm space-y-3 text-gray-300 mb-8">
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Diseño 100% Personalizado</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Integración directa a WhatsApp</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Carga ultrarrápida (Tailwind/HTML)</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Formulario de contacto directo</li>
+                    </ul>
+                </div>
+                <a href="contacto.html" class="w-full py-3 text-center font-bold text-white bg-redline-border rounded-xl hover:bg-gray-700 transition-all">Consultar Plan</a>
+            </div>
+
+            <!-- Plan Pro (Destacado) -->
+            <div class="bg-redline-card p-8 rounded-3xl border-2 border-redline-red shadow-[0_0_30px_rgba(255,26,45,0.2)] flex flex-col justify-between relative">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-redline-red text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">Más Solicitado</span>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-redline-red">Negocios & Marcas</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Sitio Multipágina</h3>
+                    <p class="text-gray-400 text-xs mb-6">Estructura completa de 4 a 6 páginas independientes para detallar servicios, catálogo y empresa.</p>
+                    <ul class="text-sm space-y-3 text-gray-300 mb-8">
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Hasta 6 Secciones Independientes</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Catálogo / Exhibidor de Productos</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Optimización SEO para Google</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Formulario Avanzado Formspree</li>
+                    </ul>
+                </div>
+                <a href="contacto.html" class="w-full py-3 text-center font-bold text-white bg-redline-red rounded-xl hover:bg-red-600 transition-all">Cotizar Multipágina</a>
+            </div>
+
+            <!-- Plan Personalizado -->
+            <div class="bg-redline-card p-8 rounded-3xl border border-redline-border flex flex-col justify-between hover:border-gray-600 transition-all">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">A Medida</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Desarrollo Custom</h3>
+                    <p class="text-gray-400 text-xs mb-6">Sistemas dinámicos, paneles de administración, integraciones con BD Laravel y arquitecturas a medida.</p>
+                    <ul class="text-sm space-y-3 text-gray-300 mb-8">
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Backend con PHP / Laravel</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Base de Datos Relacional SQL</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Gestor de contenidos dinámico</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Soporte técnico prioritario</li>
+                    </ul>
+                </div>
+                <a href="contacto.html" class="w-full py-3 text-center font-bold text-white bg-redline-border rounded-xl hover:bg-gray-700 transition-all">Hablar con un Desarrollador</a>
+            </div>
+        </div>
+
+        <!-- ACORDEÓN DE PREGUNTAS FRECUENTES -->
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-center mb-8">Preguntas Frecuentes</h2>
+            <div class="space-y-4">
+                <details class="bg-redline-card p-6 rounded-2xl border border-redline-border cursor-pointer">
+                    <summary class="font-bold text-white flex justify-between items-center">
+                        ¿Qué se necesita para iniciar el desarrollo?
+                        <i class="fa-solid fa-chevron-down text-redline-red"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs mt-4 leading-relaxed">
+                        Solo requerimos tu logo, la información básica de tu emprendimiento (textos/servicios) y las imágenes o fotos de tus productos. Nosotros nos encargamos de maquetar y optimizar el sitio.
+                    </p>
+                </details>
+
+                <details class="bg-redline-card p-6 rounded-2xl border border-redline-border cursor-pointer">
+                    <summary class="font-bold text-white flex justify-between items-center">
+                        ¿Incluye dominio y alojamiento web (hosting)?
+                        <i class="fa-solid fa-chevron-down text-redline-red"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs mt-4 leading-relaxed">
+                        Te asesoramos paso a paso en la compra de tu propio dominio (.com o local). Podemos alojar tu sitio en servidores ultrarrápidos configurados y listos para operar.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 border-t border-redline-border text-center text-xs text-gray-500">
+        <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
