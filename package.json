@@ -1,0 +1,27 @@
+{
+  "name": "redline-web",
+  "version": "1.0.0",
+  "description": "REDLINE - Páginas Web para Negocios con Vercel Web Analytics",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild analytics.js --bundle --format=iife --outfile=dist/analytics.js --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasFernandez18/Readline-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasFernandez18/Readline-web/issues"
+  },
+  "homepage": "https://github.com/NicolasFernandez18/Readline-web#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
