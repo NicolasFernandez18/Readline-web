@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowRight, ShieldCheck, Zap, Mail, MapPin } from "lucide-react";
+import { MessageCircle, ArrowRight, ShieldCheck, Zap, Mail, MapPin, Instagram } from "lucide-react";
 import { SITE_CONFIG } from "@/data/siteContent";
 
 export default function Footer() {
@@ -120,6 +120,16 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-red-500" />
                 <span>{SITE_CONFIG.email}</span>
               </div>
+
+              <a
+                href={SITE_CONFIG.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-300 hover:text-red-400 transition-colors"
+              >
+                <Instagram className="w-4 h-4 text-red-500" />
+                <span>@redline.web</span>
+              </a>
 
               <div className="pt-2">
                 <span className="inline-block px-2.5 py-1 rounded bg-red-950/40 border border-red-500/30 text-[10px] text-red-400 font-semibold">

@@ -47,6 +47,7 @@ export const SITE_CONFIG = {
   whatsappNumber: "+5491123456789", // Modificable por el cliente
   whatsappDefaultMsg: "Hola Redline, quiero potenciar mi negocio con una página web moderna. ¿Podemos hablar sobre mi proyecto?",
   email: "contacto@redlinestudio.com",
+  instagramUrl: "https://www.instagram.com/redline.web/",
   location: "Disponible para clientes en toda Latinoamérica y España",
   logoSrc: "/redline-logo.jpg",
 };
