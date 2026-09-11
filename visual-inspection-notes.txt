@@ -1,0 +1,33 @@
+# Inspección Visual de Redline Studio
+
+1. **Identidad de Marca:**
+   - El logo de Redline se muestra en la cabecera, en el Hero Mockup, en el asistente de WhatsApp flotante y en el pie de página.
+   - La paleta de colores roja y negra (#090b10 con acentos #ef4444) coincide con el logo.
+   - El slogan "HECHOS PARA IR MÁS LEJOS" está visible en el Hero, en la sección de Ventajas y en el Footer.
+
+2. **Secciones Implementadas:**
+   - **Navbar Fijo:** Logo, menú con saltos suaves, botón directo a WhatsApp y botón de cotización.
+   - **Hero:** Título llamativo, badges dinámicos, micro-métricas y mockup interactivo con métricas simuladas de retención.
+   - **Servicios:** Pestañas interactivas (Landing Pages, Webs Corporativas, Catálogo y Rediseño) con beneficios y botón de consulta personalizada.
+   - **Ventajas / Por Qué Redline:** Comparativa frente a sitios anticuados, tarjetas de propuesta de valor y velocidad.
+   - **Casos de Éxito / Portfolio:** Filtros interactivos de proyectos, etiquetas tecnológicas y métricas de impacto reales.
+   - **Proceso de Trabajo:** 4 fases claras desde la idea hasta el lanzamiento.
+   - **Planes & Precios:** 3 niveles transparentes de pago único con botón de selección a WhatsApp.
+   - **Calculadora Interactiva en Vivo:** Permite seleccionar tipo de web, cantidad de secciones, animaciones, velocidad y urgencia; calcula el costo y envía el desglose completo formateado a WhatsApp.
+   - **Testimonios:** 3 casos de pequeñas empresas con calificaciones de 5 estrellas y métricas verificables.
+   - **Preguntas Frecuentes:** Acordeón interactivo que responde dudas sobre pagos, tiempos y redes sociales.
+   - **Footer & CTA final:** Cierre de alto impacto, datos de contacto, enlaces y copyright.
+   - **WhatsApp Flotante:** Con avatar, indicador en línea, badge de notificación y selector de tipo de negocio.
+
+
+## Verificación multipágina — 11 Sep 2026
+
+- La portada ahora se muestra como una entrada compacta: navegación fija, hero de alto impacto, mockup de marca, tres beneficios, CTA y WhatsApp flotante; ya no despliega todas las secciones en el mismo scroll.
+- La ruta `/servicios` muestra un encabezado independiente con breadcrumb y título propio, seguido del contenido de servicios. La navegación superior permanece consistente.
+- El menú desktop muestra rutas separadas: Servicios, Ventajas, Proyectos, Proceso, Precios, Calculadora y Preguntas, además de Contacto vía Cotizar Web.
+- La composición desktop mantiene contraste, espaciado y jerarquía visual adecuados.
+
+
+## Verificación móvil — 11 Sep 2026
+
+La portada compacta mantiene el foco en el hero, muestra el botón de WhatsApp y conserva buena legibilidad en 390 px. La página de Precios se abre con su propio encabezado, breadcrumb y contenido dedicado; el usuario no queda expuesto al resto de secciones en el mismo documento.
