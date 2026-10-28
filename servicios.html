@@ -1,52 +1,109 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios | REDLINE</title>
-<meta name="description" content="Planes de páginas web para negocios: presentación, sitio institucional y catálogo o tienda. Pedí tu presupuesto.">
-<meta property="og:title" content="Servicios | REDLINE">
-<meta property="og:description" content="Planes de páginas web para negocios: presentación, sitio institucional y catálogo o tienda. Pedí tu presupuesto.">
-<meta property="og:image" content="https://www.redlineweb.site/logo.jpg">
-<meta name="theme-color" content="#08080A">
-<link rel="icon" type="image/jpeg" href="logo.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script>tailwind.config={theme:{extend:{colors:{ink:'#08080A',paper:'#F3F1EE',smoke:'#9A9AA3',line:'#24242B',card:'#0D0D11',red:'#FF1A2D'}}}}</script>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios y Precios | REDLINE</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="redline-enhancements.css">
 </head>
-<body class="bg-ink text-paper antialiased selection:bg-red selection:text-white">
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-red focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Saltar al contenido</a>
-<header class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur-md border-b border-line">
-<div class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between">
-<a href="index.html" aria-label="REDLINE, inicio"><img src="logo.jpg" alt="REDLINE" width="44" height="44" class="h-11 w-11 rounded-lg"></a>
-<nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Principal"><a href="index.html" class="lnk text-smoke">Inicio</a><a href="servicios.html" class="lnk text-paper font-bold border-b-2 border-red pb-1" aria-current="page">Servicios</a><a href="portafolio.html" class="lnk text-smoke">Ejemplos</a><a href="nosotros.html" class="lnk text-smoke">Nosotros</a><a href="contacto.html" class="lnk text-smoke">Contacto</a></nav>
-<a href="contacto.html" class="btn btn-red hidden md:inline-flex !py-2.5 text-sm">Pedir presupuesto</a>
-<button id="mobile-menu-btn" class="md:hidden text-2xl w-11 h-11 -mr-2" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
-</div>
-<div id="mobile-menu" class="md:hidden bg-card border-b border-line px-5 py-3"><a href="index.html" class="block py-3 text-smoke">Inicio</a><a href="servicios.html" class="block py-3 text-paper font-bold">Servicios</a><a href="portafolio.html" class="block py-3 text-smoke">Ejemplos</a><a href="nosotros.html" class="block py-3 text-smoke">Nosotros</a><a href="contacto.html" class="block py-3 text-smoke">Contacto</a><a href="contacto.html" class="btn btn-red w-full my-3">Pedir presupuesto</a></div>
-</header>
-<main id="main">
-<div class="max-w-6xl mx-auto px-5 pt-32 md:pt-40">
-<h1 class="display text-4xl md:text-6xl max-w-3xl">Elegí cuánta web necesita tu negocio.</h1>
-<p class="text-smoke text-lg mt-5 max-w-2xl">Trabajamos sobre WordPress, así que podés modificar tu contenido vos mismo. Pedinos un presupuesto y te pasamos el valor según lo que necesites.</p>
-<div class="grid md:grid-cols-3 gap-6 mt-14 items-stretch">
-<article class="rounded-3xl p-8 flex flex-col border border-line"><p class="text-sm font-bold text-smoke">Rápida y directa</p><h2 class="display text-2xl mt-2 mb-3">Página de presentación</h2><p class="text-smoke mb-6">Para mostrar lo principal y recibir mensajes directos en WhatsApp.</p><ul class="space-y-3 mb-8"><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Adaptada a celulares</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Botón directo de WhatsApp</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Galería de fotos del local o servicios</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Ubicación en Google Maps</span></li></ul><a href="contacto.html" class="btn btn-line mt-auto">Consultar este plan</a></article>
-<article class="rounded-3xl p-8 flex flex-col border-2 border-red bg-card md:-mt-4 md:pb-12"><p class="text-sm font-bold text-red">El más elegido</p><h2 class="display text-2xl mt-2 mb-3">Web institucional o menú</h2><p class="text-smoke mb-6">Varias secciones: menú o servicios, quiénes somos, galería y formulario.</p><ul class="space-y-3 mb-8"><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Varias páginas (inicio, carta, contacto)</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Panel editable con WordPress</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Formulario de reservas o consultas</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Alojamiento rápido en Hostinger</span></li></ul><a href="contacto.html" class="btn btn-red mt-auto">Pedir presupuesto</a></article>
-<article class="rounded-3xl p-8 flex flex-col border border-line"><p class="text-sm font-bold text-smoke">Ventas online</p><h2 class="display text-2xl mt-2 mb-3">Catálogo o tienda</h2><p class="text-smoke mb-6">Mostrá tus productos con precios y recibí los pedidos armados por WhatsApp.</p><ul class="space-y-3 mb-8"><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Carga ilimitada de productos</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Carrito de pedidos simplificado</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Cobros por transferencia o tarjeta</span></li><li class="flex gap-3"><i class="fa-solid fa-check text-red mt-1.5 text-sm" aria-hidden="true"></i><span>Explicación de cómo usar el panel</span></li></ul><a href="contacto.html" class="btn btn-line mt-auto">Consultar la tienda</a></article>
-</div></div>
-</main>
-<footer class="border-t border-line mt-24">
-<div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm text-smoke">
-<div class="flex items-center gap-4"><img src="logo.jpg" alt="" width="40" height="40" class="h-10 w-10 rounded-lg"><p>Hechos para ir más lejos.<br>&copy; 2026 REDLINE</p></div>
-<div class="flex flex-wrap gap-x-6 gap-y-2">
-<a class="lnk" href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram mr-2"></i>@redline.web</a>
-<a class="lnk" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp</a></div>
-</div></footer>
-<a id="wa" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp" class="group fixed bottom-5 right-5 z-50 bg-[#1FA855] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-black/40 btn !p-0"><i class="fa-brands fa-whatsapp text-3xl"></i><span class="hidden md:block absolute right-16 bg-card text-paper text-xs px-3 py-1.5 rounded-lg border border-line opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap">Escribinos por WhatsApp</span></a>
-<script src="main.js" defer></script>
-<script src="dist/analytics.js" defer></script>
-</body></html>
+<body class="bg-redline-dark text-gray-100 font-sans antialiased">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html"><img src="logo.jpg" alt="REDLINE" class="h-10 w-auto"></a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-redline-red">Inicio</a>
+                <a href="servicios.html" class="text-redline-red font-bold">Servicios & Precios</a>
+                <a href="portafolio.html" class="hover:text-redline-red">Ejemplos</a>
+                <a href="nosotros.html" class="hover:text-redline-red">Nosotros</a>
+                <a href="contacto.html" class="hover:text-redline-red">Contacto</a>
+            </nav>
+            <a href="contacto.html" class="hidden md:inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl">Cotizar Web</a>
+        </div>
+    </header>
+
+    <main class="pt-36 pb-24 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Soluciones para tu Negocio</h1>
+            <p class="text-gray-400 text-base max-w-2xl mx-auto">Diseñamos sobre WordPress para que tengas la mejor calidad y puedas modificar tu contenido vos mismo.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+            <!-- Plan 1 -->
+            <div class="bg-redline-card p-8 rounded-3xl border border-redline-border flex flex-col justify-between hover:border-gray-600 transition-all">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Rápida y Directa</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Página de Presentación</h3>
+                    <p class="text-gray-400 text-xs mb-6">Perfecta para mostrar tus productos principales y recibir mensajes directos al WhatsApp.</p>
+                    <ul class="text-sm space-y-3 text-gray-300 mb-8">
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Adaptada 100% a celulares</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Botón directo de WhatsApp</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Galería de fotos del local/servicios</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Ubicación en mapa Google Maps</li>
+                    </ul>
+                </div>
+                <a href="contacto.html" class="w-full py-3 text-center font-bold text-white bg-redline-border rounded-xl hover:bg-gray-700 transition-all">Consultar Plan</a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="bg-redline-card p-8 rounded-3xl border-2 border-redline-red shadow-[0_0_30px_rgba(255,26,45,0.2)] flex flex-col justify-between relative">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-redline-red text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">El más elegido</span>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-redline-red">Sitio Completo</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Web Institucional / Menú</h3>
+                    <p class="text-gray-400 text-xs mb-6">Varias secciones independientes: Menú o Servicios, Quiénes Somos, Galería y Formulario.</p>
+                    <ul class="text-sm space-y-3 text-gray-300 mb-8">
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Varias páginas (Inicio, Carta, Contacto, etc.)</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Panel editable (WordPress)</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Formulario de reservas o consultas</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Alojamiento rápido en Hostinger</li>
+                    </ul>
+                </div>
+                <a href="contacto.html" class="w-full py-3 text-center font-bold text-white bg-redline-red rounded-xl hover:bg-red-600 transition-all">Cotizar este Plan</a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="bg-redline-card p-8 rounded-3xl border border-redline-border flex flex-col justify-between hover:border-gray-600 transition-all">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Ventas Online</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Catálogo / Tienda</h3>
+                    <p class="text-gray-400 text-xs mb-6">Exhibí tus productos con precios, detalles y pedidos armados directamente para WhatsApp.</p>
+                    <ul class="text-sm space-y-3 text-gray-300 mb-8">
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Carga ilimitada de productos</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Carrito de pedidos simplificado</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Cobros por transferencia o tarjetas</li>
+                        <li><i class="fa-solid fa-check text-redline-red mr-2"></i> Explicación de cómo usar el panel</li>
+                    </ul>
+                </div>
+                <a href="contacto.html" class="w-full py-3 text-center font-bold text-white bg-redline-border rounded-xl hover:bg-gray-700 transition-all">Consultar Tienda</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 border-t border-redline-border text-center text-xs text-gray-500">
+        <p>&copy; 2026 REDLINE. Siguenos en <a href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer" class="text-redline-red hover:underline">@redline.web</a></p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 flex items-center justify-center">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+    
+    <!-- Vercel Web Analytics -->
+    <script src="dist/analytics.js"></script>
+    <script src="redline-enhancements.js" defer></script>
+</body>
+</html>

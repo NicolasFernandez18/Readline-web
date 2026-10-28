@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "esbuild analytics.js --bundle --format=iife --outfile=dist/analytics.js --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build"
   },
   "repository": {
     "type": "git",

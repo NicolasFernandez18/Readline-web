@@ -1,54 +1,90 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosotros | REDLINE</title>
-<meta name="description" content="Diseño visual y código limpio para hacer crecer marcas y negocios. Conocé cómo trabaja REDLINE.">
-<meta property="og:title" content="Nosotros | REDLINE">
-<meta property="og:description" content="Diseño visual y código limpio para hacer crecer marcas y negocios. Conocé cómo trabaja REDLINE.">
-<meta property="og:image" content="https://www.redlineweb.site/logo.jpg">
-<meta name="theme-color" content="#08080A">
-<link rel="icon" type="image/jpeg" href="logo.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script>tailwind.config={theme:{extend:{colors:{ink:'#08080A',paper:'#F3F1EE',smoke:'#9A9AA3',line:'#24242B',card:'#0D0D11',red:'#FF1A2D'}}}}</script>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | REDLINE</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="redline-enhancements.css">
 </head>
-<body class="bg-ink text-paper antialiased selection:bg-red selection:text-white">
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-red focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Saltar al contenido</a>
-<header class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur-md border-b border-line">
-<div class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between">
-<a href="index.html" aria-label="REDLINE, inicio"><img src="logo.jpg" alt="REDLINE" width="44" height="44" class="h-11 w-11 rounded-lg"></a>
-<nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Principal"><a href="index.html" class="lnk text-smoke">Inicio</a><a href="servicios.html" class="lnk text-smoke">Servicios</a><a href="portafolio.html" class="lnk text-smoke">Ejemplos</a><a href="nosotros.html" class="lnk text-paper font-bold border-b-2 border-red pb-1" aria-current="page">Nosotros</a><a href="contacto.html" class="lnk text-smoke">Contacto</a></nav>
-<a href="contacto.html" class="btn btn-red hidden md:inline-flex !py-2.5 text-sm">Pedir presupuesto</a>
-<button id="mobile-menu-btn" class="md:hidden text-2xl w-11 h-11 -mr-2" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
-</div>
-<div id="mobile-menu" class="md:hidden bg-card border-b border-line px-5 py-3"><a href="index.html" class="block py-3 text-smoke">Inicio</a><a href="servicios.html" class="block py-3 text-smoke">Servicios</a><a href="portafolio.html" class="block py-3 text-smoke">Ejemplos</a><a href="nosotros.html" class="block py-3 text-paper font-bold">Nosotros</a><a href="contacto.html" class="block py-3 text-smoke">Contacto</a><a href="contacto.html" class="btn btn-red w-full my-3">Pedir presupuesto</a></div>
-</header>
-<main id="main">
-<div class="max-w-6xl mx-auto px-5 pt-32 md:pt-40">
-<h1 class="display text-4xl md:text-6xl max-w-3xl">Hechos para ir más lejos.</h1>
-<p class="text-smoke text-lg mt-5 max-w-2xl leading-relaxed">En REDLINE combinamos buen diseño con código limpio. No usamos plantillas pesadas y genéricas: armamos cada sitio para que tu marca o proyecto crezca.</p>
-<div class="mt-14 border-b border-line">
-<div class="row py-8 grid md:grid-cols-[1fr_2fr] gap-3"><h2 class="display text-2xl">Código limpio</h2><p class="text-smoke text-lg max-w-xl">Armamos la estructura sin plugins innecesarios, para que la página cargue rápido.</p></div>
-<div class="row py-8 grid md:grid-cols-[1fr_2fr] gap-3"><h2 class="display text-2xl">Enfoque comercial</h2><p class="text-smoke text-lg max-w-xl">Cada botón y cada sección están pensados para que una visita termine en una consulta por WhatsApp.</p></div>
-<div class="row py-8 grid md:grid-cols-[1fr_2fr] gap-3"><h2 class="display text-2xl">Trato directo</h2><p class="text-smoke text-lg max-w-xl">Hablás directamente con quienes desarrollan tu proyecto, y los cambios se resuelven rápido.</p></div>
-</div>
-<a href="contacto.html" class="btn btn-red mt-10">Contanos tu proyecto</a>
-</div>
-</main>
-<footer class="border-t border-line mt-24">
-<div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm text-smoke">
-<div class="flex items-center gap-4"><img src="logo.jpg" alt="" width="40" height="40" class="h-10 w-10 rounded-lg"><p>Hechos para ir más lejos.<br>&copy; 2026 REDLINE</p></div>
-<div class="flex flex-wrap gap-x-6 gap-y-2">
-<a class="lnk" href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram mr-2"></i>@redline.web</a>
-<a class="lnk" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp</a></div>
-</div></footer>
-<a id="wa" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp" class="group fixed bottom-5 right-5 z-50 bg-[#1FA855] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-black/40 btn !p-0"><i class="fa-brands fa-whatsapp text-3xl"></i><span class="hidden md:block absolute right-16 bg-card text-paper text-xs px-3 py-1.5 rounded-lg border border-line opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap">Escribinos por WhatsApp</span></a>
-<script src="main.js" defer></script>
-<script src="dist/analytics.js" defer></script>
-</body></html>
+<body class="bg-redline-dark text-gray-100 font-sans antialiased">
+
+    <!-- HEADER MENU -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html"><img src="logo.jpg" alt="REDLINE" class="h-10 w-auto"></a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-redline-red">Inicio</a>
+                <a href="servicios.html" class="hover:text-redline-red">Servicios & Precios</a>
+                <a href="portafolio.html" class="hover:text-redline-red">Portafolio</a>
+                <a href="nosotros.html" class="text-redline-red font-bold">Nosotros</a>
+                <a href="contacto.html" class="hover:text-redline-red">Contacto</a>
+            </nav>
+            <a href="contacto.html" class="hidden md:inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl">Cotizar Web</a>
+        </div>
+    </header>
+
+    <main class="pt-36 pb-24 max-w-5xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold text-redline-red uppercase tracking-widest">Nuestra Filosofía</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 mb-6">Hechos para ir más lejos</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
+                En REDLINE combinamos diseño visual impactante con desarrollo de código limpio. No creemos en plantillas pesadas y genéricas; construimos soluciones digitales diseñadas específicamente para acelerar el crecimiento de marcas y proyectos.
+            </p>
+        </div>
+
+        <!-- PILARES -->
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+            <div class="bg-redline-card p-6 rounded-2xl border border-redline-border">
+                <div class="w-10 h-10 bg-redline-red/20 text-redline-red rounded-xl flex items-center justify-center text-lg mb-4">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Código Limpio</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">Optimizamos la estructura sin plugins innecesarios para garantizar la máxima velocidad de carga.</p>
+            </div>
+
+            <div class="bg-redline-card p-6 rounded-2xl border border-redline-border">
+                <div class="w-10 h-10 bg-redline-red/20 text-redline-red rounded-xl flex items-center justify-center text-lg mb-4">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Enfoque Comercial</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">Cada botón y sección está estratégicamente ubicado para convertir visitas en consultas por WhatsApp.</p>
+            </div>
+
+            <div class="bg-redline-card p-6 rounded-2xl border border-redline-border">
+                <div class="w-10 h-10 bg-redline-red/20 text-redline-red rounded-xl flex items-center justify-center text-lg mb-4">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Trato Directo</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">Habla directamente con desarrolladores para iterar y ajustar tu proyecto rápidamente.</p>
+            </div>
+        </div>
+    </main>
+       <a href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 flex items-center justify-center group" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute right-16 bg-redline-card text-white text-xs px-3 py-1.5 rounded-lg border border-redline-border opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg pointer-events-none">
+            ¡Hablános por WhatsApp!
+        </span>
+    </a>
+
+    <footer class="py-8 border-t border-redline-border text-center text-xs text-gray-500">
+        <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
+    </footer>
+    
+    <!-- Vercel Web Analytics -->
+    <script src="dist/analytics.js"></script>
+    <script src="redline-enhancements.js" defer></script>
+</body>
+</html>
