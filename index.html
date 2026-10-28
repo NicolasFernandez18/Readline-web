@@ -1,145 +1,76 @@
 <!DOCTYPE html>
-<html lang="es" class="dark scroll-smooth">
+<html lang="es" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REDLINE | Páginas Web para Negocios</title>
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REDLINE | Páginas web para negocios</title>
+<meta name="description" content="Diseñamos páginas web rápidas y pensadas para el celular, para que tu negocio reciba más consultas por WhatsApp.">
+<meta property="og:title" content="REDLINE | Páginas web para negocios">
+<meta property="og:description" content="Diseñamos páginas web rápidas y pensadas para el celular, para que tu negocio reciba más consultas por WhatsApp.">
+<meta property="og:image" content="https://www.redlineweb.site/logo.jpg">
+<meta name="theme-color" content="#08080A">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>tailwind.config={theme:{extend:{colors:{ink:'#08080A',paper:'#F3F1EE',smoke:'#9A9AA3',line:'#24242B',card:'#0D0D11',red:'#FF1A2D'}}}}</script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-redline-dark text-gray-100 font-sans antialiased selection:bg-redline-red selection:text-white">
+<body class="bg-ink text-paper antialiased selection:bg-red selection:text-white">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-red focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Saltar al contenido</a>
+<header class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur-md border-b border-line">
+<div class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between">
+<a href="index.html" aria-label="REDLINE, inicio"><img src="logo.jpg" alt="REDLINE" width="44" height="44" class="h-11 w-11 rounded-lg"></a>
+<nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Principal"><a href="index.html" class="lnk text-paper font-bold border-b-2 border-red pb-1" aria-current="page">Inicio</a><a href="servicios.html" class="lnk text-smoke">Servicios</a><a href="portafolio.html" class="lnk text-smoke">Ejemplos</a><a href="nosotros.html" class="lnk text-smoke">Nosotros</a><a href="contacto.html" class="lnk text-smoke">Contacto</a></nav>
+<a href="contacto.html" class="btn btn-red hidden md:inline-flex !py-2.5 text-sm">Pedir presupuesto</a>
+<button id="mobile-menu-btn" class="md:hidden text-2xl w-11 h-11 -mr-2" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+</div>
+<div id="mobile-menu" class="md:hidden bg-card border-b border-line px-5 py-3"><a href="index.html" class="block py-3 text-paper font-bold">Inicio</a><a href="servicios.html" class="block py-3 text-smoke">Servicios</a><a href="portafolio.html" class="block py-3 text-smoke">Ejemplos</a><a href="nosotros.html" class="block py-3 text-smoke">Nosotros</a><a href="contacto.html" class="block py-3 text-smoke">Contacto</a><a href="contacto.html" class="btn btn-red w-full my-3">Pedir presupuesto</a></div>
+</header>
+<main id="main">
+<section class="pt-32 md:pt-44 pb-20 overflow-hidden">
+<div class="max-w-6xl mx-auto px-5 grid md:grid-cols-[1.25fr_1fr] gap-10 items-center">
+<div>
+<h1 class="display text-[2.6rem] sm:text-6xl lg:text-7xl">Una página web que te trae consultas por WhatsApp.</h1>
+<svg viewBox="0 0 400 24" class="w-full max-w-md mt-6" aria-hidden="true"><path class="redline" pathLength="1" d="M2 12 H384"/><path class="redline-head" d="M372 3 L390 12 L372 21" fill="none" stroke="#FF1A2D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<p class="rise text-smoke text-lg mt-6 max-w-[34rem] leading-relaxed">Diseñamos y programamos sitios rápidos, pensados para el celular, para comercios y marcas que quieren vender más cada día.</p>
+<div class="rise flex flex-col sm:flex-row gap-3 mt-9"><a href="servicios.html" class="btn btn-red">Ver planes</a><a href="portafolio.html" class="btn btn-line">Ver ejemplos de diseño</a></div>
+</div>
+<img src="logo.jpg" alt="Logo de REDLINE: media luna roja y la frase Hechos para ir más lejos" width="520" height="520" class="logo-mask rise w-full max-w-[280px] md:max-w-none mx-auto">
+</div></section>
 
-    <!-- NAV -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.jpg" alt="REDLINE Logo" class="h-10 w-auto object-contain">
-            </a>
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
-                <a href="index.html" class="text-redline-red font-bold">Inicio</a>
-                <a href="servicios.html" class="hover:text-redline-red transition-colors">Servicios & Precios</a>
-                <a href="portafolio.html" class="hover:text-redline-red transition-colors">Ejemplos</a>
-                <a href="nosotros.html" class="hover:text-redline-red transition-colors">Nosotros</a>
-                <a href="contacto.html" class="hover:text-redline-red transition-colors">Contacto</a>
-            </nav>
-            <div class="hidden md:flex items-center gap-4">
-                <a href="contacto.html" class="px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl shadow-[0_0_15px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all">
-                    Cotizar Web
-                </a>
-            </div>
-            <button id="mobile-menu-btn" class="md:hidden text-gray-300 text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-        <!-- Dropdown Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-redline-card border-b border-redline-border px-6 py-6 space-y-4">
-            <a href="index.html" class="block text-redline-red font-bold">Inicio</a>
-            <a href="servicios.html" class="block text-gray-300 hover:text-white">Servicios & Precios</a>
-            <a href="portafolio.html" class="block text-gray-300 hover:text-white">Ejemplos</a>
-            <a href="nosotros.html" class="block text-gray-300 hover:text-white">Nosotros</a>
-            <a href="contacto.html" class="block text-gray-300 hover:text-white">Contacto</a>
-            <a href="contacto.html" class="block text-center py-3 text-sm font-bold text-white bg-redline-red rounded-xl">Cotizar Web</a>
-        </div>
-    </header>
+<section class="max-w-6xl mx-auto px-5">
+<h2 class="display text-3xl md:text-4xl mb-10">Lo que incluye cada web</h2>
+<dl>
+<div class="row py-6 grid md:grid-cols-[1fr_2fr] gap-2"><dt class="font-bold text-lg">Hecha para celulares</dt><dd class="text-smoke">La mayoría de tus clientes te va a mirar desde el teléfono, así que diseñamos primero para esa pantalla.</dd></div>
+<div class="row py-6 grid md:grid-cols-[1fr_2fr] gap-2"><dt class="font-bold text-lg">Botón de WhatsApp</dt><dd class="text-smoke">Cada visita está a un toque de escribirte, con el mensaje ya armado.</dd></div>
+<div class="row py-6 grid md:grid-cols-[1fr_2fr] gap-2"><dt class="font-bold text-lg">Carga rápida</dt><dd class="text-smoke">Código liviano y alojamiento en Hostinger, sin plugins que la hagan lenta.</dd></div>
+<div class="row py-6 grid md:grid-cols-[1fr_2fr] gap-2 border-b border-line"><dt class="font-bold text-lg">La editás vos</dt><dd class="text-smoke">Cambiás fotos, textos y precios desde un panel, y te explicamos cómo usarlo.</dd></div>
+</dl></section>
 
-    <!-- HERO SECTION -->
-    <section class="pt-36 pb-20 md:pt-48 md:pb-32 text-center relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-4">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-redline-red/10 border border-redline-red/40 text-redline-red text-xs font-bold uppercase tracking-widest mb-6">
-                Páginas Web para Comercios y Marcas
-            </span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-                Hacé crecer tu negocio con una página <span class="text-transparent bg-clip-text bg-gradient-to-r from-redline-red via-red-500 to-rose-400">moderna y rápida</span>
-            </h1>
-            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-                Diseñamos webs atractivas y fáciles de usar para que recibas más consultas por WhatsApp y vendas más todos los días.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="servicios.html" class="px-8 py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all">
-                    Ver Planes & Precios
-                </a>
-                <a href="portafolio.html" class="px-8 py-4 bg-redline-card border border-redline-border text-gray-300 font-bold rounded-xl hover:bg-redline-border transition-all">
-                    Ver Diseños
-                </a>
-            </div>
-        </div>
-    </section>
+<section class="max-w-6xl mx-auto px-5 mt-24">
+<h2 class="display text-3xl md:text-4xl mb-10">Cómo trabajamos</h2>
+<ol class="grid md:grid-cols-3 gap-10">
+<li><p class="display text-red text-4xl mb-3" aria-hidden="true">1</p><h3 class="font-bold text-lg mb-1">Nos contás tu negocio</h3><p class="text-smoke">Qué vendés, a quién y qué querés que haga tu página.</p></li>
+<li><p class="display text-red text-4xl mb-3" aria-hidden="true">2</p><h3 class="font-bold text-lg mb-1">Diseñamos y ajustamos</h3><p class="text-smoke">Hablás directo con quien la desarrolla y corregimos hasta que te guste.</p></li>
+<li><p class="display text-red text-4xl mb-3" aria-hidden="true">3</p><h3 class="font-bold text-lg mb-1">La publicamos</h3><p class="text-smoke">Queda online con tu dominio y lista para recibir mensajes.</p></li>
+</ol></section>
 
-    <!-- BENEFICIOS CLAVE -->
-    <section class="py-16 border-y border-redline-border bg-redline-card/40">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <i class="fa-solid fa-mobile-screen text-redline-red text-3xl mb-2"></i>
-                <p class="text-sm font-bold text-white">100% Celulares</p>
-                <p class="text-xs text-gray-400 mt-1">Se adapta a cualquier pantalla</p>
-            </div>
-            <div>
-                <i class="fa-brands fa-whatsapp text-emerald-400 text-3xl mb-2"></i>
-                <p class="text-sm font-bold text-white">Botón de WhatsApp</p>
-                <p class="text-xs text-gray-400 mt-1">Consultas directas a tu chat</p>
-            </div>
-            <div>
-                <i class="fa-solid fa-bolt text-yellow-400 text-3xl mb-2"></i>
-                <p class="text-sm font-bold text-white">Carga Veloz</p>
-                <p class="text-xs text-gray-400 mt-1">Alojamiento en Hostinger</p>
-            </div>
-            <div>
-                <i class="fa-solid fa-pen-to-square text-blue-400 text-3xl mb-2"></i>
-                <p class="text-sm font-bold text-white">Fácil Edición</p>
-                <p class="text-xs text-gray-400 mt-1">Cambiá fotos y textos vos mismo</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER GENERAL -->
-    <footer class="py-12 border-t border-redline-border bg-redline-dark text-sm text-gray-500">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-center">
-            <div>
-                <img src="logo.jpg" alt="REDLINE" class="h-10 w-auto mb-3">
-                <p class="text-xs text-gray-400">Hechos para ir más lejos. Páginas web modernas para emprendedores y comercios.</p>
-            </div>
-            <div class="flex justify-center">
-                <a href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-redline-red bg-redline-card px-5 py-2.5 rounded-xl border border-redline-border transition-all">
-                    <i class="fa-brands fa-instagram text-xl text-pink-500"></i>
-                    <span>@redline.web</span>
-                </a>
-            </div>
-            <div class="md:text-right">
-                <h4 class="text-white font-bold mb-2">Contacto Directo</h4>
-                <p class="text-xs text-gray-400"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> Escribinos por WhatsApp</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 border-t border-redline-border/60 pt-6 text-center text-xs">
-            <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 flex items-center justify-center group" aria-label="Contactar por WhatsApp">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <span class="absolute right-16 bg-redline-card text-white text-xs px-3 py-1.5 rounded-lg border border-redline-border opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg pointer-events-none">
-            ¡Hablános por WhatsApp!
-        </span>
-    </a>
-
-    <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-    
-    <!-- Vercel Web Analytics -->
-    <script src="dist/analytics.js"></script>
-</body>
-</html>
+<section class="max-w-6xl mx-auto px-5 mt-24">
+<div class="border border-line rounded-3xl p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 bg-card">
+<h2 class="display text-3xl md:text-4xl max-w-md">¿Qué necesita tu negocio online?</h2>
+<a href="contacto.html" class="btn btn-red self-start md:self-auto">Pedir presupuesto</a></div></section>
+</main>
+<footer class="border-t border-line mt-24">
+<div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm text-smoke">
+<div class="flex items-center gap-4"><img src="logo.jpg" alt="" width="40" height="40" class="h-10 w-10 rounded-lg"><p>Hechos para ir más lejos.<br>&copy; 2026 REDLINE</p></div>
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="lnk" href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram mr-2"></i>@redline.web</a>
+<a class="lnk" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp</a></div>
+</div></footer>
+<a id="wa" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp" class="group fixed bottom-5 right-5 z-50 bg-[#1FA855] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-black/40 btn !p-0"><i class="fa-brands fa-whatsapp text-3xl"></i><span class="hidden md:block absolute right-16 bg-card text-paper text-xs px-3 py-1.5 rounded-lg border border-line opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap">Escribinos por WhatsApp</span></a>
+<script src="main.js" defer></script>
+<script src="dist/analytics.js" defer></script>
+</body></html>

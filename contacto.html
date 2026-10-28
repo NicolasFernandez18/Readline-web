@@ -1,134 +1,60 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | REDLINE</title>
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | REDLINE</title>
+<meta name="description" content="Pedí tu presupuesto para una página web. Te respondemos en el día.">
+<meta property="og:title" content="Contacto | REDLINE">
+<meta property="og:description" content="Pedí tu presupuesto para una página web. Te respondemos en el día.">
+<meta property="og:image" content="https://www.redlineweb.site/logo.jpg">
+<meta name="theme-color" content="#08080A">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>tailwind.config={theme:{extend:{colors:{ink:'#08080A',paper:'#F3F1EE',smoke:'#9A9AA3',line:'#24242B',card:'#0D0D11',red:'#FF1A2D'}}}}</script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-redline-dark text-gray-100 font-sans antialiased">
-
-    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="index.html"><img src="logo.jpg" alt="REDLINE" class="h-10 w-auto"></a>
-            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
-                <a href="index.html" class="hover:text-redline-red">Inicio</a>
-                <a href="servicios.html" class="hover:text-redline-red">Servicios & Precios</a>
-                <a href="portafolio.html" class="hover:text-redline-red">Ejemplos</a>
-                <a href="nosotros.html" class="hover:text-redline-red">Nosotros</a>
-                <a href="contacto.html" class="text-redline-red font-bold">Contacto</a>
-            </nav>
-            <a href="contacto.html" class="hidden md:inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl">Cotizar Web</a>
-        </div>
-    </header>
-
-    <main class="pt-36 pb-24 max-w-4xl mx-auto px-4">
-        <div class="bg-redline-card p-8 md:p-12 rounded-3xl border border-redline-border shadow-2xl relative overflow-hidden">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-center mb-2">Cotizá tu Página Web</h1>
-            <p class="text-gray-400 text-center text-sm mb-8">Completá tus datos y te respondemos en el día.</p>
-
-            <!-- MENSAJE DE ÉXITO (Oculto por defecto) -->
-            <div id="form-success-msg" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 text-sm text-center flex items-center justify-center gap-3">
-                <i class="fa-solid fa-circle-check text-xl"></i>
-                <span>¡Mensaje enviado con éxito! Nos pondremos en contacto muy pronto.</span>
-            </div>
-
-            <!-- FORMULARIO -->
-            <form id="contact-form" class="space-y-6" action="https://formspree.io/f/xjyvrgyj" method="POST">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Tu Nombre / Negocio</label>
-                        <input type="text" name="nombre" required placeholder="Ej. Nicolas / Mi Negocio" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">WhatsApp / Teléfono</label>
-                        <input type="tel" name="telefono" required placeholder="+54 11 1234 5678" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Rubro o Tipo de Negocio</label>
-                    <input type="text" name="rubro" placeholder="Ej. Restaurante, Barbería, Hotel, Tienda de ropa..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-2">¿Qué te gustaría agregar en tu web?</label>
-                    <textarea name="mensaje" rows="4" placeholder="Contanos brevemente qué querés mostrar..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none"></textarea>
-                </div>
-
-                <button type="submit" id="submit-btn" class="w-full py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all flex items-center justify-center gap-2">
-                    <span>Enviar Consulta</span>
-                </button>
-            </form>
-
-            <div class="mt-8 pt-8 border-t border-redline-border text-center">
-                <p class="text-xs text-gray-400 mb-3">También podés encontrarnos en Instagram:</p>
-                <a href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-redline-dark px-4 py-2 rounded-xl border border-redline-border hover:border-redline-red transition-all">
-                    <i class="fa-brands fa-instagram text-pink-500 text-lg"></i>
-                    <span>@redline.web</span>
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer class="py-8 border-t border-redline-border text-center text-xs text-gray-500">
-        <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 flex items-center justify-center">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- SCRIPT MANEJO DE ENVÍO CON FETCH -->
-    <script>
-        const form = document.getElementById('contact-form');
-        const successMsg = document.getElementById('form-success-msg');
-        const submitBtn = document.getElementById('submit-btn');
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Evita la redirección fuera del sitio
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-
-            const data = new FormData(form);
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    successMsg.classList.remove('hidden');
-                    form.reset(); // Limpia los campos
-                } else {
-                    alert('Ocurrió un error al enviar el mensaje. Inténtalo nuevamente o escríbenos por WhatsApp.');
-                }
-            } catch (error) {
-                alert('Error de conexión. Inténtalo de nuevo.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<span>Enviar Consulta</span>';
-            }
-        });
-    </script>
-    
-    <!-- Vercel Web Analytics -->
-    <script src="dist/analytics.js"></script>
-</body>
-</html>
+<body class="bg-ink text-paper antialiased selection:bg-red selection:text-white">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-red focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Saltar al contenido</a>
+<header class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur-md border-b border-line">
+<div class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between">
+<a href="index.html" aria-label="REDLINE, inicio"><img src="logo.jpg" alt="REDLINE" width="44" height="44" class="h-11 w-11 rounded-lg"></a>
+<nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Principal"><a href="index.html" class="lnk text-smoke">Inicio</a><a href="servicios.html" class="lnk text-smoke">Servicios</a><a href="portafolio.html" class="lnk text-smoke">Ejemplos</a><a href="nosotros.html" class="lnk text-smoke">Nosotros</a><a href="contacto.html" class="lnk text-paper font-bold border-b-2 border-red pb-1" aria-current="page">Contacto</a></nav>
+<a href="contacto.html" class="btn btn-red hidden md:inline-flex !py-2.5 text-sm">Pedir presupuesto</a>
+<button id="mobile-menu-btn" class="md:hidden text-2xl w-11 h-11 -mr-2" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+</div>
+<div id="mobile-menu" class="md:hidden bg-card border-b border-line px-5 py-3"><a href="index.html" class="block py-3 text-smoke">Inicio</a><a href="servicios.html" class="block py-3 text-smoke">Servicios</a><a href="portafolio.html" class="block py-3 text-smoke">Ejemplos</a><a href="nosotros.html" class="block py-3 text-smoke">Nosotros</a><a href="contacto.html" class="block py-3 text-paper font-bold">Contacto</a><a href="contacto.html" class="btn btn-red w-full my-3">Pedir presupuesto</a></div>
+</header>
+<main id="main">
+<div class="max-w-2xl mx-auto px-5 pt-32 md:pt-40">
+<h1 class="display text-4xl md:text-5xl">Pedí tu presupuesto.</h1>
+<p class="text-smoke text-lg mt-4 mb-10">Completá el formulario y te respondemos en el día.</p>
+<div id="form-ok" tabindex="-1" role="status" class="hidden mb-6 p-4 rounded-xl border border-emerald-500/50 bg-emerald-500/10 text-emerald-300 flex gap-3"><i class="fa-solid fa-circle-check mt-1" aria-hidden="true"></i><span>Mensaje enviado. Te respondemos hoy.</span></div>
+<div id="form-err" tabindex="-1" role="alert" class="hidden mb-6 p-4 rounded-xl border border-red/60 bg-red/10 text-red flex gap-3"><i class="fa-solid fa-circle-exclamation mt-1" aria-hidden="true"></i><span>No se pudo enviar el mensaje. Probá de nuevo o escribinos por WhatsApp.</span></div>
+<form id="contact-form" class="space-y-6" action="https://formspree.io/f/xjyvrgyj" method="POST">
+<div class="grid md:grid-cols-2 gap-6">
+<div><label for="nombre" class="block text-sm font-bold mb-2">Tu nombre o el de tu negocio</label><input id="nombre" class="field" type="text" name="nombre" required autocomplete="name" placeholder="Ej. Nicolás / Mi Negocio"></div>
+<div><label for="telefono" class="block text-sm font-bold mb-2">WhatsApp o teléfono</label><input id="telefono" class="field" type="tel" name="telefono" required autocomplete="tel" placeholder="+54 9 11 1234 5678"></div>
+</div>
+<div><label for="rubro" class="block text-sm font-bold mb-2">Rubro del negocio</label><input id="rubro" class="field" type="text" name="rubro" placeholder="Ej. Restaurante, barbería, tienda de ropa"></div>
+<div><label for="mensaje" class="block text-sm font-bold mb-2">¿Qué querés mostrar en tu web?</label><textarea id="mensaje" class="field" name="mensaje" rows="4" placeholder="Contanos brevemente qué ofrecés."></textarea></div>
+<button type="submit" id="submit-btn" class="btn btn-red w-full">Enviar consulta</button>
+</form>
+<p class="text-smoke text-sm mt-10 pt-8 border-t border-line">También estamos en <a class="lnk text-paper font-bold" href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer">Instagram @redline.web</a> y por <a class="lnk text-paper font-bold" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+</div>
+</main>
+<footer class="border-t border-line mt-24">
+<div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm text-smoke">
+<div class="flex items-center gap-4"><img src="logo.jpg" alt="" width="40" height="40" class="h-10 w-10 rounded-lg"><p>Hechos para ir más lejos.<br>&copy; 2026 REDLINE</p></div>
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="lnk" href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram mr-2"></i>@redline.web</a>
+<a class="lnk" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp</a></div>
+</div></footer>
+<a id="wa" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp" class="group fixed bottom-5 right-5 z-50 bg-[#1FA855] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-black/40 btn !p-0"><i class="fa-brands fa-whatsapp text-3xl"></i><span class="hidden md:block absolute right-16 bg-card text-paper text-xs px-3 py-1.5 rounded-lg border border-line opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap">Escribinos por WhatsApp</span></a>
+<script src="main.js" defer></script>
+<script src="dist/analytics.js" defer></script>
+</body></html>
