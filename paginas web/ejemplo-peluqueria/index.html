@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mora Studio | Peluquería</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -13,7 +14,8 @@ body{font:400 1.05rem/1.6 var(--b);color:var(--ink);background:var(--paper);over
 a{color:inherit}
 :focus-visible{outline:3px solid var(--pink);outline-offset:3px}
 header{display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw}
-.logo{font:800 1.4rem var(--f);text-decoration:none}
+.logo{font:800 1.4rem var(--f);text-decoration:none;display:flex;align-items:center;gap:.55rem}
+.lg{height:2.4rem;width:auto}
 .btn{display:inline-block;background:var(--ink);color:#fff;padding:.8rem 1.5rem;border-radius:99px;text-decoration:none;font-weight:500;transition:transform .2s,background .2s}
 .btn:hover{background:var(--pink);transform:rotate(-2deg) scale(1.04)}
 .hero{padding:5vh 5vw 0;min-height:76vh;display:flex;flex-direction:column;justify-content:center}
@@ -81,13 +83,14 @@ details p{margin-top:.6rem;max-width:60ch}
 .contact dt{font:800 1rem var(--f);margin-top:1rem}
 .mapb{display:block;margin-top:1.5rem;border-radius:1.5rem;padding:2rem;text-align:center;color:#fff;font:800 1.2rem var(--f);text-decoration:none;background:repeating-linear-gradient(45deg,#6b3fa0,#6b3fa0 14px,#7d52b5 14px,#7d52b5 28px)}
 @media(max-width:800px){.himg,.nav{display:none}.contact{grid-template-columns:1fr}.gal{grid-template-columns:repeat(2,1fr)}.gal .g4{grid-column:span 2}}
-.back-home{position:fixed;bottom:1.2rem;left:1.2rem;z-index:40;display:inline-flex;min-height:48px;align-items:center;padding:.7rem 1.1rem;border:1px solid #fff5;border-radius:999px;background:var(--ink);box-shadow:0 10px 30px #1c0f2e44;color:#fff;font:500 .9rem var(--b);text-decoration:none;transition:transform .2s,background .2s}
-.back-home:hover{transform:translateY(-2px);background:var(--pink);color:var(--ink)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.redline-back{position:fixed;left:1.2rem;bottom:1.2rem;z-index:30;display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border:1px solid #1c0f2e22;border-radius:999px;background:var(--ink);color:#fff;font:500 .85rem var(--b);text-decoration:none;box-shadow:0 8px 24px #1c0f2e33;transition:background .2s,transform .2s}
+.redline-back:hover{background:var(--pink);color:var(--ink);transform:translateY(-2px)}
 </style>
 </head>
 <body>
-<header><a class="logo" href="#">Mora Studio</a><nav class="nav"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#equipo">Equipo</a><a href="#contacto">Contacto</a></nav><a class="btn" href="#turno">Pedir turno</a></header>
+<a class="redline-back" href="../../index.html"><span aria-hidden="true">&larr;</span> Volver a REDLINE</a>
+<header><a class="logo" href="#"><img class="lg" src="img/logo.png" alt="">Mora Studio</a><nav class="nav"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#equipo">Equipo</a><a href="#contacto">Contacto</a></nav><a class="btn" href="#turno">Pedir turno</a></header>
 <main>
 <section class="hero">
 <h1><span>Corte.</span><span>Color.</span><span>Carácter.</span></h1>
@@ -179,7 +182,6 @@ details p{margin-top:.6rem;max-width:60ch}
 </form>
 </section>
 </main>
-<a class="back-home" href="../../index.html">← Volver a REDLINE</a>
 <footer>Mora Studio. Página de ejemplo. Imágenes generadas con IA.</footer>
 <script>
 const t=document.getElementById('t');t.innerHTML+=t.innerHTML;

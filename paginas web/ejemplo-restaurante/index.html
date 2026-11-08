@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Surubí | Cocina de río</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,800;1,9..144,500&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -12,7 +13,8 @@
 body{font:400 1.05rem/1.65 var(--b);color:var(--rio);background:var(--sal)}
 :focus-visible{outline:3px solid var(--lad);outline-offset:3px}
 nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 6vw}
-.logo{font:800 1.7rem var(--f);text-decoration:none;color:var(--rio)}
+.logo{font:800 1.7rem var(--f);text-decoration:none;color:var(--rio);display:flex;align-items:center;gap:.6rem}
+.lg{height:2.8rem;width:auto}
 nav a:not(.logo){color:var(--rio);font-weight:600}
 .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:4vw;align-items:center;padding:4vh 6vw 8vh}
 h1{font:800 clamp(2.8rem,7vw,6rem)/1 var(--f);letter-spacing:-.025em}
@@ -89,13 +91,14 @@ nav{position:sticky;top:0;z-index:20;background:#eaf1efd9;backdrop-filter:blur(1
 .contact input,.contact select,.contact textarea{font:inherit;padding:.8rem 1rem;border:2px solid var(--bl);border-radius:.5rem;background:var(--bl);color:var(--rio)}
 .mapb{display:block;margin-top:1.5rem;border-radius:1rem;padding:1.8rem;text-align:center;color:var(--rio);font:800 1.2rem var(--f);text-decoration:none;background:repeating-linear-gradient(45deg,var(--sol),var(--sol) 14px,#f6c859 14px,#f6c859 28px)}
 @media(max-width:800px){.story,.contact{grid-template-columns:1fr}.nav2{display:none}.gal{grid-template-columns:repeat(2,1fr)}.gal .g4{grid-column:span 2}}
-.back-home{position:fixed;bottom:1.2rem;left:1.2rem;z-index:40;display:inline-flex;min-height:48px;align-items:center;padding:.7rem 1.1rem;border:1px solid #fbfdfc99;border-radius:.4rem;background:var(--rio);box-shadow:0 10px 30px #0f3d3a40;color:var(--bl);font:600 .9rem var(--b);text-decoration:none;transition:transform .2s,background .2s}
-.back-home:hover{transform:translateY(-2px);background:var(--lad)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.redline-back{position:fixed;left:1.2rem;bottom:1.2rem;z-index:30;display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border:1px solid #fbfdfc55;border-radius:999px;background:var(--rio);color:var(--bl);font:600 .85rem var(--b);text-decoration:none;box-shadow:0 8px 24px #0f3d3a33;transition:background .2s,transform .2s}
+.redline-back:hover{background:var(--sol);color:var(--rio);transform:translateY(-2px)}
 </style>
 </head>
 <body>
-<nav><a class="logo" href="#">Surubí</a><div class="nav2"><a href="#historia">Historia</a><a href="#menu">Menú</a><a href="#precios">Precios</a><a href="#contacto">Contacto</a></div><a href="#reserva">Reservar mesa</a></nav>
+<a class="redline-back" href="../../index.html"><span aria-hidden="true">&larr;</span> Volver a REDLINE</a>
+<nav><a class="logo" href="#"><img class="lg" src="img/logo.png" alt="">Surubí</a><div class="nav2"><a href="#historia">Historia</a><a href="#menu">Menú</a><a href="#precios">Precios</a><a href="#contacto">Contacto</a></div><a href="#reserva">Reservar mesa</a></nav>
 <main>
 <section class="hero">
 <div>
@@ -218,7 +221,6 @@ nav{position:sticky;top:0;z-index:20;background:#eaf1efd9;backdrop-filter:blur(1
 </section>
 <a class="btn fab" href="#reserva">Reservar</a>
 </main>
-<a class="back-home" href="../../index.html">← Volver a REDLINE</a>
 <footer>Surubí. Costanera 456, Gualeguaychú. Miércoles a domingo. Página de ejemplo. Imágenes generadas con IA.</footer>
 <script>
 const T=document.querySelectorAll('.tab'),P=document.querySelectorAll('.panel');
