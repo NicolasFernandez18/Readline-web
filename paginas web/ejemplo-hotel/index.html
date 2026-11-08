@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Costanera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--p:0;--noche:#101b3b;--cielo:#7fb2e5;--dur:#ffb98a;--rosa:#e0707a;--bruma:#f4eff8;--f:'Cormorant Garamond',Georgia,serif;--b:'Jost',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font:400 1.05rem/1.65 var(--b);color:var(--noche);background:var(--bruma)}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px}
+.track{height:170vh}
+.sky{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff;
+background:linear-gradient(color-mix(in oklab,var(--cielo) calc((1 - var(--p))*100%),var(--noche)),color-mix(in oklab,var(--dur) calc((1 - var(--p))*100%),#3a2a5c))}
+.sun{position:absolute;left:50%;top:calc(14% + var(--p)*52%);width:clamp(7rem,18vw,13rem);aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:radial-gradient(circle,#fff6e5,var(--dur) 60%,var(--rosa));box-shadow:0 0 90px 30px #ffb98a88}
+.river{position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(#1b2850,var(--noche))}
+.top{position:absolute;inset:0 0 auto;display:flex;justify-content:space-between;padding:1.5rem 6vw;z-index:2;font-weight:500}
+.top a{color:#fff;text-decoration:none}
+.title{position:absolute;inset:0;display:grid;place-content:center;text-align:center;z-index:1;padding:0 6vw}
+h1{font:300 clamp(3.4rem,11vw,9rem)/.95 var(--f);letter-spacing:-.01em;text-shadow:0 2px 30px #10182f55}
+.title p{margin-top:1rem;font:italic 300 clamp(1.3rem,3vw,2rem) var(--f)}
+.rooms{padding:6rem 6vw 3rem;max-width:62rem;margin:auto}
+h2{font:300 clamp(2.2rem,5vw,3.6rem)/1.05 var(--f);margin-bottom:2rem}
+.room{display:grid;grid-template-columns:7rem 1fr auto;gap:1.5rem;align-items:center;padding:1.5rem 0;border-top:1px solid #101b3b44}
+.swatch{aspect-ratio:1;border-radius:50% 50% 0 0;transition:transform .4s}
+.room:hover .swatch{transform:translateY(-6px)}
+.room h3{font:500 1.7rem var(--f)}
+.room p{font-size:.95rem;opacity:.8}
+.price{font:500 1.5rem var(--f);text-align:right}
+.price small{display:block;font:400 .8rem var(--b);opacity:.7}
+.book{background:var(--noche);color:#fff;padding:4rem 6vw}
+.book h2{margin-bottom:1.5rem}
+.bar{display:flex;flex-wrap:wrap;gap:1rem;align-items:end;max-width:62rem}
+label{display:grid;gap:.3rem;font-size:.9rem}
+input,select{font:inherit;padding:.75rem;border-radius:.3rem;border:1px solid #ffffff66;background:#ffffff14;color:#fff;color-scheme:dark}
+.btn{font:500 1rem var(--b);background:var(--dur);color:var(--noche);border:0;border-radius:.3rem;padding:.85rem 1.6rem;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--rosa);color:#fff}
+.srv{padding:4rem 6vw;max-width:62rem;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:2rem}
+.srv h3{font:500 1.5rem var(--f)}
+footer{padding:2rem 6vw;font-size:.9rem;border-top:1px solid #101b3b33}
+@media(max-width:600px){.room{grid-template-columns:4rem 1fr}.price{grid-column:2;text-align:left}}
+.top{position:fixed;transition:background .4s}
+body.s .top{background:#101b3bd9;backdrop-filter:blur(12px)}
+.wrap{padding:5rem 6vw;max-width:72rem;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.card{min-height:18rem;border-radius:1.5rem;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;transition:transform .4s}
+.card:hover{transform:translateY(-8px)}
+.card h3{font:500 1.8rem var(--f)}
+.card p{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s}
+.card:hover p,.card:focus-within p,.card:focus p{max-height:6rem;opacity:1}
+@media(hover:none){.card p{max-height:none;opacity:1}}
+.mos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:9rem;gap:.8rem}
+.mos div{border-radius:1.2rem;padding:1rem;color:#fff;font:500 1.3rem var(--f);display:flex;align-items:flex-end;transition:transform .4s}
+.mos div:hover{transform:scale(1.03)}
+.mos .a{grid-column:span 2;grid-row:span 2}
+.mos .b{grid-row:span 2}
+.mos .c{grid-column:span 2}
+.promo{background:linear-gradient(90deg,var(--rosa),var(--dur));color:var(--noche);padding:2.5rem 6vw;font:500 clamp(1.5rem,4vw,2.4rem)/1.2 var(--f);text-align:center}
+.near{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1.5rem}
+.near b{font:300 3rem/1 var(--f);display:block}
+details{border-top:1px solid #101b3b44;padding:1.1rem 0}
+summary{font:500 1.4rem var(--f);cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:.5rem;max-width:60ch}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.js .rv.on{opacity:1;transform:none}
+@media(max-width:700px){.mos{grid-template-columns:repeat(2,1fr)}.mos .a{grid-column:span 2}}
+.img{position:relative;overflow:hidden;background:linear-gradient(160deg,#3b5ea8,var(--noche))}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.room .swatch{border-radius:50% 50% 0 0}
+.room:hover img,.mos div:hover img{transform:scale(1.08)}
+.card{position:relative;overflow:hidden}
+.card .img{position:absolute;inset:0;z-index:0}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#101b3bdd);z-index:1}
+.card h3,.card p{position:relative;z-index:2}
+.mos div{position:relative;overflow:hidden}
+.mos div span{position:relative;z-index:2;text-shadow:0 2px 12px #0008}
+.nav3{display:flex;gap:1.6rem}
+.tar{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.tr{border:1px solid #101b3b55;border-radius:1.5rem;padding:2rem;background:#fff}
+.tr h3{font:500 1.7rem var(--f)}.tr .pr{font:300 3rem/1 var(--f);margin:.5rem 0}.tr .pr small{font:400 .85rem var(--b);opacity:.7}
+.tr ul{padding-left:1.1rem;margin-top:.8rem}
+.tr.hot{background:var(--noche);color:#fff}.tr.hot .pr{color:var(--dur)}
+.amen{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1.5rem}
+.amen div{padding:1.2rem 0;border-top:1px solid #101b3b44}
+.amen span{font-size:1.8rem}.amen h3{font:500 1.4rem var(--f);margin-top:.3rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem;background:var(--noche);color:#fff;padding:4rem 6vw}
+.contact h2{margin-bottom:1rem}
+.contact dt{font:500 1.3rem var(--f);margin-top:1rem;color:var(--dur)}
+.contact form{display:grid;gap:.8rem}
+.contact input,.contact select,.contact textarea{font:inherit;padding:.8rem 1rem;border-radius:.3rem;border:1px solid #ffffff66;background:#ffffff14;color:#fff;color-scheme:dark}
+.mapb{display:block;margin-top:1.5rem;border-radius:1rem;padding:1.8rem;text-align:center;color:var(--noche);font:500 1.4rem var(--f);text-decoration:none;background:linear-gradient(90deg,var(--rosa),var(--dur))}
+@media(max-width:800px){.contact{grid-template-columns:1fr}.nav3{display:none}}
+.back-home{position:fixed;bottom:1.2rem;left:1.2rem;z-index:40;display:inline-flex;min-height:48px;align-items:center;padding:.7rem 1.1rem;border:1px solid #fff9;border-radius:999px;background:var(--bruma);box-shadow:0 10px 30px #101b3b30;color:var(--noche);font:500 .9rem var(--b);text-decoration:none;transition:transform .2s,background .2s}
+.back-home:hover{transform:translateY(-2px);background:var(--dur)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="track" id="tr">
+<div class="sky">
+<div class="top"><a href="#">Hotel Costanera</a><div class="nav3"><a href="#habitaciones">Habitaciones</a><a href="#tarifas">Tarifas</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div><a href="#reserva">Reservar</a></div>
+<div class="sun"></div><div class="river"></div>
+<div class="title"><h1>Dormí frente al río.</h1><p>Hotel boutique en la costanera de Gualeguaychú</p></div>
+</div>
+</div>
+<main>
+<section class="rooms" id="habitaciones">
+<style>.room{grid-template-columns:11rem 1fr auto}.room .swatch{aspect-ratio:4/3;border-radius:1rem}@media(max-width:600px){.room{grid-template-columns:6rem 1fr}}</style>
+<h2>Habitaciones</h2>
+<div class="room"><div class="swatch img"><img src="img/hab-doble.jpg" alt="Habitación doble" loading="lazy"></div><div><h3>Doble vista al río</h3><p>Cama king, balcón y desayuno incluido.</p></div><div class="price">$95.000<small>por noche</small></div></div>
+<div class="room"><div class="swatch img"><img src="img/hab-suite.jpg" alt="Suite" loading="lazy"></div><div><h3>Suite Atardecer</h3><p>Living, bañera y terraza privada.</p></div><div class="price">$150.000<small>por noche</small></div></div>
+<div class="room"><div class="swatch img"><img src="img/hab-familiar.jpg" alt="Habitación familiar" loading="lazy"></div><div><h3>Familiar</h3><p>Dos ambientes para cuatro personas.</p></div><div class="price">$120.000<small>por noche</small></div></div>
+<p style="font-size:.85rem;opacity:.65;margin-top:1rem">Habitaciones y precios de ejemplo.</p>
+</section>
+<section class="wrap rv" style="padding-bottom:2rem">
+<h2>Qué hacer</h2>
+<div class="cards">
+<div class="card" tabindex="0" style="background:#101b3b"><div class="img"><img src="img/actividad1.jpg" alt="Paseo en lancha" loading="lazy"></div><h3>Paseo en lancha</h3><p>Salida al atardecer desde el muelle del hotel.</p></div>
+<div class="card" tabindex="0" style="background:#101b3b"><div class="img"><img src="img/actividad2.jpg" alt="Cena en la terraza" loading="lazy"></div><h3>Cena en la terraza</h3><p>Cocina de río con vista al agua.</p></div>
+<div class="card" tabindex="0" style="background:#101b3b"><div class="img"><img src="img/actividad3.jpg" alt="Bicicletas" loading="lazy"></div><h3>Bici por la costanera</h3><p>Bicicletas a disposición de los huéspedes.</p></div>
+</div>
+</section>
+<section class="wrap rv" style="padding-top:2rem">
+<h2>Conocé los espacios</h2>
+<div class="mos">
+<div class="a img"><img src="img/espacio1.jpg" alt="Terraza" loading="lazy"><span>Terraza</span></div>
+<div class="b img"><img src="img/espacio2.jpg" alt="Suite" loading="lazy"><span>Suite</span></div>
+<div class="img"><img src="img/espacio3.jpg" alt="Pileta" loading="lazy"><span>Pileta</span></div>
+<div class="c img"><img src="img/espacio4.jpg" alt="Desayunador" loading="lazy"><span>Desayunador</span></div>
+<div class="img"><img src="img/espacio5.jpg" alt="Muelle" loading="lazy"><span>Muelle</span></div>
+<div class="img"><img src="img/espacio6.jpg" alt="Jardín" loading="lazy"><span>Jardín</span></div>
+</div>
+<p style="font-size:.85rem;opacity:.65;margin-top:1rem">Espacios de ejemplo con imágenes generadas con IA.</p>
+</section>
+<section class="wrap rv" id="tarifas">
+<h2>Tarifas por temporada</h2>
+<div class="tar">
+<div class="tr"><h3>Temporada baja</h3><div class="pr">$95.000<small> por noche</small></div><p>Abril a septiembre.</p><ul><li>Habitación doble</li><li>Desayuno incluido</li></ul></div>
+<div class="tr hot"><h3>Temporada media</h3><div class="pr">$115.000<small> por noche</small></div><p>Octubre, noviembre y marzo.</p><ul><li>Habitación doble</li><li>Desayuno y pileta</li></ul></div>
+<div class="tr"><h3>Temporada alta</h3><div class="pr">$140.000<small> por noche</small></div><p>Diciembre a febrero y fines de semana largos.</p><ul><li>Habitación doble</li><li>Desayuno, pileta y bicicletas</li></ul></div>
+</div>
+<p style="font-size:.85rem;opacity:.65;margin-top:1rem">Tarifas de ejemplo para la habitación doble.</p>
+</section>
+<div class="promo rv">Reservá tres noches y la cuarta va por nuestra cuenta.</div>
+<section class="book" id="reserva">
+<h2>Consultá disponibilidad</h2>
+<form class="bar" id="f">
+<label>Llegada<input id="a" type="date" required></label>
+<label>Salida<input id="s" type="date" required></label>
+<label>Huéspedes<select id="g"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+<button class="btn" type="submit">Consultar por WhatsApp</button>
+</form>
+</section>
+<section class="wrap rv" id="servicios">
+<h2>Servicios incluidos</h2>
+<div class="amen">
+<div><span>☕</span><h3>Desayuno</h3><p>Todas las mañanas frente al río.</p></div>
+<div><span>🏊</span><h3>Pileta</h3><p>Abierta de octubre a marzo.</p></div>
+<div><span>🚲</span><h3>Bicicletas</h3><p>Para recorrer la costanera.</p></div>
+<div><span>📶</span><h3>Wi-Fi</h3><p>En todo el hotel, sin costo.</p></div>
+<div><span>🚗</span><h3>Estacionamiento</h3><p>Gratuito para huéspedes.</p></div>
+<div><span>❄️</span><h3>Climatización</h3><p>Frío y calor en cada habitación.</p></div>
+</div>
+</section>
+<section class="wrap rv">
+<h2>Todo cerca</h2>
+<div class="near">
+<div><b>2 min</b><p>a pie hasta la costanera.</p></div>
+<div><b>10 min</b><p>a pie hasta el centro.</p></div>
+<div><b>8 min</b><p>en auto hasta la terminal.</p></div>
+</div>
+<p style="font-size:.85rem;opacity:.65;margin-top:1rem">Distancias de ejemplo.</p>
+</section>
+<section class="wrap rv" style="padding-top:0;max-width:52rem">
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿A qué hora es el check-in y el check-out?</summary><p>Entrada desde las 14 y salida hasta las 10.</p></details>
+<details><summary>¿Aceptan mascotas?</summary><p>Sí, en habitaciones seleccionadas. Consultanos antes de reservar.</p></details>
+<details><summary>¿Hay estacionamiento?</summary><p>Sí, gratuito para huéspedes.</p></details>
+</section>
+<section class="contact" id="contacto">
+<div>
+<h2>Contacto</h2>
+<dl>
+<dt>Dirección</dt><dd>Costanera 789, Gualeguaychú</dd>
+<dt>Recepción</dt><dd>Todos los días, las 24 horas.</dd>
+<dt>WhatsApp</dt><dd>344 400-0000</dd>
+<dt>Email</dt><dd>reservas@hotelcostanera.example</dd>
+</dl>
+<a class="mapb" href="https://www.google.com/maps/search/?api=1&query=Gualeguaych%C3%BA+Entre+R%C3%ADos" target="_blank" rel="noopener">Ver en Google Maps</a>
+</div>
+<form onsubmit="event.preventDefault();location.href='https://wa.me/5493444000000?text='+encodeURIComponent('Hola! Soy '+this.n.value+'. Consulta: '+this.m.value)">
+<h2>Escribinos</h2>
+<input name="n" placeholder="Tu nombre" required>
+<textarea name="m" rows="4" placeholder="Consulta, evento o pedido especial" required></textarea>
+<button class="btn" type="submit">Enviar por WhatsApp</button>
+</form>
+</section>
+</main>
+<a class="back-home" href="../../index.html">← Volver a REDLINE</a>
+<footer>Hotel Costanera. Costanera 789, Gualeguaychú. Página de ejemplo. Imágenes generadas con IA.</footer>
+<script>
+const tr=document.getElementById('tr'),r=document.documentElement;
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function u(){const p=calm?.4:Math.min(1,Math.max(0,scrollY/(tr.offsetHeight-innerHeight)));r.style.setProperty('--p',p)}
+addEventListener('scroll',u,{passive:true});u();
+document.getElementById('f').onsubmit=e=>{e.preventDefault();
+const m='Hola! Quiero consultar disponibilidad del '+a.value+' al '+s.value+' para '+g.value+' huéspedes';
+location.href='https://wa.me/5493444000000?text='+encodeURIComponent(m)};
+addEventListener('scroll',()=>document.body.classList.toggle('s',scrollY>innerHeight*.6),{passive:true});
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

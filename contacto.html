@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es" class="dark" data-type="service" data-radius="sharp" data-buttons="solid" data-motion>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="page-type" content="service">
+    <meta name="site-kind" content="other">
+    <meta name="theme-color" content="#070709">
+    <meta name="description" content="Completá tus datos y te respondemos en el día.">
+    <meta property="og:title" content="Contacto | REDLINE">
+    <meta property="og:description" content="Completá tus datos y te respondemos en el día.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Contacto | REDLINE</title>
     <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -15,120 +26,108 @@
                     colors: { redline: { red: '#FF1A2D', dark: '#070709', card: '#0F0F14', border: '#22222A' } }
                 }
             }
-        }
+        };
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="redline-site.css">
+    <script src="redline-site.js" defer></script>
+    <script src="dist/analytics.js" defer></script>
 </head>
-<body class="bg-redline-dark text-gray-100 font-sans antialiased">
-
-    <header class="fixed top-0 left-0 w-full z-50 bg-redline-dark/90 backdrop-blur-md border-b border-redline-border">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="index.html"><img src="logo.jpg" alt="REDLINE" class="h-10 w-auto"></a>
-            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
-                <a href="index.html" class="hover:text-redline-red">Inicio</a>
-                <a href="servicios.html" class="hover:text-redline-red">Servicios & Precios</a>
-                <a href="portafolio.html" class="hover:text-redline-red">Ejemplos</a>
-                <a href="nosotros.html" class="hover:text-redline-red">Nosotros</a>
-                <a href="contacto.html" class="text-redline-red font-bold">Contacto</a>
+<body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <header class="site-header">
+        <div class="site-header__inner wrap">
+            <a class="brand" href="index.html" aria-label="REDLINE, Inicio">
+                <img class="brand__logo" src="logo.jpg" width="1024" height="1024" alt="">
+                <span class="brand__name">REDLINE</span>
+            </a>
+            <nav class="desktop-nav" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios &amp; Precios</a>
+                <a href="portafolio.html">Ejemplos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html" aria-current="page">Contacto</a>
             </nav>
-            <a href="contacto.html" class="hidden md:inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-redline-red rounded-xl">Cotizar Web</a>
+            <a class="button-primary header-action" href="contacto.html">Cotizar Web</a>
+            <button class="mobile-menu-button" id="mobile-menu-btn" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
+        <nav class="mobile-nav" id="mobile-menu" aria-label="Navegación móvil" aria-hidden="true" inert>
+            <div class="mobile-nav__links wrap">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios &amp; Precios</a>
+                <a href="portafolio.html">Ejemplos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html" aria-current="page">Contacto</a>
+            </div>
+            <a class="button-primary mobile-nav__action" href="contacto.html">Cotizar Web</a>
+        </nav>
     </header>
 
-    <main class="pt-36 pb-24 max-w-4xl mx-auto px-4">
-        <div class="bg-redline-card p-8 md:p-12 rounded-3xl border border-redline-border shadow-2xl relative overflow-hidden">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-center mb-2">Cotizá tu Página Web</h1>
-            <p class="text-gray-400 text-center text-sm mb-8">Completá tus datos y te respondemos en el día.</p>
+    <main class="page-shell" id="main">
+        <div class="wrap">
+            <header class="page-intro contact-intro">
+                <h1 class="page-title">Cotizá tu Página Web</h1>
+                <p class="page-intro__text">Completá tus datos y te respondemos en el día.</p>
+            </header>
 
-            <!-- MENSAJE DE ÉXITO (Oculto por defecto) -->
-            <div id="form-success-msg" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 text-sm text-center flex items-center justify-center gap-3">
-                <i class="fa-solid fa-circle-check text-xl"></i>
-                <span>¡Mensaje enviado con éxito! Nos pondremos en contacto muy pronto.</span>
-            </div>
-
-            <!-- FORMULARIO -->
-            <form id="contact-form" class="space-y-6" action="https://formspree.io/f/xjyvrgyj" method="POST">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Tu Nombre / Negocio</label>
-                        <input type="text" name="nombre" required placeholder="Ej. Nicolas / Mi Negocio" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
+            <div class="contact-layout">
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/maeezvna" method="POST">
+                    <div class="contact-form__row">
+                        <div class="field">
+                            <label for="contact-name">Nombre del negocio</label>
+                            <input id="contact-name" type="text" name="nombre" autocomplete="organization" required placeholder="Ej. Mi Negocio">
+                        </div>
+                        <div class="field">
+                            <label for="contact-phone">Teléfono</label>
+                            <input id="contact-phone" type="tel" name="telefono" autocomplete="tel" required placeholder="+54 11 1234 5678">
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-400 mb-2">WhatsApp / Teléfono</label>
-                        <input type="tel" name="telefono" required placeholder="+54 11 1234 5678" class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
+                    <div class="field">
+                        <label for="contact-business">Rubro o Tipo de Negocio</label>
+                        <input id="contact-business" type="text" name="rubro" placeholder="Ej. Restaurante, Barbería, Hotel, Tienda de ropa...">
                     </div>
-                </div>
+                    <div class="field">
+                        <label for="contact-message">¿Qué te gustaría agregar en tu web?</label>
+                        <textarea id="contact-message" name="mensaje" rows="4" placeholder="Contanos brevemente qué querés mostrar..."></textarea>
+                    </div>
+                    <p class="form-status form-status--success" id="form-success-msg" role="status" aria-live="polite" hidden>¡Mensaje enviado con éxito! Nos pondremos en contacto muy pronto.</p>
+                    <p class="form-status form-status--error" id="form-error-msg" role="alert" aria-live="assertive" hidden>No pudimos enviar la consulta. Revisá los datos o volvé a intentar.</p>
+                    <button class="button-primary contact-form__submit" type="submit" id="submit-btn">
+                        <span class="submit-label">Enviar Consulta</span>
+                    </button>
+                </form>
 
-                <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Rubro o Tipo de Negocio</label>
-                    <input type="text" name="rubro" placeholder="Ej. Restaurante, Barbería, Hotel, Tienda de ropa..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-2">¿Qué te gustaría agregar en tu web?</label>
-                    <textarea name="mensaje" rows="4" placeholder="Contanos brevemente qué querés mostrar..." class="w-full bg-redline-dark border border-redline-border rounded-xl p-3.5 text-sm text-white focus:border-redline-red focus:outline-none"></textarea>
-                </div>
-
-                <button type="submit" id="submit-btn" class="w-full py-4 bg-redline-red text-white font-bold rounded-xl shadow-[0_0_20px_rgba(255,26,45,0.4)] hover:bg-red-600 transition-all flex items-center justify-center gap-2">
-                    <span>Enviar Consulta</span>
-                </button>
-            </form>
-
-            <div class="mt-8 pt-8 border-t border-redline-border text-center">
-                <p class="text-xs text-gray-400 mb-3">También podés encontrarnos en Instagram:</p>
-                <a href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-redline-dark px-4 py-2 rounded-xl border border-redline-border hover:border-redline-red transition-all">
-                    <i class="fa-brands fa-instagram text-pink-500 text-lg"></i>
-                    <span>@redline.web</span>
-                </a>
+                <aside class="contact-social">
+                    <a class="contact-social__link" href="mailto:redlinewebgchu@gmail.com?subject=Consulta%20REDLINE"><i class="fa-solid fa-envelope" aria-hidden="true"></i>redlinewebgchu@gmail.com</a>
+                    <a class="contact-social__link" href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>@redline.web</a>
+                </aside>
             </div>
         </div>
     </main>
 
-    <footer class="py-8 border-t border-redline-border text-center text-xs text-gray-500">
-        <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
+    <footer class="site-footer">
+        <div class="site-footer__main wrap">
+            <div class="site-footer__brand-block">
+                <a class="site-footer__brand" href="index.html" aria-label="REDLINE, Inicio">
+                    <img src="logo.jpg" width="1024" height="1024" alt="">
+                    <span class="site-footer__brand-name">REDLINE</span>
+                </a>
+                <p class="site-footer__tagline">Hechos para ir más lejos.</p>
+            </div>
+            <div class="footer-endcap">
+                <p class="footer-cta__title">Hablemos de tu próxima web.</p>
+                <div class="footer-contact">
+                    <a class="button-primary footer-contact__whatsapp" href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Escribinos por WhatsApp</a>
+                    <a class="footer-contact__email" href="mailto:redlinewebgchu@gmail.com?subject=Consulta%20REDLINE"><i class="fa-solid fa-envelope" aria-hidden="true"></i>redlinewebgchu@gmail.com</a>
+                    <a class="footer-contact__instagram" href="https://www.instagram.com/redline.web" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>@redline.web</a>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__bottom wrap">
+            <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
+        </div>
     </footer>
-
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/5491112345678?text=Hola%20REDLINE!%20Quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 flex items-center justify-center">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- SCRIPT MANEJO DE ENVÍO CON FETCH -->
-    <script>
-        const form = document.getElementById('contact-form');
-        const successMsg = document.getElementById('form-success-msg');
-        const submitBtn = document.getElementById('submit-btn');
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Evita la redirección fuera del sitio
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-
-            const data = new FormData(form);
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    successMsg.classList.remove('hidden');
-                    form.reset(); // Limpia los campos
-                } else {
-                    alert('Ocurrió un error al enviar el mensaje. Inténtalo nuevamente o escríbenos por WhatsApp.');
-                }
-            } catch (error) {
-                alert('Error de conexión. Inténtalo de nuevo.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<span>Enviar Consulta</span>';
-            }
-        });
-    </script>
-    
-    <!-- Vercel Web Analytics -->
-    <script src="dist/analytics.js"></script>
 </body>
 </html>

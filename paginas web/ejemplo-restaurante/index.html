@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Surubí | Cocina de río</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,800;1,9..144,500&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--sal:#eaf1ef;--rio:#0f3d3a;--sol:#f2b632;--lad:#b5472c;--bl:#fbfdfc;--f:'Fraunces',Georgia,serif;--b:'Figtree',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font:400 1.05rem/1.65 var(--b);color:var(--rio);background:var(--sal)}
+:focus-visible{outline:3px solid var(--lad);outline-offset:3px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 6vw}
+.logo{font:800 1.7rem var(--f);text-decoration:none;color:var(--rio)}
+nav a:not(.logo){color:var(--rio);font-weight:600}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:4vw;align-items:center;padding:4vh 6vw 8vh}
+h1{font:800 clamp(2.8rem,7vw,6rem)/1 var(--f);letter-spacing:-.025em}
+h1 em{font-weight:500}
+.hero p{max-width:36ch;margin:1.4rem 0 2rem;font-size:1.15rem}
+.btn{display:inline-block;background:var(--lad);color:#fff;padding:.9rem 1.6rem;border-radius:.4rem;text-decoration:none;font-weight:600;border:0;font-family:inherit;font-size:1rem;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--rio)}
+.plate{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--lad) 0 9%,var(--sol) 9.5% 23%,var(--bl) 23.5% 54%,var(--rio) 54.5% 58%,var(--bl) 58.5%);box-shadow:0 40px 70px #0f3d3a40;animation:spin 1.6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes spin{from{transform:rotate(-200deg) scale(.6);opacity:0}}
+.board{background:var(--rio);color:var(--bl);padding:5rem 6vw}
+.board h2{font:800 clamp(2rem,5vw,3.4rem)/1.05 var(--f);margin-bottom:1.5rem}
+.tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.tab{font:600 1rem var(--b);background:none;color:var(--bl);border:2px solid var(--bl);border-radius:99px;padding:.5rem 1.2rem;cursor:pointer;transition:background .2s,color .2s}
+.tab[aria-selected=true]{background:var(--sol);border-color:var(--sol);color:var(--rio)}
+.panel{max-width:46rem}
+.panel[hidden]{display:none}
+.row{display:flex;align-items:baseline;gap:.6rem;padding:.7rem 0}
+.row b{font:500 1.35rem var(--f)}
+.row i{flex:1;border-bottom:2px dotted #fbfdfc66;transform:translateY(-.3rem)}
+.row small{display:block;font-size:.9rem;opacity:.75}
+.res{padding:5rem 6vw;max-width:52rem}
+.res h2{font:800 clamp(2rem,5vw,3.2rem)/1.05 var(--f);margin-bottom:1.5rem}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1rem;align-items:end}
+label{display:grid;gap:.3rem;font-weight:600;font-size:.95rem}
+input,select{font:inherit;padding:.7rem;border:2px solid var(--rio);border-radius:.4rem;background:var(--bl);color:var(--rio)}
+footer{padding:2rem 6vw;border-top:2px solid var(--rio);font-size:.95rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.plate{max-width:20rem}}
+nav{position:sticky;top:0;z-index:20;background:#eaf1efd9;backdrop-filter:blur(12px)}
+.wrap{padding:5rem 6vw;max-width:72rem;margin:auto}
+.wrap h2{font:800 clamp(2rem,5vw,3.2rem)/1.05 var(--f);margin-bottom:2rem}
+.stars{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem}
+.dish{background:var(--bl);border-radius:1.2rem;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.dish:hover{transform:translateY(-8px);box-shadow:0 24px 40px #0f3d3a30}
+.dish .ph{height:11rem;transition:transform .5s}
+.dish:hover .ph{transform:scale(1.06)}
+.dish .tx{padding:1.2rem;position:relative;background:var(--bl)}
+.dish h3{font:500 1.5rem var(--f)}
+.dish p{font-size:.95rem;opacity:.8}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem;counter-reset:s}
+.flow div{border-top:4px solid var(--rio);padding-top:1rem;counter-increment:s}
+.flow h3{font:500 1.6rem var(--f)}
+.flow h3::before{content:counter(s) ". ";color:var(--lad)}
+.band{background:var(--sol);padding:3.5rem 6vw;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
+.band h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--f);max-width:22ch}
+.band .btn{background:var(--rio)}
+.band .btn:hover{background:var(--lad)}
+.hrs{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem}
+.hrs h3{font:500 1.5rem var(--f);margin-bottom:.3rem}
+.fab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:30;box-shadow:0 10px 30px #b5472c66}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.js .rv.on{opacity:1;transform:none}
+.img{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--rio),#3f8f86)}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.dish:hover img,.sv:hover img,.gal .img:hover img{transform:scale(1.08)}
+.nav2{display:flex;gap:1.6rem;font-weight:600}.nav2 a{text-decoration:none;color:var(--rio)}.nav2 a:hover{color:var(--lad)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
+.story .img{aspect-ratio:4/5;border-radius:1.5rem}
+.story p{margin-bottom:1rem;max-width:46ch}
+.svs{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.2rem}
+.sv{border-radius:1.2rem;overflow:hidden;background:var(--bl);transition:transform .3s}
+.sv:hover{transform:translateY(-6px)}
+.sv .img{aspect-ratio:4/3}.sv .t{padding:1rem 1.2rem}
+.sv h3{font:500 1.3rem var(--f)}.sv p{font-size:.92rem;opacity:.8}
+.pks{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.pk{border:2px solid var(--rio);border-radius:1.2rem;padding:1.8rem;display:flex;flex-direction:column;gap:.6rem;background:var(--bl)}
+.pk h3{font:500 1.5rem var(--f)}.pk .pr{font:800 2.4rem/1 var(--f);color:var(--lad)}.pk ul{padding-left:1.1rem;flex:1}
+.pk.hot{background:var(--rio);color:var(--bl);transform:scale(1.04)}.pk.hot .pr{color:var(--sol)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:11rem;gap:.7rem}
+.gal .img{border-radius:1rem}.gal .g1{grid-row:span 2}.gal .g4{grid-column:span 2}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem;background:var(--rio);color:var(--bl);padding:4rem 6vw}
+.contact h2{font:800 clamp(2rem,4vw,3rem)/1.05 var(--f);margin-bottom:1rem}
+.contact dt{font:500 1.3rem var(--f);margin-top:1rem;color:var(--sol)}
+.contact form{display:grid;gap:.8rem}
+.contact input,.contact select,.contact textarea{font:inherit;padding:.8rem 1rem;border:2px solid var(--bl);border-radius:.5rem;background:var(--bl);color:var(--rio)}
+.mapb{display:block;margin-top:1.5rem;border-radius:1rem;padding:1.8rem;text-align:center;color:var(--rio);font:800 1.2rem var(--f);text-decoration:none;background:repeating-linear-gradient(45deg,var(--sol),var(--sol) 14px,#f6c859 14px,#f6c859 28px)}
+@media(max-width:800px){.story,.contact{grid-template-columns:1fr}.nav2{display:none}.gal{grid-template-columns:repeat(2,1fr)}.gal .g4{grid-column:span 2}}
+.back-home{position:fixed;bottom:1.2rem;left:1.2rem;z-index:40;display:inline-flex;min-height:48px;align-items:center;padding:.7rem 1.1rem;border:1px solid #fbfdfc99;border-radius:.4rem;background:var(--rio);box-shadow:0 10px 30px #0f3d3a40;color:var(--bl);font:600 .9rem var(--b);text-decoration:none;transition:transform .2s,background .2s}
+.back-home:hover{transform:translateY(-2px);background:var(--lad)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#">Surubí</a><div class="nav2"><a href="#historia">Historia</a><a href="#menu">Menú</a><a href="#precios">Precios</a><a href="#contacto">Contacto</a></div><a href="#reserva">Reservar mesa</a></nav>
+<main>
+<section class="hero">
+<div>
+<h1>Pescado de río, <em>fuego de leña.</em></h1>
+<p>Cocina de la costa entrerriana. Lo que trae el río por la mañana, a la parrilla por la noche.</p>
+<a class="btn" href="#reserva">Reservar mesa</a>
+</div>
+<div class="plate" role="img" aria-label="Plato visto desde arriba"></div>
+</section>
+<section class="wrap rv" id="historia">
+<div class="story">
+<div class="img"><img src="img/historia.jpg" alt="Cocina del restaurante" loading="lazy"></div>
+<div>
+<h2>Nuestra historia</h2>
+<p>Surubí nació de una idea simple: cocinar lo que da el río con el fuego de siempre. Una cocina chica, una parrilla grande y mesas largas para compartir.</p>
+<p>Trabajamos con pescadores de la zona y productores de Entre Ríos. La carta cambia según lo que haya cada día.</p>
+<a class="btn" href="#reserva">Reservar mesa</a>
+</div>
+</div>
+<p style="font-size:.85rem;opacity:.65;margin-top:1rem">Historia de ejemplo.</p>
+</section>
+<section class="wrap rv" style="padding-top:0">
+<h2>Qué ofrecemos</h2>
+<div class="svs">
+<div class="sv"><div class="img"><img src="img/salon.jpg" alt="Salón interior" loading="lazy"></div><div class="t"><h3>Salón</h3><p>Ambiente cálido, con vista a la parrilla.</p></div></div>
+<div class="sv"><div class="img"><img src="img/terraza.jpg" alt="Terraza" loading="lazy"></div><div class="t"><h3>Terraza</h3><p>Mesas al aire libre sobre la costanera.</p></div></div>
+<div class="sv"><div class="img"><img src="img/llevar.jpg" alt="Comida para llevar" loading="lazy"></div><div class="t"><h3>Para llevar</h3><p>Pedí por WhatsApp y retirá.</p></div></div>
+<div class="sv"><div class="img"><img src="img/eventos.jpg" alt="Evento" loading="lazy"></div><div class="t"><h3>Eventos</h3><p>Cumpleaños y reuniones de hasta 40 personas.</p></div></div>
+</div>
+</section>
+<section class="wrap rv">
+<h2>Los que más piden</h2>
+<div class="stars">
+<div class="dish"><div class="ph img"><img src="img/plato1.jpg" alt="Pescado a la parrilla" loading="lazy"></div><div class="tx"><h3>Surubí a la parrilla</h3><p>Pescado grueso, brasa fuerte y papas rústicas.</p></div></div>
+<div class="dish"><div class="ph img"><img src="img/plato2.jpg" alt="Pescado al horno" loading="lazy"></div><div class="tx"><h3>Dorado al horno</h3><p>Con verduras asadas y limón.</p></div></div>
+<div class="dish"><div class="ph img"><img src="img/plato3.jpg" alt="Provoleta a la parrilla" loading="lazy"></div><div class="tx"><h3>Provoleta a la leña</h3><p>Dorada por fuera, derretida por dentro.</p></div></div>
+</div>
+</section>
+<section class="wrap rv" style="padding-top:0">
+<h2>Del río a la mesa</h2>
+<div class="flow">
+<div><h3>Llega el pescado</h3><p>Lo traen pescadores de la zona cada mañana.</p></div>
+<div><h3>Se enciende la leña</h3><p>Brasa pareja y tiempo justo, sin apuro.</p></div>
+<div><h3>Llega a tu mesa</h3><p>Caliente, simple y para compartir.</p></div>
+</div>
+</section>
+<section class="board" id="menu">
+<h2>La pizarra de hoy</h2>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" aria-selected="true" data-t="0">Para empezar</button>
+<button class="tab" role="tab" aria-selected="false" data-t="1">Del río</button>
+<button class="tab" role="tab" aria-selected="false" data-t="2">Postres</button>
+</div>
+<div class="panel" role="tabpanel">
+<div class="row"><b>Empanadas de pescado</b><i></i><span>$6.500</span></div>
+<div class="row"><b>Provoleta a la leña</b><i></i><span>$8.200</span></div>
+<div class="row"><b>Pan de campo y manteca</b><i></i><span>$3.000</span></div>
+</div>
+<div class="panel" role="tabpanel" hidden>
+<div class="row"><div><b>Surubí a la parrilla</b><small>Con papas rústicas</small></div><i></i><span>$21.000</span></div>
+<div class="row"><div><b>Dorado al horno</b><small>Con verduras asadas</small></div><i></i><span>$19.500</span></div>
+<div class="row"><div><b>Milanesa de pacú</b><small>Con puré</small></div><i></i><span>$18.000</span></div>
+</div>
+<div class="panel" role="tabpanel" hidden>
+<div class="row"><b>Flan casero</b><i></i><span>$5.500</span></div>
+<div class="row"><b>Vigilante con dulce de batata</b><i></i><span>$5.800</span></div>
+</div>
+<p style="margin-top:1.5rem;opacity:.7;font-size:.9rem">Menú y precios de ejemplo.</p>
+</section>
+<section class="wrap rv" id="precios">
+<h2>Menús y precios</h2>
+<div class="pks">
+<div class="pk"><h3>Menú del mediodía</h3><div class="pr">$14.000</div><ul><li>Entrada</li><li>Plato del día</li><li>Bebida</li></ul><a class="btn" href="#reserva">Reservar</a></div>
+<div class="pk hot"><h3>Menú para dos</h3><div class="pr">$48.000</div><ul><li>Provoleta para compartir</li><li>Surubí a la parrilla</li><li>Postre y botella de vino</li></ul><a class="btn" href="#reserva">Reservar</a></div>
+<div class="pk"><h3>Grupos</h3><div class="pr">$22.000<small style="font:400 .9rem var(--b)"> por persona</small></div><ul><li>Desde 8 personas</li><li>Menú a medida</li><li>Mesa reservada</li></ul><a class="btn" href="#contacto">Consultar</a></div>
+</div>
+<p style="font-size:.85rem;opacity:.65;margin-top:1rem">Menús y precios de ejemplo.</p>
+</section>
+<section class="wrap rv" style="padding-top:0">
+<h2>Galería</h2>
+<div class="gal">
+<div class="img g1"><img src="img/galeria1.jpg" alt="Brasas de leña" loading="lazy"></div>
+<div class="img"><img src="img/galeria2.jpg" alt="Salón del restaurante" loading="lazy"></div>
+<div class="img"><img src="img/galeria3.jpg" alt="Pescado en la parrilla" loading="lazy"></div>
+<div class="img g4"><img src="img/galeria4.jpg" alt="Costanera al atardecer" loading="lazy"></div>
+<div class="img"><img src="img/galeria5.jpg" alt="Copa de vino tinto" loading="lazy"></div>
+<div class="img"><img src="img/galeria6.jpg" alt="Pan de campo con manteca" loading="lazy"></div>
+</div>
+</section>
+<section class="res" id="reserva">
+<h2>Reservá tu mesa</h2>
+<form id="f">
+<label>Nombre<input id="n" required></label>
+<label>Fecha<input id="d" type="date" required></label>
+<label>Personas<select id="p"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+<button class="btn" type="submit">Enviar por WhatsApp</button>
+</form>
+</section>
+<section class="band rv">
+<h2>¿Cumpleaños o reunión? Armamos el menú para tu grupo.</h2>
+<a class="btn" href="https://wa.me/5493444000000?text=Hola!%20Quiero%20consultar%20por%20un%20evento">Consultar por WhatsApp</a>
+</section>
+<section class="contact" id="contacto">
+<div>
+<h2>Contacto</h2>
+<dl>
+<dt>Dirección</dt><dd>Costanera 456, Gualeguaychú</dd>
+<dt>Horarios</dt><dd>Miércoles a domingo. Mediodía de 12 a 15, noche de 20 a 24.</dd>
+<dt>WhatsApp</dt><dd>344 400-0000</dd>
+<dt>Instagram</dt><dd>@surubi.cocina</dd>
+</dl>
+<a class="mapb" href="https://www.google.com/maps/search/?api=1&query=Gualeguaych%C3%BA+Entre+R%C3%ADos" target="_blank" rel="noopener">Ver en Google Maps</a>
+</div>
+<form onsubmit="event.preventDefault();location.href='https://wa.me/5493444000000?text='+encodeURIComponent('Hola! Soy '+this.n.value+'. Consulta: '+this.m.value)">
+<h2>Escribinos</h2>
+<input name="n" placeholder="Tu nombre" required>
+<textarea name="m" rows="4" placeholder="Consulta, evento o pedido para llevar" required></textarea>
+<button class="btn" type="submit">Enviar por WhatsApp</button>
+</form>
+</section>
+<a class="btn fab" href="#reserva">Reservar</a>
+</main>
+<a class="back-home" href="../../index.html">← Volver a REDLINE</a>
+<footer>Surubí. Costanera 456, Gualeguaychú. Miércoles a domingo. Página de ejemplo. Imágenes generadas con IA.</footer>
+<script>
+const T=document.querySelectorAll('.tab'),P=document.querySelectorAll('.panel');
+T.forEach(b=>b.onclick=()=>{T.forEach(x=>x.setAttribute('aria-selected',x===b));P.forEach((p,i)=>p.hidden=i!=b.dataset.t)});
+document.getElementById('f').onsubmit=e=>{e.preventDefault();
+const m='Hola! Soy '+n.value+'. Quiero reservar mesa para '+p.value+' el '+d.value;
+location.href='https://wa.me/5493444000000?text='+encodeURIComponent(m)};
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
