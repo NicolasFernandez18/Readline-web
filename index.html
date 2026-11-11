@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="redline-site.css">
     <script src="redline-site.js" defer></script>
-    <script src="dist/analytics.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -133,7 +132,19 @@
         </div>
         <div class="site-footer__bottom wrap">
             <p>&copy; 2026 REDLINE. Todos los derechos reservados.</p>
+            <a class="cookie-policy-link" href="politica-cookies.html">Política de cookies</a>
+            <button class="cookie-preferences-trigger" id="cookie-preferences-trigger" type="button">Preferencias de cookies</button>
         </div>
     </footer>
+    <section class="cookie-notice" id="cookie-notice" aria-labelledby="cookie-notice-title" aria-describedby="cookie-notice-description" hidden>
+        <h2 class="cookie-notice__title" id="cookie-notice-title">Cookies en REDLINE</h2>
+        <p class="cookie-notice__description" id="cookie-notice-description">Guardamos tu elección. Si aceptás, Google Analytics mide las visitas.</p>
+        <a class="cookie-notice__link" href="politica-cookies.html">Política de cookies</a>
+        <div class="cookie-notice__actions">
+            <button class="cookie-notice__button cookie-notice__button--secondary" id="cookie-reject" type="button">Rechazar todas</button>
+            <button class="cookie-notice__button cookie-notice__button--primary" id="cookie-accept" type="button">Aceptar todas</button>
+        </div>
+    </section>
+    <p class="cookie-toast" id="cookie-toast" role="status" aria-live="polite" hidden></p>
 </body>
 </html>

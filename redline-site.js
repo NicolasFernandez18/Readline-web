@@ -48,6 +48,98 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const cookieNotice = document.getElementById('cookie-notice');
+    const cookieToast = document.getElementById('cookie-toast');
+    const cookiePreferencesTrigger = document.getElementById('cookie-preferences-trigger');
+    const cookieConsentName = 'redline_consent_v2';
+
+    const readCookieConsent = () => {
+        const consentCookie = document.cookie
+            .split(';')
+            .map((cookie) => cookie.trim())
+            .find((cookie) => cookie.startsWith(`${cookieConsentName}=`));
+
+        return consentCookie ? consentCookie.split('=')[1] : null;
+    };
+
+    const loadAnalytics = () => {
+        if (typeof window.redlineGoogleAnalyticsConsent === 'function') {
+            window.redlineGoogleAnalyticsConsent(true);
+            return;
+        }
+
+        if (document.querySelector('script[data-consent-analytics]')) return;
+
+        const analyticsScript = document.createElement('script');
+        analyticsScript.src = 'dist/analytics.js';
+        analyticsScript.async = true;
+        analyticsScript.dataset.consentAnalytics = 'true';
+        document.head.append(analyticsScript);
+    };
+
+    const disableAnalytics = () => {
+        if (typeof window.redlineGoogleAnalyticsConsent === 'function') {
+            window.redlineGoogleAnalyticsConsent(false);
+        }
+    };
+
+    let toastTimeout;
+
+    const showCookieToast = (message) => {
+        window.clearTimeout(toastTimeout);
+        cookieToast.textContent = message;
+        cookieToast.hidden = false;
+        cookieToast.dataset.visible = 'true';
+
+        toastTimeout = window.setTimeout(() => {
+            cookieToast.dataset.visible = 'false';
+            window.setTimeout(() => {
+                cookieToast.hidden = true;
+            }, 200);
+        }, 4000);
+    };
+
+    if (cookieNotice && cookieToast && cookiePreferencesTrigger) {
+        const savedConsent = readCookieConsent();
+        const acceptButton = document.getElementById('cookie-accept');
+        const rejectButton = document.getElementById('cookie-reject');
+
+        if (savedConsent === 'accepted') {
+            loadAnalytics();
+        } else if (savedConsent !== 'necessary') {
+            cookieNotice.hidden = false;
+        }
+
+        const saveConsent = (consent) => {
+            const secureAttribute = window.location.protocol === 'https:' ? '; Secure' : '';
+            document.cookie = `${cookieConsentName}=${consent}; Max-Age=15552000; Path=/; SameSite=Lax${secureAttribute}`;
+
+            if (readCookieConsent() !== consent) {
+                showCookieToast('No se pudo guardar tu preferencia. Revisá la configuración de cookies del navegador.');
+                return;
+            }
+
+            if (consent === 'accepted') {
+                loadAnalytics();
+            } else {
+                disableAnalytics();
+            }
+            cookieNotice.hidden = true;
+            cookiePreferencesTrigger.focus();
+            showCookieToast('Listo, guardamos tu elección.');
+        };
+
+        acceptButton.addEventListener('click', () => saveConsent('accepted'));
+        rejectButton.addEventListener('click', () => saveConsent('necessary'));
+
+        cookiePreferencesTrigger.addEventListener('click', () => {
+            window.clearTimeout(toastTimeout);
+            cookieToast.hidden = true;
+            cookieNotice.hidden = false;
+            acceptButton.focus();
+        });
+    }
+
     const form = document.getElementById('contact-form');
 
     if (form) {

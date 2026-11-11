@@ -1119,6 +1119,174 @@ textarea {
     text-underline-offset: 3px;
 }
 
+.cookie-notice__link,
+.cookie-policy-link {
+    color: var(--redline-text);
+    text-decoration: underline;
+    text-decoration-color: var(--redline-red);
+    text-underline-offset: 3px;
+}
+
+.cookie-notice__link {
+    display: inline-block;
+    min-height: 32px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.cookie-policy {
+    display: grid;
+    max-width: 860px;
+    gap: 42px;
+}
+
+.cookie-policy section {
+    display: grid;
+    gap: 14px;
+}
+
+.cookie-policy .section-title {
+    margin: 0;
+}
+
+.cookie-policy p {
+    max-width: 75ch;
+    margin: 0;
+    color: var(--redline-muted);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.cookie-policy a {
+    color: var(--redline-text);
+    text-decoration: underline;
+    text-decoration-color: var(--redline-red);
+    text-underline-offset: 3px;
+}
+
+.cookie-policy code {
+    color: var(--redline-text);
+    font-size: 0.9em;
+}
+
+.cookie-preferences-trigger {
+    min-height: 44px;
+    padding: 6px 0;
+    border: 0;
+    background: transparent;
+    color: var(--redline-muted);
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: var(--redline-red);
+    text-underline-offset: 3px;
+}
+
+.cookie-preferences-trigger:hover {
+    color: var(--redline-text);
+}
+
+.cookie-notice {
+    position: fixed;
+    z-index: 110;
+    right: 24px;
+    bottom: 24px;
+    width: min(440px, calc(100vw - 32px));
+    padding: 22px;
+    border: 1px solid var(--redline-border);
+    border-top: 2px solid var(--redline-red);
+    background: var(--redline-card);
+    box-shadow: 0 18px 56px rgba(0, 0, 0, 0.48);
+}
+
+.cookie-notice__title {
+    margin: 0 0 6px;
+    color: var(--redline-text);
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.cookie-notice__description {
+    margin: 0;
+    color: var(--redline-muted);
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.cookie-notice__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.cookie-notice__button {
+    min-height: 44px;
+    padding: 9px 14px;
+    border: 1px solid var(--redline-border);
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 150ms var(--ease-out), background-color 150ms ease, border-color 150ms ease;
+}
+
+.cookie-notice__button:hover {
+    transform: translateY(-2px);
+}
+
+.cookie-notice__button:active {
+    transform: translateY(0);
+}
+
+.cookie-notice__button--secondary {
+    background: transparent;
+    color: var(--redline-text);
+}
+
+.cookie-notice__button--secondary:hover {
+    border-color: var(--redline-muted);
+    background: #15151B;
+}
+
+.cookie-notice__button--primary {
+    border-color: var(--redline-red);
+    background: var(--redline-red);
+    color: #fff;
+}
+
+.cookie-notice__button--primary:hover {
+    background: #e81729;
+}
+
+.cookie-toast {
+    position: fixed;
+    z-index: 111;
+    right: 24px;
+    bottom: 24px;
+    max-width: min(440px, calc(100vw - 32px));
+    margin: 0;
+    padding: 13px 17px;
+    transform: translateY(8px);
+    border: 1px solid var(--redline-border);
+    background: var(--redline-card);
+    color: var(--redline-text);
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms var(--ease-out);
+}
+
+.cookie-toast[data-visible="true"] {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+[hidden] {
+    display: none !important;
+}
+
 .button-secondary:hover {
     border-color: var(--redline-red);
     background: #15151B;
@@ -1684,6 +1852,25 @@ textarea {
         align-items: flex-start;
         flex-direction: column;
         gap: 8px;
+    }
+
+    .cookie-notice {
+        right: 16px;
+        bottom: 16px;
+        padding: 18px;
+    }
+
+    .cookie-notice__actions {
+        flex-direction: column;
+    }
+
+    .cookie-notice__button {
+        width: 100%;
+    }
+
+    .cookie-toast {
+        right: 16px;
+        bottom: 16px;
     }
 
 }
